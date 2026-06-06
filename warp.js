@@ -17,7 +17,8 @@
     cx = W/2; cy = H/2; seed();
   }
   function seed(){
-    const count = Math.round((W*H)/(DPR*DPR)/1500);
+    // density by CSS-pixel area, capped so large/low-DPR monitors don't overpopulate
+    const count = Math.min(Math.round((W*H)/(DPR*DPR)/1500), 850);
     stars = [];
     for (let i=0;i<count;i++){
       stars.push({
@@ -53,24 +54,31 @@
       const px = cx + s.x * k;
       const py = cy + s.y * k;
       if (px<0||px>W||py<0||py>H) continue;
+      // fade toward the vanishing point so far stars never pile into a blown-out
+      // white blob at centre (worst on large / low-DPR monitors).
+      const dc = Math.hypot(px - cx, py - cy);
+      const cf = Math.min(1, dc / (220 * DPR));
+      if (cf <= 0.002) continue;
       const size = (1 - s.z / W) * 2.6 * DPR + 0.3;
       const tw = reduce||!animate ? 0.85 : (0.55 + 0.45*Math.sin(t*s.tws + s.tw));
       const c = COL[s.hue];
+      const aa = s.a * tw * cf;
 
       // streak when moving fast
       if (animate && vel > 6){
         const pk = 128*DPR / s.pz;
         const ppx = cx + s.x*pk, ppy = cy + s.y*pk;
-        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${s.a*tw*0.8})`;
+        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${aa*0.8})`;
         ctx.lineWidth = size*0.7;
         ctx.beginPath(); ctx.moveTo(ppx,ppy); ctx.lineTo(px,py); ctx.stroke();
       }
-      ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${s.a*tw})`;
+      ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${aa})`;
       ctx.beginPath(); ctx.arc(px,py,size,0,Math.PI*2); ctx.fill();
       if (size > 1.4*DPR){
-        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${s.a*tw*0.16})`;
+        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${aa*0.14})`;
         ctx.beginPath(); ctx.arc(px,py,size*3.2,0,Math.PI*2); ctx.fill();
-        if (s.z < W*0.4) pts.push([px,py,size]);
+        // exclude near-centre points and cap total -> no dense central web
+        if (cf > 0.55 && s.z < W*0.4 && pts.length < 110) pts.push([px,py,size]);
       }
     }
     // constellation lines between near bright stars
@@ -80,7 +88,7 @@
         const dx=pts[i][0]-pts[j][0], dy=pts[i][1]-pts[j][1];
         const d2 = dx*dx+dy*dy;
         if (d2 < (150*DPR)*(150*DPR)){
-          const al = (1 - Math.sqrt(d2)/(150*DPR)) * 0.10;
+          const al = (1 - Math.sqrt(d2)/(150*DPR)) * 0.08;
           ctx.strokeStyle = `rgba(150,170,255,${al})`;
           ctx.beginPath(); ctx.moveTo(pts[i][0],pts[i][1]); ctx.lineTo(pts[j][0],pts[j][1]); ctx.stroke();
         }
