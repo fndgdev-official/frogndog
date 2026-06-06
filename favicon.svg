@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="frog" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#d6ffe2"/>
+      <stop offset="55%" stop-color="#7CFF9B"/>
+      <stop offset="100%" stop-color="#1f8a55"/>
+    </radialGradient>
+    <radialGradient id="dog" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#fff0d2"/>
+      <stop offset="55%" stop-color="#FFC061"/>
+      <stop offset="100%" stop-color="#c97a1e"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#050510"/>
+  <circle cx="26" cy="34" r="15" fill="url(#frog)"/>
+  <circle cx="40" cy="30" r="15" fill="url(#dog)" style="mix-blend-mode:screen"/>
+</svg>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" data-locale="ko" data-grain="on">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PuzzleShooter — FNDG</title>
+<meta name="description" content="PuzzleShooter — 999 스테이지 퍼즐 슈터. 한 번의 발사에 모든 각도를 계산하는 중독적인 벽돌깨기. FNDG (Frog and Dog Games)." />
+<link rel="canonical" href="https://frogndog.com/puzzleshooter.html" />
+<meta name="theme-color" content="#050510" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="PuzzleShooter — FNDG" />
+<meta property="og:description" content="999 스테이지 퍼즐 슈터 — 벽돌깨기의 진화. by FNDG (Frog and Dog Games)." />
+<meta property="og:url" content="https://frogndog.com/puzzleshooter.html" />
+<meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script>(function(){try{var l=localStorage.getItem('fndg-locale');if(l!=='ko'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('ko')===0?'ko':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
+<link rel="stylesheet" href="site.css" />
+<style>
+  :root { --c: var(--frog); }
+  .detail-hero .gc-title { background: linear-gradient(180deg,#eafff0,var(--frog)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="nebula"></div>
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<a class="back-link" href="index.html"><span>←</span> <span class="tr" lang="ko">FNDG / 모든 게임</span><span class="tr" lang="en">FNDG / All games</span></a>
+<div class="lang-switch" role="group" aria-label="Language" style="position:fixed;top:13px;right:var(--pad);z-index:51;">
+  <button type="button" data-loc="ko" aria-pressed="true">KO</button>
+  <button type="button" data-loc="en" aria-pressed="false">EN</button>
+</div>
+
+<main>
+  <section class="detail-hero">
+    <div class="wrap" style="text-align:center;">
+      <div class="gc-tag reveal" style="justify-content:center;color:var(--frog);"><span class="pill">RELEASED · 2026</span> PUZZLE · BRICK-BREAKER</div>
+      <h1 class="gc-title reveal d1" style="margin-top:18px;">PuzzleShooter</h1>
+      <div class="gc-kr reveal d2" style="font-size:clamp(16px,2vw,22px);margin-top:8px;"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화 🐸</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved 🐸</span></div>
+      <p class="lead reveal d2" style="margin:24px auto 0;text-align:center;"><span class="tr" lang="ko">한 번의 발사에 모든 각도를 계산하는 중독적인 퍼즐 브레이커. 999개의 스테이지가 당신을 기다립니다.</span><span class="tr" lang="en">An addictive puzzle breaker where a single shot calculates every angle. 999 stages are waiting for you.</span></p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-primary" style="--c:var(--frog)" href="https://play.google.com/store/apps/details?id=com.fndg.puzzleshooter" target="_blank" rel="noopener"><span>Google Play</span><span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" style="--c:var(--frog)" href="index.html#games"><span><span class="tr" lang="ko">다른 게임</span><span class="tr" lang="en">More games</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <!-- IMG SLOT (hero): replace inner <span> with <img src="..." alt="PuzzleShooter"> -->
+      <div class="shot reveal" style="aspect-ratio:21/9;margin-bottom:24px;"><span>HERO SCREENSHOT · 1920×820</span></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// FEATURES</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(30px,4.5vw,58px);">한 발에 거는 전략.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(30px,4.5vw,58px);">Everything on one shot.</h2></div>
+      <div class="feature-row">
+        <div class="feature reveal"><div class="ic">🎯</div><h3>999 Stages</h3><p><span class="tr" lang="ko">천 개에 가까운 손수 설계된 스테이지. 끝이 보이지 않는 도전.</span><span class="tr" lang="en">Nearly a thousand hand-designed stages. A challenge with no end in sight.</span></p></div>
+        <div class="feature reveal d1"><div class="ic">⚡</div><h3>One-Shot Physics</h3><p><span class="tr" lang="ko">각도와 반사를 계산해 단 한 번의 발사로 모든 벽돌을 쓸어버리세요.</span><span class="tr" lang="en">Read the angles and ricochets, then clear every brick in a single shot.</span></p></div>
+        <div class="feature reveal d2"><div class="ic">🏆</div><h3>Endless Replay</h3><p><span class="tr" lang="ko">같은 스테이지도 매번 다른 풀이. 완벽한 클리어에 도전하세요.</span><span class="tr" lang="en">Every stage has many solutions. Chase the perfect clear.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// GALLERY</span></div>
+      <!-- IMG SLOTS (gallery): replace each inner <span> with <img src="..." alt="..."> -->
+      <div class="shot-grid">
+        <div class="shot reveal"><span>SCREENSHOT 01</span></div>
+        <div class="shot reveal d1"><span>SCREENSHOT 02</span></div>
+        <div class="shot reveal d2"><span>SCREENSHOT 03</span></div>
+        <div class="shot reveal"><span>SCREENSHOT 04</span></div>
+        <div class="shot reveal d1"><span>SCREENSHOT 05</span></div>
+        <div class="shot reveal d2"><span>SCREENSHOT 06</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2 class="reveal tr" lang="ko" style="font-size:clamp(34px,6vw,84px);">지금, 발사하세요.</h2>
+      <h2 class="reveal tr" lang="en" style="font-size:clamp(34px,6vw,84px);">Take your shot.</h2>
+      <a class="big-mail reveal d1" href="https://play.google.com/store/apps/details?id=com.fndg.puzzleshooter" target="_blank" rel="noopener" style="font-size:clamp(20px,2.6vw,34px);">Google Play ↗</a>
+      <div class="reveal d2" style="margin-top:30px;"><a class="btn btn-ghost" style="--c:var(--frog)" href="index.html#games"><span><span class="tr" lang="ko">← 다른 게임 보기</span><span class="tr" lang="en">← Back to games</span></span></a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span></div>
+  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></div>
+  <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
+</footer>
+
+<script src="cosmos.js"></script>
+<script src="site.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>

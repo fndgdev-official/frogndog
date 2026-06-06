@@ -1,167 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" data-locale="ko" data-hero="orbit" data-grain="on">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FNDG — Frog and Dog Games</title>
-<meta name="description" content="FNDG (Frog and Dog Games) is an indie game studio from Korea. Makers of PuzzleShooter and an upcoming adventure RPG.">
-<style>
-  :root{
-    --green:#3aa856; --green-dark:#2c7d41; --ink:#1f2a24; --muted:#5c6b62;
-    --bg:#f4f9f4; --card:#ffffff; --line:#e2ece4;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",
-      "Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    color:var(--ink); background:var(--bg); line-height:1.6;
-  }
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+<meta name="description" content="FNDG (Frog and Dog Games) — 한국의 2인 인디 게임 스튜디오. PuzzleShooter & FD Quest를 만듭니다. An indie game studio from Korea." />
+<link rel="canonical" href="https://frogndog.com/" />
+<meta name="theme-color" content="#050510" />
 
-  header{
-    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
-    color:#fff; padding:72px 0 64px; text-align:center;
-  }
-  .logo{font-size:64px;line-height:1}
-  header h1{font-size:44px;letter-spacing:2px;margin:14px 0 6px;font-weight:800}
-  header .full{font-size:18px;opacity:.92;font-weight:500}
-  header .tag{margin-top:18px;font-size:15px;opacity:.85}
+<!-- favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="favicon.svg" />
 
-  section{padding:56px 0}
-  section h2{font-size:24px;color:var(--green-dark);margin-bottom:18px;font-weight:700}
-  p.lead{font-size:17px;color:var(--muted)}
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="FNDG — Frog and Dog Games" />
+<meta property="og:title" content="FNDG — Frog and Dog Games" />
+<meta property="og:description" content="한국의 2인 인디 게임 스튜디오. 개구리와 강아지가 만드는 작은 우주 — PuzzleShooter & FD Quest." />
+<meta property="og:url" content="https://frogndog.com/" />
+<meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FNDG — Frog and Dog Games" />
+<meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — PuzzleShooter & FD Quest." />
+<meta name="twitter:image" content="https://frogndog.com/og-cover.jpg" />
 
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:16px;
-    box-shadow:0 4px 16px rgba(44,125,65,.06);margin-bottom:26px;overflow:hidden;
-  }
-  .shots{
-    display:flex;gap:12px;padding:22px;background:#eef5ef;
-    justify-content:center;align-items:center;flex-wrap:wrap;
-  }
-  .shots img{border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18);display:block}
-  .shots .phone{height:320px;width:auto}
-  .shots .wide{width:100%;max-width:600px;height:auto}
-  .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:600px;margin-top:2px}
-  .thumbs img{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-  .cardbody{padding:24px 28px 28px}
-  .cardbody h3{font-size:21px;margin-bottom:8px}
-  .cardbody h3 .ico{margin-right:6px}
-  .cardbody p{color:var(--muted);font-size:15px}
-  .badge{
-    display:inline-block;margin-top:14px;padding:5px 12px;border-radius:999px;
-    background:#eaf6ec;color:var(--green-dark);font-size:13px;font-weight:600;
-  }
-  .badge.dev{background:#fff3e0;color:#b26a00}
+<!-- set locale before paint to avoid flash -->
+<script>(function(){try{var l=localStorage.getItem('fndg-locale');if(l!=='ko'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('ko')===0?'ko':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
 
-  .contact a{color:var(--green-dark);font-weight:700;text-decoration:none}
-  .contact a:hover{text-decoration:underline}
+<link rel="stylesheet" href="site.css" />
 
-  footer{border-top:1px solid var(--line);background:#eef5ef;padding:34px 0;font-size:13px;color:var(--muted)}
-  footer .biz{line-height:1.9}
-  footer .biz b{color:var(--ink)}
-  footer .copy{margin-top:14px;opacity:.8}
-
-  @media(max-width:560px){
-    header h1{font-size:34px}
-    .logo{font-size:52px}
-    section{padding:42px 0}
-    .shots .phone{height:260px}
-  }
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FNDG",
+  "alternateName": "Frog and Dog Games",
+  "url": "https://frogndog.com/",
+  "email": "fndgdev@gmail.com",
+  "description": "An indie game studio from Korea. Makers of PuzzleShooter and FD Quest.",
+  "foundingLocation": "Republic of Korea",
+  "makesOffer": [
+    { "@type": "VideoGame", "name": "PuzzleShooter", "gamePlatform": "Android", "applicationCategory": "Game" },
+    { "@type": "VideoGame", "name": "FD Quest", "gamePlatform": ["PC", "Console"], "applicationCategory": "Game" }
+  ]
+}
+</script>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="logo">🐸🐶</div>
-    <h1>FNDG</h1>
-    <div class="full">Frog and Dog Games</div>
-    <div class="tag">An indie game studio from Korea · 대한민국 인디 게임 스튜디오</div>
+<!-- ===== Cosmic background ===== -->
+<canvas id="starfield"></canvas>
+<div class="nebula"></div>
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <a class="brand" href="#top" aria-label="FNDG home">
+    <span class="mark">
+      <span class="orb frog-o"></span>
+      <span class="orb dog-o"></span>
+    </span>
+    <span class="name">FNDG<small>FROG · DOG</small></span>
+  </a>
+
+  <div class="nav-right">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-loc="ko" aria-pressed="true">KO</button>
+      <button type="button" data-loc="en" aria-pressed="false">EN</button>
+    </div>
+    <nav class="nav-links">
+      <a href="#about"><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">Studio</span></a>
+      <a href="#games"><span class="tr" lang="ko">게임</span><span class="tr" lang="en">Games</span></a>
+      <a href="#contact"><span class="tr" lang="ko">문의</span><span class="tr" lang="en">Contact</span></a>
+      <a class="nav-cta" href="#games"><span class="tr" lang="ko">플레이</span><span class="tr" lang="en">Play</span> ↗</a>
+    </nav>
+    <button class="nav-burger" aria-label="menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <h2>About Us</h2>
-    <p class="lead">
-      FNDG (Frog and Dog Games) is an independent game studio based in Korea.
-      We design and build games with care — easy to pick up, deep enough to master.
-      <br><br>
-      FNDG(에프엔디지)는 한국의 인디 게임 스튜디오입니다.
-      쉽게 시작하지만 깊이 있게 즐길 수 있는 게임을 만듭니다.
-    </p>
-  </div>
-</section>
+<main id="top">
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2>Our Games</h2>
-
-    <!-- Game 1: PuzzleShooter -->
-    <div class="card">
-      <div class="shots">
-        <img class="phone" src="pss-lobby.jpg" alt="PuzzleShooter lobby">
-        <img class="phone" src="pss-laser.jpg" alt="PuzzleShooter gameplay">
-      </div>
-      <div class="cardbody">
-        <h3><span class="ico">🎯</span>PuzzleShooter</h3>
-        <p>
-          999 stages of bouncing-ball brick breaker with deep skill strategy.
-          Four active skills, precise difficulty tuning, and an endless challenge mode.
-          <br>
-          999 스테이지 공 튕기기 벽돌깨기 — 깊이 있는 스킬 전략 퍼즐 슈터.
-        </p>
-        <span class="badge">Android · Google Play (Closed Testing)</span>
-      </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="orbit-stage">
+      <div class="orbit r2 spin-rev"><span class="body-orb frog-moon"></span></div>
+      <div class="orbit r1 spin"><span class="body-orb dog-sun"></span></div>
     </div>
 
-    <!-- Game 2: RPG (in development) -->
-    <div class="card">
-      <div class="shots">
-        <img class="wide" src="rpg-worldmap.jpg" alt="FD Quest — Countryside">
-        <div class="thumbs">
-          <img src="rpg-2.jpg" alt="FD Quest — Royal Capital">
-          <img src="rpg-3.jpg" alt="FD Quest — Aurora Coast">
-          <img src="rpg-4.jpg" alt="FD Quest — Cherry Vale">
-          <img src="rpg-5.jpg" alt="FD Quest — Crystal Caves">
+    <div class="hero-inner wrap">
+      <div class="eyebrow">
+        <span class="tr" lang="ko">한국의 2인 인디 게임 스튜디오</span>
+        <span class="tr" lang="en">INDIE GAME STUDIO FROM KOREA</span>
+      </div>
+      <h1 class="wordmark">F<span class="g">N</span><span class="d">D</span>G</h1>
+      <div class="hero-tag">
+        <span class="tr" lang="ko">개구리🐸와 강아지🐶가 만드는 작은 우주</span>
+        <span class="tr" lang="en">A tiny universe, made by a frog 🐸 and a dog 🐶</span>
+      </div>
+      <p class="hero-sub">
+        <span class="tr" lang="ko">단 두 사람이 손으로 빚는 인디 게임.</span>
+        <span class="tr" lang="en">Two makers. One universe.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#games">
+          <span><span class="tr" lang="ko">게임 보기</span><span class="tr" lang="en">Play</span></span><span class="arrow">→</span>
+        </a>
+        <a class="btn btn-ghost" href="#about">
+          <span><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">About</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><span class="dot"></span>// 001 — STUDIO</span>
+        <h2 class="reveal d1 tr" lang="ko">둘이서, <span style="color:var(--frog)">전부</span>를.</h2>
+        <h2 class="reveal d1 tr" lang="en">Two of us. <span style="color:var(--frog)">The whole</span> team.</h2>
+        <div class="kr-title reveal d2">
+          <span class="tr" lang="ko">둘이서 만들고, 둘이서 끝까지 책임집니다.</span>
+          <span class="tr" lang="en">We are two — and that is the whole team.</span>
         </div>
       </div>
-      <div class="cardbody">
-        <h3><span class="ico">🗺️</span>FD Quest</h3>
-        <p>
-          A top-down adventure RPG. Travel a living world map, explore towns and
-          dungeons, and grow your journey day by day.
-          <br>
-          탑다운 어드벤처 RPG. 살아있는 월드맵을 여행하며 마을과 던전을 탐험하고,
-          하루하루 모험을 키워갑니다.
-        </p>
-        <span class="badge dev">🚧 In Development · 개발 중</span>
+
+      <div class="about-grid">
+        <div class="about-copy reveal d1">
+          <p class="tr" lang="ko">FNDG는 <strong>Frog and Dog Games</strong>의 줄임말입니다. 기획·구현·아트·사운드까지, 게임에 필요한 모든 일을 <strong>두 사람</strong>이 나눠 맡습니다.</p>
+          <p class="tr" lang="en">FNDG stands for <strong>Frog and Dog Games</strong>. Design, code, art, sound — every part of a game is shared between <strong>just two people</strong>.</p>
+          <p class="tr" lang="ko" style="margin-top:22px;">거대한 스튜디오는 못 만드는, 작지만 <strong>오래 기억되는</strong> 순간. 그런 손맛 나는 게임을 만듭니다. 아트는 둘이 함께 그립니다.</p>
+          <p class="tr" lang="en" style="margin-top:22px;">We chase small moments that <strong>stay with you</strong> — the kind a big studio can't make. The art, we draw together.</p>
+        </div>
+        <div class="makers reveal d2">
+          <div class="maker frog">
+            <div class="av">🐸</div>
+            <div>
+              <div class="role"><span class="tr" lang="ko">FROG · 총괄 디렉터 &amp; 사운드</span><span class="tr" lang="en">FROG · DIRECTOR &amp; SOUND</span></div>
+              <div class="who">The Frog</div>
+              <div class="what"><span class="tr" lang="ko">방향을 정하고 끝까지 검증하며, 음악과 사운드로 세계에 숨을 불어넣는 사람.</span><span class="tr" lang="en">Sets the direction and guards it — and breathes life into each world with music and sound.</span></div>
+            </div>
+          </div>
+          <div class="maker dog">
+            <div class="av">🐶</div>
+            <div>
+              <div class="role"><span class="tr" lang="ko">DOG · 기획 &amp; 구현</span><span class="tr" lang="en">DOG · DESIGN &amp; CODE</span></div>
+              <div class="who">The Dog</div>
+              <div class="what"><span class="tr" lang="ko">세계를 기획하고, 코드로 한 칸씩 차근차근 쌓아 올리는 사람.</span><span class="tr" lang="en">Designs the world and builds it, one line of code at a time.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal d1">
+          <div class="num g" data-count="2">0</div>
+          <div class="lbl"><span class="tr" lang="ko">멤버 <small>MAKERS · 기획부터 출시까지</small></span><span class="tr" lang="en">MAKERS <small>from design to launch</small></span></div>
+        </div>
+        <div class="stat reveal d2">
+          <div class="num d" data-count="999">0</div>
+          <div class="lbl"><span class="tr" lang="ko">스테이지 <small>STAGES · PuzzleShooter</small></span><span class="tr" lang="en">STAGES <small>in PuzzleShooter</small></span></div>
+        </div>
+        <div class="stat reveal d3">
+          <div class="num" style="background:linear-gradient(90deg,var(--frog),var(--dog));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">∞</div>
+          <div class="lbl"><span class="tr" lang="ko">만들고 싶은 세계 <small>UNIVERSES · 아직 끝나지 않음</small></span><span class="tr" lang="en">WORLDS TO BUILD <small>never finished</small></span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding-top:0">
-  <div class="wrap contact">
-    <h2>Contact</h2>
-    <p class="lead">
-      For support, business, or press inquiries:<br>
-      <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
-    </p>
-  </div>
-</section>
+  <!-- ===== GAMES ===== -->
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><span class="dot"></span>// 002 — OUR GAMES</span>
+        <h2 class="reveal d1 tr" lang="ko">우리가 만든 우주들.</h2>
+        <h2 class="reveal d1 tr" lang="en">The worlds we've built.</h2>
+        <div class="kr-title reveal d2">
+          <span class="tr" lang="ko">픽셀 한 칸까지, 손으로 빚은 세계.</span>
+          <span class="tr" lang="en">Hand-crafted, one pixel at a time.</span>
+        </div>
+      </div>
 
-<footer>
-  <div class="wrap biz">
-    <b>FNDG (에프엔디지)</b><br>
-    사업자등록번호 / Business Reg. No.: 601-16-52660<br>
-    통신판매업신고 / E-commerce License: 2026-경기하남-0930<br>
-    Email: fndgdev@gmail.com
-    <div class="copy">© 2026 FNDG (Frog and Dog Games). All rights reserved.</div>
+      <div class="games">
+        <!-- PuzzleShooter -->
+        <a class="game-card reveal" href="puzzleshooter.html">
+          <div class="gc-media">
+            <div class="gc-glow"></div>
+            <!-- IMG SLOT: replace .ph with <img src="..." alt="PuzzleShooter"> -->
+            <div class="ph"><div class="big">🐸</div>SCREENSHOT<br>PUZZLESHOOTER</div>
+          </div>
+          <div class="gc-body">
+            <div class="gc-tag"><span class="pill">RELEASED</span> PUZZLE · BRICK-BREAKER</div>
+            <div class="gc-title">PuzzleShooter</div>
+            <div class="gc-kr"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved</span></div>
+            <p class="gc-desc"><span class="tr" lang="ko">999개의 스테이지. 한 번의 발사에 모든 각도를 계산하는, 중독적인 퍼즐 브레이커.</span><span class="tr" lang="en">999 stages. Calculate every angle in a single shot — an addictive puzzle breaker.</span></p>
+            <div class="gc-meta"><span><b>999</b> STAGES</span><span><b>ANDROID</b></span><span><b>2026</b></span></div>
+            <span class="gc-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span> <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- FD Quest -->
+        <a class="game-card amber reveal d1" href="fd-quest.html">
+          <div class="gc-media">
+            <div class="gc-glow"></div>
+            <!-- IMG SLOT: replace .ph with <img src="..." alt="FD Quest"> -->
+            <div class="ph"><div class="big">🐶</div>SCREENSHOT<br>FD QUEST</div>
+          </div>
+          <div class="gc-body">
+            <div class="gc-tag"><span class="pill">IN DEVELOPMENT</span> TOP-DOWN · ADVENTURE</div>
+            <div class="gc-title">FD Quest</div>
+            <div class="gc-kr"><span class="tr" lang="ko">에프디 퀘스트 — 개구리와 강아지의 모험</span><span class="tr" lang="en">FD Quest — a frog &amp; dog adventure</span></div>
+            <p class="gc-desc"><span class="tr" lang="ko">개구리와 강아지가 떠나는 탑다운 어드벤처. 픽셀 한 칸마다 손으로 빚은 세계를 탐험하세요.</span><span class="tr" lang="en">A top-down adventure with a frog and a dog. Explore a world hand-built pixel by pixel.</span></p>
+            <div class="gc-meta"><span><b>TBA</b></span><span><b>PC · Console</b></span><span><b>WISHLIST</b> SOON</span></div>
+            <span class="gc-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span> <span class="arrow">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <span class="kicker reveal" style="justify-content:center;"><span class="dot"></span>// 003 — SAY HELLO</span>
+      <h2 class="reveal d1 tr" lang="ko" style="margin-top:24px;">함께 놀아요.</h2>
+      <h2 class="reveal d1 tr" lang="en" style="margin-top:24px;">Let's play together.</h2>
+      <div class="kr-title reveal d2" style="color:var(--ink-2);margin-top:12px;">
+        <span class="tr" lang="ko">제안 · 협업 · 그냥 인사도 환영합니다.</span>
+        <span class="tr" lang="en">Pitches, collabs, or just a hello — all welcome.</span>
+      </div>
+      <a class="big-mail reveal d2" href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="col">
+    <span class="h">Studio</span>
+    <span>FNDG — Frog and Dog Games</span>
+    <span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span></span>
+  </div>
+  <div class="col">
+    <span class="h">Games</span>
+    <a href="puzzleshooter.html">PuzzleShooter</a>
+    <a href="fd-quest.html">FD Quest</a>
+  </div>
+  <div class="col">
+    <span class="h">Connect</span>
+    <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
+    <a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a>
+  </div>
+  <div class="col">
+    <span class="h">Business</span>
+    <span class="legal">
+      FNDG (에프엔디지)<br>
+      사업자등록번호 601-16-52660<br>
+      통신판매업신고 2026-경기하남-0930<br>
+      © 2026 FNDG · Made by 🐸 + 🐶
+    </span>
   </div>
 </footer>
 
+<script src="cosmos.js"></script>
+<script src="site.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
