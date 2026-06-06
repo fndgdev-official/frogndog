@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FNDG — Frog and Dog Games</title>
+<meta name="description" content="FNDG (Frog and Dog Games) is an indie game studio from Korea. Makers of PuzzleShooter and an upcoming adventure RPG.">
+<style>
+  :root{
+    --green:#3aa856; --green-dark:#2c7d41; --ink:#1f2a24; --muted:#5c6b62;
+    --bg:#f4f9f4; --card:#ffffff; --line:#e2ece4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",
+      "Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  header{
+    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+    color:#fff; padding:72px 0 64px; text-align:center;
+  }
+  .logo{font-size:64px;line-height:1}
+  header h1{font-size:44px;letter-spacing:2px;margin:14px 0 6px;font-weight:800}
+  header .full{font-size:18px;opacity:.92;font-weight:500}
+  header .tag{margin-top:18px;font-size:15px;opacity:.85}
+
+  section{padding:56px 0}
+  section h2{font-size:24px;color:var(--green-dark);margin-bottom:18px;font-weight:700}
+  p.lead{font-size:17px;color:var(--muted)}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:0 4px 16px rgba(44,125,65,.06);margin-bottom:26px;overflow:hidden;
+  }
+  .shots{
+    display:flex;gap:12px;padding:22px;background:#eef5ef;
+    justify-content:center;align-items:center;flex-wrap:wrap;
+  }
+  .shots img{border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18);display:block}
+  .shots .phone{height:320px;width:auto}
+  .shots .wide{width:100%;max-width:600px;height:auto}
+  .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:600px;margin-top:2px}
+  .thumbs img{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+  .cardbody{padding:24px 28px 28px}
+  .cardbody h3{font-size:21px;margin-bottom:8px}
+  .cardbody h3 .ico{margin-right:6px}
+  .cardbody p{color:var(--muted);font-size:15px}
+  .badge{
+    display:inline-block;margin-top:14px;padding:5px 12px;border-radius:999px;
+    background:#eaf6ec;color:var(--green-dark);font-size:13px;font-weight:600;
+  }
+  .badge.dev{background:#fff3e0;color:#b26a00}
+
+  .contact a{color:var(--green-dark);font-weight:700;text-decoration:none}
+  .contact a:hover{text-decoration:underline}
+
+  footer{border-top:1px solid var(--line);background:#eef5ef;padding:34px 0;font-size:13px;color:var(--muted)}
+  footer .biz{line-height:1.9}
+  footer .biz b{color:var(--ink)}
+  footer .copy{margin-top:14px;opacity:.8}
+
+  @media(max-width:560px){
+    header h1{font-size:34px}
+    .logo{font-size:52px}
+    section{padding:42px 0}
+    .shots .phone{height:260px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">🐸🐶</div>
+    <h1>FNDG</h1>
+    <div class="full">Frog and Dog Games</div>
+    <div class="tag">An indie game studio from Korea · 대한민국 인디 게임 스튜디오</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>About Us</h2>
+    <p class="lead">
+      FNDG (Frog and Dog Games) is an independent game studio based in Korea.
+      We design and build games with care — easy to pick up, deep enough to master.
+      <br><br>
+      FNDG(에프엔디지)는 한국의 인디 게임 스튜디오입니다.
+      쉽게 시작하지만 깊이 있게 즐길 수 있는 게임을 만듭니다.
+    </p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Our Games</h2>
+
+    <!-- Game 1: PuzzleShooter -->
+    <div class="card">
+      <div class="shots">
+        <img class="phone" src="pss-lobby.jpg" alt="PuzzleShooter lobby">
+        <img class="phone" src="pss-laser.jpg" alt="PuzzleShooter gameplay">
+      </div>
+      <div class="cardbody">
+        <h3><span class="ico">🎯</span>PuzzleShooter</h3>
+        <p>
+          999 stages of bouncing-ball brick breaker with deep skill strategy.
+          Four active skills, precise difficulty tuning, and an endless challenge mode.
+          <br>
+          999 스테이지 공 튕기기 벽돌깨기 — 깊이 있는 스킬 전략 퍼즐 슈터.
+        </p>
+        <span class="badge">Android · Google Play (Closed Testing)</span>
+      </div>
+    </div>
+
+    <!-- Game 2: RPG (in development) -->
+    <div class="card">
+      <div class="shots">
+        <img class="wide" src="rpg-worldmap.jpg" alt="FD Quest — Countryside">
+        <div class="thumbs">
+          <img src="rpg-2.jpg" alt="FD Quest — Royal Capital">
+          <img src="rpg-3.jpg" alt="FD Quest — Aurora Coast">
+          <img src="rpg-4.jpg" alt="FD Quest — Cherry Vale">
+          <img src="rpg-5.jpg" alt="FD Quest — Crystal Caves">
+        </div>
+      </div>
+      <div class="cardbody">
+        <h3><span class="ico">🗺️</span>FD Quest</h3>
+        <p>
+          A top-down adventure RPG. Travel a living world map, explore towns and
+          dungeons, and grow your journey day by day.
+          <br>
+          탑다운 어드벤처 RPG. 살아있는 월드맵을 여행하며 마을과 던전을 탐험하고,
+          하루하루 모험을 키워갑니다.
+        </p>
+        <span class="badge dev">🚧 In Development · 개발 중</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p class="lead">
+      For support, business, or press inquiries:<br>
+      <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap biz">
+    <b>FNDG (에프엔디지)</b><br>
+    사업자등록번호 / Business Reg. No.: 601-16-52660<br>
+    통신판매업신고 / E-commerce License: 2026-경기하남-0930<br>
+    Email: fndgdev@gmail.com
+    <div class="copy">© 2026 FNDG (Frog and Dog Games). All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
