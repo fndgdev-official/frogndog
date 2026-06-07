@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) — GA4 frogndog.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1ESCDQDS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R1ESCDQDS9');
+  // FNDG 커스텀 이벤트: 웹플레이 / 스토어 클릭
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a'); if(!a) return;
+    var h = a.getAttribute('href') || '';
+    if(h.indexOf('play.google.com') > -1){ gtag('event','store_click',{store:'google_play', game:'puzzleshooter'}); }
+    else if(h.charAt(0)==='/' && h.indexOf('/play') === 0){ gtag('event','web_play_click',{game:'puzzleshooter'}); }
+  });
+</script>
 <title>FD Quest — FNDG</title>
 <meta name="description" content="FD Quest — 광활한 환상의 세계를 가로지르는 탑다운 어드벤처 RPG. 개발 중. FNDG (Frog and Dog Games)." />
 <link rel="canonical" href="https://frogndog.com/fd-quest.html" />
