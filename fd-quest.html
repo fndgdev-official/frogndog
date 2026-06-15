@@ -29,7 +29,7 @@
 <meta property="og:url" content="https://frogndog.com/fd-quest.html" />
 <meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<script>(function(){try{var l=localStorage.getItem('fndg-locale');if(l!=='ko'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('ko')===0?'ko':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
+<script>(function(){try{var V=['ko','en','ja','zh'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':n.indexOf('zh')===0?'zh':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
 <link rel="stylesheet" href="site.css" />
 <style>
   :root { --c: var(--dog); }
@@ -48,10 +48,12 @@
 <div class="vignette"></div>
 <div class="grain"></div>
 
-<a class="back-link" href="index.html"><span>←</span> <span class="tr" lang="ko">FNDG / 모든 게임</span><span class="tr" lang="en">FNDG / All games</span></a>
+<a class="back-link" href="index.html"><span>←</span> <span class="tr" lang="ko">FNDG / 모든 게임</span><span class="tr" lang="en">FNDG / All games</span><span class="tr" lang="ja">FNDG / すべてのゲーム</span><span class="tr" lang="zh">FNDG / 所有游戏</span></a>
 <div class="lang-switch" role="group" aria-label="Language" style="position:fixed;top:13px;right:var(--pad);z-index:51;">
   <button type="button" data-loc="ko" aria-pressed="true">KO</button>
   <button type="button" data-loc="en" aria-pressed="false">EN</button>
+  <button type="button" data-loc="ja" aria-pressed="false">JA</button>
+  <button type="button" data-loc="zh" aria-pressed="false">ZH</button>
 </div>
 
 <main>
@@ -59,11 +61,11 @@
     <div class="wrap" style="text-align:center;">
       <div class="gc-tag reveal" style="justify-content:center;color:var(--dog);"><span class="pill">IN DEVELOPMENT</span> TOP-DOWN · ADVENTURE</div>
       <h1 class="gc-title reveal d1" style="margin-top:18px;">FD Quest</h1>
-      <div class="gc-kr reveal d2" style="font-size:clamp(16px,2vw,22px);margin-top:8px;"><span class="tr" lang="ko">에프디 퀘스트 — 별빛이 머무는 환상의 대륙으로</span><span class="tr" lang="en">FD Quest — To a land where the starlight lingers</span></div>
-      <p class="lead reveal d2" style="margin:24px auto 0;text-align:center;"><span class="tr" lang="ko">광활한 환상의 세계를 가로지르는 탑다운 어드벤처. 발길이 닿는 모든 곳에서 새로운 이야기가 피어납니다.</span><span class="tr" lang="en">A top-down adventure across a vast world of wonder. A new story unfolds wherever your steps may wander.</span></p>
+      <div class="gc-kr reveal d2" style="font-size:clamp(16px,2vw,22px);margin-top:8px;"><span class="tr" lang="ko">에프디 퀘스트 — 별빛이 머무는 환상의 대륙으로</span><span class="tr" lang="en">FD Quest — To a land where the starlight lingers</span><span class="tr" lang="ja">FDクエスト — 星明かりの宿る幻想の大陸へ</span><span class="tr" lang="zh">FD Quest — 前往星光长驻的幻想大陆</span></div>
+      <p class="lead reveal d2" style="margin:24px auto 0;text-align:center;"><span class="tr" lang="ko">광활한 환상의 세계를 가로지르는 탑다운 어드벤처. 발길이 닿는 모든 곳에서 새로운 이야기가 피어납니다.</span><span class="tr" lang="en">A top-down adventure across a vast world of wonder. A new story unfolds wherever your steps may wander.</span><span class="tr" lang="ja">広大な幻想の世界を駆け抜けるトップダウンアドベンチャー。足の向くすべての場所で、新たな物語が芽吹きます。</span><span class="tr" lang="zh">穿越广袤幻想世界的俯视角冒险。脚步所至之处，皆有新的故事绽放。</span></p>
       <div class="hero-actions reveal d3">
-        <a class="btn btn-primary" style="--c:var(--dog)" href="mailto:fndgdev@gmail.com"><span><span class="tr" lang="ko">개발 소식 받기</span><span class="tr" lang="en">Get devlog updates</span></span><span class="arrow">↗</span></a>
-        <a class="btn btn-ghost" style="--c:var(--dog)" href="index.html#games"><span><span class="tr" lang="ko">다른 게임</span><span class="tr" lang="en">More games</span></span></a>
+        <a class="btn btn-primary" style="--c:var(--dog)" href="mailto:fndgdev@gmail.com"><span><span class="tr" lang="ko">개발 소식 받기</span><span class="tr" lang="en">Get devlog updates</span><span class="tr" lang="ja">開発の最新情報を受け取る</span><span class="tr" lang="zh">获取开发动态</span></span><span class="arrow">↗</span></a>
+        <a class="btn btn-ghost" style="--c:var(--dog)" href="index.html#games"><span><span class="tr" lang="ko">다른 게임</span><span class="tr" lang="en">More games</span><span class="tr" lang="ja">他のゲーム</span><span class="tr" lang="zh">更多游戏</span></span></a>
       </div>
     </div>
   </section>
@@ -76,11 +78,11 @@
 
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// THE WORLD</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(30px,4.5vw,58px);">둘이서 만드는 모험.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(30px,4.5vw,58px);">An adventure, made by two.</h2></div>
+      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// THE WORLD</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(30px,4.5vw,58px);">둘이서 만드는 모험.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(30px,4.5vw,58px);">An adventure, made by two.</h2><h2 class="reveal d1 tr" lang="ja" style="font-size:clamp(30px,4.5vw,58px);">ふたりで作る冒険。</h2><h2 class="reveal d1 tr" lang="zh" style="font-size:clamp(30px,4.5vw,58px);">两人打造的冒险。</h2></div>
       <div class="feature-row">
-        <div class="feature reveal"><div class="ic">🗺️</div><h3>Living World</h3><p><span class="tr" lang="ko">구석구석 살아 숨 쉬는 탑다운 세계. 모든 길목마다 숨겨진 이야기가 기다립니다.</span><span class="tr" lang="en">A living top-down world that breathes — a story waiting at every turn.</span></p></div>
-        <div class="feature reveal d1"><div class="ic">🧭</div><h3>Endless Journey</h3><p><span class="tr" lang="ko">광활한 대륙을 가로지르며 마을과 던전, 잊혀진 유적을 누비세요.</span><span class="tr" lang="en">Roam a vast continent — towns, dungeons, and forgotten ruins await.</span></p></div>
-        <div class="feature reveal d2"><div class="ic">🎵</div><h3>Original Score</h3><p><span class="tr" lang="ko">장면마다 직접 작곡한 음악. 모험의 매 순간에 감정을 더합니다.</span><span class="tr" lang="en">An original score written scene by scene, scoring every moment of the journey.</span></p></div>
+        <div class="feature reveal"><div class="ic">🗺️</div><h3>Living World</h3><p><span class="tr" lang="ko">구석구석 살아 숨 쉬는 탑다운 세계. 모든 길목마다 숨겨진 이야기가 기다립니다.</span><span class="tr" lang="en">A living top-down world that breathes — a story waiting at every turn.</span><span class="tr" lang="ja">隅々まで生きて息づくトップダウンの世界。あらゆる道の先に、隠された物語が待っています。</span><span class="tr" lang="zh">处处生机盎然的俯视角世界。每个路口都有隐藏的故事等待着你。</span></p></div>
+        <div class="feature reveal d1"><div class="ic">🧭</div><h3>Endless Journey</h3><p><span class="tr" lang="ko">광활한 대륙을 가로지르며 마을과 던전, 잊혀진 유적을 누비세요.</span><span class="tr" lang="en">Roam a vast continent — towns, dungeons, and forgotten ruins await.</span><span class="tr" lang="ja">広大な大陸を旅し、街やダンジョン、忘れられた遺跡を巡りましょう。</span><span class="tr" lang="zh">漫游广袤大陆，穿梭于城镇、地牢与被遗忘的遗迹。</span></p></div>
+        <div class="feature reveal d2"><div class="ic">🎵</div><h3>Original Score</h3><p><span class="tr" lang="ko">장면마다 직접 작곡한 음악. 모험의 매 순간에 감정을 더합니다.</span><span class="tr" lang="en">An original score written scene by scene, scoring every moment of the journey.</span><span class="tr" lang="ja">場面ごとに自ら書き下ろした楽曲。冒険のあらゆる瞬間に感情を添えます。</span><span class="tr" lang="zh">为每个场景亲自谱写的原创配乐，为冒险的每一刻注入情感。</span></p></div>
       </div>
     </div>
   </section>
@@ -88,7 +90,7 @@
   <!-- ===== WORLD MAP gallery ===== -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// WORLD MAP</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(28px,4.2vw,52px);">끝없이 펼쳐지는 대륙.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(28px,4.2vw,52px);">A continent without end.</h2></div>
+      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// WORLD MAP</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(28px,4.2vw,52px);">끝없이 펼쳐지는 대륙.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(28px,4.2vw,52px);">A continent without end.</h2><h2 class="reveal d1 tr" lang="ja" style="font-size:clamp(28px,4.2vw,52px);">果てしなく広がる大陸。</h2><h2 class="reveal d1 tr" lang="zh" style="font-size:clamp(28px,4.2vw,52px);">无尽延展的大陆。</h2></div>
       <div class="map-grid">
         <div class="shot wide reveal" style="--c:var(--dog)"><img src="fdq-map-1.jpg" alt="Royal capital"></div>
         <div class="shot reveal d1" style="--c:var(--dog)"><img src="fdq-map-2.jpg" alt="City state"></div>
@@ -103,7 +105,7 @@
   <!-- ===== MOODS gallery (color / atmosphere) ===== -->
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// MOODS</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(28px,4.2vw,52px);">색으로 기억되는 장소들.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(28px,4.2vw,52px);">Places you remember by color.</h2></div>
+      <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// MOODS</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(28px,4.2vw,52px);">색으로 기억되는 장소들.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(28px,4.2vw,52px);">Places you remember by color.</h2><h2 class="reveal d1 tr" lang="ja" style="font-size:clamp(28px,4.2vw,52px);">色で記憶に残る場所たち。</h2><h2 class="reveal d1 tr" lang="zh" style="font-size:clamp(28px,4.2vw,52px);">以色彩铭记的地方。</h2></div>
       <div class="map-grid moods">
         <div class="shot reveal" style="--c:var(--dog)"><img src="fdq-mood-1.jpg" alt="Aurora tundra"></div>
         <div class="shot reveal d1" style="--c:var(--dog)"><img src="fdq-mood-2.jpg" alt="Cherry vale"></div>
@@ -121,16 +123,16 @@
   <section class="contact">
     <div class="wrap">
       <h2 class="reveal tr" lang="ko" style="font-size:clamp(34px,6vw,84px);">곧, 모험이 시작됩니다.</h2>
-      <h2 class="reveal tr" lang="en" style="font-size:clamp(34px,6vw,84px);">The journey begins soon.</h2>
-      <a class="big-mail reveal d1" href="mailto:fndgdev@gmail.com" style="font-size:clamp(20px,2.6vw,34px);"><span class="tr" lang="ko">개발 소식 받아보기 ↗</span><span class="tr" lang="en">Follow the devlog ↗</span></a>
-      <div class="reveal d2" style="margin-top:30px;"><a class="btn btn-ghost" style="--c:var(--dog)" href="index.html#games"><span><span class="tr" lang="ko">← 다른 게임 보기</span><span class="tr" lang="en">← Back to games</span></span></a></div>
+      <h2 class="reveal tr" lang="en" style="font-size:clamp(34px,6vw,84px);">The journey begins soon.</h2><h2 class="reveal tr" lang="ja" style="font-size:clamp(34px,6vw,84px);">もうすぐ、冒険が始まります。</h2><h2 class="reveal tr" lang="zh" style="font-size:clamp(34px,6vw,84px);">冒险即将开始。</h2>
+      <a class="big-mail reveal d1" href="mailto:fndgdev@gmail.com" style="font-size:clamp(20px,2.6vw,34px);"><span class="tr" lang="ko">개발 소식 받아보기 ↗</span><span class="tr" lang="en">Follow the devlog ↗</span><span class="tr" lang="ja">開発の最新情報をフォロー ↗</span><span class="tr" lang="zh">关注开发日志 ↗</span></a>
+      <div class="reveal d2" style="margin-top:30px;"><a class="btn btn-ghost" style="--c:var(--dog)" href="index.html#games"><span><span class="tr" lang="ko">← 다른 게임 보기</span><span class="tr" lang="en">← Back to games</span><span class="tr" lang="ja">← 他のゲームを見る</span><span class="tr" lang="zh">← 返回游戏列表</span></span></a></div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span></div>
-  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span></a></div>
+  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
 

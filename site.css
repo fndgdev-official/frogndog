@@ -444,10 +444,12 @@ html.no-anim .eclipse-disc::before, html.no-anim .eclipse-disc::after { animatio
 .feature p { color: var(--ink-2); font-size: 15px; }
 
 /* ============================================================
-   i18n — show only the active locale's text
+   i18n — show only the active locale's text (KO / EN / JA / ZH)
    ============================================================ */
-html[data-locale="ko"] .tr[lang="en"] { display: none !important; }
-html[data-locale="en"] .tr[lang="ko"] { display: none !important; }
+html[data-locale="ko"] .tr[lang]:not([lang="ko"]),
+html[data-locale="en"] .tr[lang]:not([lang="en"]),
+html[data-locale="ja"] .tr[lang]:not([lang="ja"]),
+html[data-locale="zh"] .tr[lang]:not([lang="zh"]) { display: none !important; }
 
 /* anchor offset so fixed nav doesn't cover section tops */
 section[id] { scroll-margin-top: 84px; }

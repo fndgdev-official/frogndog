@@ -416,9 +416,11 @@ html.no-anim .dust i { opacity: .4 !important; }
 .lang-switch button:hover:not([aria-pressed="true"]) { color: var(--ink); }
 .lang-switch button[aria-pressed="true"] { color: #04120a; background: var(--frog); }
 
-/* i18n: show only active locale's text */
-html[data-locale="ko"] .tr[lang="en"] { display: none !important; }
-html[data-locale="en"] .tr[lang="ko"] { display: none !important; }
+/* i18n: show only active locale's text (KO / EN / JA / ZH) */
+html[data-locale="ko"] .tr[lang]:not([lang="ko"]),
+html[data-locale="en"] .tr[lang]:not([lang="en"]),
+html[data-locale="ja"] .tr[lang]:not([lang="ja"]),
+html[data-locale="zh"] .tr[lang]:not([lang="zh"]) { display: none !important; }
 
 /* anchor offset under fixed nav */
 section[id] { scroll-margin-top: 88px; }

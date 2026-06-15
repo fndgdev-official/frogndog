@@ -1,9 +1,10 @@
 /* Language toggle (KO / EN) + mobile nav. Shared across all pages. */
 (function () {
   var KEY = 'fndg-locale';
+  var LOCALES = ['ko', 'en', 'ja', 'zh'];
 
   function apply(loc) {
-    if (loc !== 'ko' && loc !== 'en') loc = 'ko';
+    if (LOCALES.indexOf(loc) < 0) loc = 'ko';
     var h = document.documentElement;
     h.setAttribute('data-locale', loc);
     h.setAttribute('lang', loc);

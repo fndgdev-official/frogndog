@@ -41,7 +41,7 @@
 <meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — PuzzleShooter & FD Quest." />
 <meta name="twitter:image" content="https://frogndog.com/og-cover.jpg" />
 
-<script>(function(){try{var l=localStorage.getItem('fndg-locale');if(l!=='ko'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('ko')===0?'ko':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
+<script>(function(){try{var V=['ko','en','ja','zh'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':n.indexOf('zh')===0?'zh':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
 
 <link rel="stylesheet" href="maximal.css" />
 
@@ -126,12 +126,14 @@
     <div class="lang-switch" role="group" aria-label="Language">
       <button type="button" data-loc="ko" aria-pressed="true">KO</button>
       <button type="button" data-loc="en" aria-pressed="false">EN</button>
+      <button type="button" data-loc="ja" aria-pressed="false">JA</button>
+      <button type="button" data-loc="zh" aria-pressed="false">ZH</button>
     </div>
     <nav class="nav-links">
-      <a href="#manifesto"><span class="tr" lang="ko">매니페스토</span><span class="tr" lang="en">Manifesto</span></a>
-      <a href="#studio"><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">Studio</span></a>
-      <a href="#games"><span class="tr" lang="ko">게임</span><span class="tr" lang="en">Games</span></a>
-      <a class="nav-cta" href="#games"><span class="tr" lang="ko">플레이</span><span class="tr" lang="en">Play</span> ↗</a>
+      <a href="#manifesto"><span class="tr" lang="ko">매니페스토</span><span class="tr" lang="en">Manifesto</span><span class="tr" lang="ja">マニフェスト</span><span class="tr" lang="zh">宣言</span></a>
+      <a href="#studio"><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">Studio</span><span class="tr" lang="ja">スタジオ</span><span class="tr" lang="zh">工作室</span></a>
+      <a href="#games"><span class="tr" lang="ko">게임</span><span class="tr" lang="en">Games</span><span class="tr" lang="ja">ゲーム</span><span class="tr" lang="zh">游戏</span></a>
+      <a class="nav-cta" href="#games"><span class="tr" lang="ko">플레이</span><span class="tr" lang="en">Play</span><span class="tr" lang="ja">プレイ</span><span class="tr" lang="zh">开始游玩</span> ↗</a>
     </nav>
     <button class="nav-burger" aria-label="menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
@@ -151,16 +153,16 @@
     <div class="godrays"></div>
     <div class="godrays g2"></div>
     <div class="hero-tilt">
-      <div class="eyebrow reveal"><span class="tr" lang="ko">한국의 2인 인디 게임 스튜디오</span><span class="tr" lang="en">INDIE GAME STUDIO FROM KOREA</span></div>
+      <div class="eyebrow reveal"><span class="tr" lang="ko">한국의 2인 인디 게임 스튜디오</span><span class="tr" lang="en">INDIE GAME STUDIO FROM KOREA</span><span class="tr" lang="ja">韓国の2人組インディーゲームスタジオ</span><span class="tr" lang="zh">来自韩国的双人独立游戏工作室</span></div>
       <div class="wm-wrap">
         <h1 class="wordmark"><span class="ch">F</span><span class="ch g">N</span><span class="ch d">D</span><span class="ch">G</span></h1>
         <div class="wordmark reflect" aria-hidden="true"><span class="ch">F</span><span class="ch g">N</span><span class="ch d">D</span><span class="ch">G</span></div>
       </div>
-      <div class="hero-tag reveal d1"><span class="tr" lang="ko">개구리🐸와 강아지🐶가 만드는 작은 우주</span><span class="tr" lang="en">A tiny universe, made by a frog 🐸 and a dog 🐶</span></div>
-      <p class="hero-sub reveal d2"><span class="tr" lang="ko">단 두 사람이 만드는 인디 게임.</span><span class="tr" lang="en">Two makers. One universe.</span></p>
+      <div class="hero-tag reveal d1"><span class="tr" lang="ko">개구리🐸와 강아지🐶가 만드는 작은 우주</span><span class="tr" lang="en">A tiny universe, made by a frog 🐸 and a dog 🐶</span><span class="tr" lang="ja">カエル🐸とイヌ🐶が作る小さな宇宙</span><span class="tr" lang="zh">青蛙🐸和小狗🐶打造的小宇宙</span></div>
+      <p class="hero-sub reveal d2"><span class="tr" lang="ko">단 두 사람이 만드는 인디 게임.</span><span class="tr" lang="en">Two makers. One universe.</span><span class="tr" lang="ja">たった2人で作るインディーゲーム。</span><span class="tr" lang="zh">仅由两人打造的独立游戏。</span></p>
       <div class="hero-actions reveal d3">
-        <a class="btn btn-primary" href="#games"><span><span class="tr" lang="ko">게임 보기</span><span class="tr" lang="en">Play</span></span><span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="#studio"><span><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">About</span></span></a>
+        <a class="btn btn-primary" href="#games"><span><span class="tr" lang="ko">게임 보기</span><span class="tr" lang="en">Play</span><span class="tr" lang="ja">ゲームを見る</span><span class="tr" lang="zh">查看游戏</span></span><span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#studio"><span><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">About</span><span class="tr" lang="ja">スタジオについて</span><span class="tr" lang="zh">关于我们</span></span></a>
       </div>
     </div>
     <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
@@ -171,19 +173,19 @@
     <div class="wrap">
       <div class="line">
         <span class="kin tr" lang="ko"><span>둘이서,</span></span>
-        <span class="kin tr" lang="en"><span>Two of us,</span></span>
+        <span class="kin tr" lang="en"><span>Two of us,</span></span><span class="kin tr" lang="ja"><span>ふたりで、</span></span><span class="kin tr" lang="zh"><span>两个人，</span></span>
       </div>
       <div class="line">
         <span class="kin tr" lang="ko"><span>하나의 <span class="accentg">우주</span>를</span></span>
-        <span class="kin tr" lang="en"><span>building one <span class="accentg">universe</span></span></span>
+        <span class="kin tr" lang="en"><span>building one <span class="accentg">universe</span></span></span><span class="kin tr" lang="ja"><span>ひとつの<span class="accentg">宇宙</span>を</span></span><span class="kin tr" lang="zh"><span>一个<span class="accentg">宇宙</span></span></span>
       </div>
       <div class="line muted">
         <span class="kin tr" lang="ko"><span><span class="accentd">만든다</span>.</span></span>
-        <span class="kin tr" lang="en"><span><span class="accentd">together</span>.</span></span>
+        <span class="kin tr" lang="en"><span><span class="accentd">together</span>.</span></span><span class="kin tr" lang="ja"><span><span class="accentd">作る</span>。</span></span><span class="kin tr" lang="zh"><span>一起<span class="accentd">打造</span>。</span></span>
       </div>
       <p class="sub reveal d3">
         <span class="tr" lang="ko">거대한 스튜디오가 못 만드는, 작지만 오래 기억되는 순간.</span>
-        <span class="tr" lang="en">Small, strange, unforgettable worlds a big studio can't make.</span>
+        <span class="tr" lang="en">Small, strange, unforgettable worlds a big studio can't make.</span><span class="tr" lang="ja">大きなスタジオには作れない、小さくとも長く心に残る瞬間。</span><span class="tr" lang="zh">大型工作室造不出的、微小却令人久久难忘的瞬间。</span>
       </p>
     </div>
   </section>
@@ -193,8 +195,8 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="kicker reveal"><span class="dot"></span>// 001 — THE TWO</span>
-        <h2 class="reveal d1"><span class="tr" lang="ko">단 두 사람.</span><span class="tr" lang="en">Just the two of us.</span></h2>
-        <div class="kr-title reveal d2"><span class="tr" lang="ko">기획부터 출시까지, 모든 일을 둘이 나눠 맡습니다.</span><span class="tr" lang="en">From design to launch, we share every task.</span></div>
+        <h2 class="reveal d1"><span class="tr" lang="ko">단 두 사람.</span><span class="tr" lang="en">Just the two of us.</span><span class="tr" lang="ja">たった2人。</span><span class="tr" lang="zh">仅此两人。</span></h2>
+        <div class="kr-title reveal d2"><span class="tr" lang="ko">기획부터 출시까지, 모든 일을 둘이 나눠 맡습니다.</span><span class="tr" lang="en">From design to launch, we share every task.</span><span class="tr" lang="ja">企画からリリースまで、すべての作業を2人で分担します。</span><span class="tr" lang="zh">从企划到上线，所有工作都由两人分担。</span></div>
       </div>
 
       <div class="two">
@@ -202,32 +204,32 @@
           <span class="glow"></span>
           <div class="av">🐸</div>
           <div class="role">Frog</div>
-          <div class="who"><span class="tr" lang="ko">총괄 디렉터</span><span class="tr" lang="en">Creative Director</span></div>
-          <div class="tasks"><span>Direction</span><span class="tr" lang="ko">방향성 검증</span><span class="tr" lang="en">Validation</span><span>Music</span><span>Sound</span></div>
-          <p class="desc"><span class="tr" lang="ko">프로젝트의 방향을 잡고 끊임없이 검증하며, 게임의 음악과 사운드를 직접 만듭니다.</span><span class="tr" lang="en">Sets the project's direction and constantly tests it — and creates the game's music and sound.</span></p>
+          <div class="who"><span class="tr" lang="ko">총괄 디렉터</span><span class="tr" lang="en">Creative Director</span><span class="tr" lang="ja">総合ディレクター</span><span class="tr" lang="zh">总监</span></div>
+          <div class="tasks"><span>Direction</span><span class="tr" lang="ko">방향성 검증</span><span class="tr" lang="en">Validation</span><span class="tr" lang="ja">方向性の検証</span><span class="tr" lang="zh">方向把控</span><span>Music</span><span>Sound</span></div>
+          <p class="desc"><span class="tr" lang="ko">프로젝트의 방향을 잡고 끊임없이 검증하며, 게임의 음악과 사운드를 직접 만듭니다.</span><span class="tr" lang="en">Sets the project's direction and constantly tests it — and creates the game's music and sound.</span><span class="tr" lang="ja">プロジェクトの方向性を定め、絶えず検証しながら、ゲームの音楽とサウンドを自ら手がけます。</span><span class="tr" lang="zh">把握项目方向并持续验证，同时亲自制作游戏的音乐与音效。</span></p>
           <div class="eq"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         </div>
 
         <div class="bridge reveal d1">
           <div class="venn"><span class="c cf"></span><span class="c cd"></span></div>
-          <div class="lbl"><span class="tr" lang="ko">함께</span><span class="tr" lang="en">Together</span><b>Art</b></div>
+          <div class="lbl"><span class="tr" lang="ko">함께</span><span class="tr" lang="en">Together</span><span class="tr" lang="ja">一緒に</span><span class="tr" lang="zh">共同</span><b>Art</b></div>
         </div>
 
         <div class="person dog reveal d2">
           <span class="glow"></span>
           <div class="av">🐶</div>
           <div class="role">Dog</div>
-          <div class="who"><span class="tr" lang="ko">기획 · 구현</span><span class="tr" lang="en">Design · Code</span></div>
-          <div class="tasks"><span>Game Design</span><span class="tr" lang="ko">기획</span><span class="tr" lang="en">Planning</span><span>Development</span><span class="tr" lang="ko">구현</span><span class="tr" lang="en">Build</span></div>
-          <p class="desc"><span class="tr" lang="ko">게임을 설계하고 직접 코드로 구현해, 아이디어를 플레이할 수 있는 형태로 굴립니다.</span><span class="tr" lang="en">Designs the game and builds it in code, turning ideas into something you can play.</span></p>
+          <div class="who"><span class="tr" lang="ko">기획 · 구현</span><span class="tr" lang="en">Design · Code</span><span class="tr" lang="ja">企画・実装</span><span class="tr" lang="zh">企划 · 开发</span></div>
+          <div class="tasks"><span>Game Design</span><span class="tr" lang="ko">기획</span><span class="tr" lang="en">Planning</span><span class="tr" lang="ja">企画</span><span class="tr" lang="zh">企划</span><span>Development</span><span class="tr" lang="ko">구현</span><span class="tr" lang="en">Build</span><span class="tr" lang="ja">実装</span><span class="tr" lang="zh">实现</span></div>
+          <p class="desc"><span class="tr" lang="ko">게임을 설계하고 직접 코드로 구현해, 아이디어를 플레이할 수 있는 형태로 굴립니다.</span><span class="tr" lang="en">Designs the game and builds it in code, turning ideas into something you can play.</span><span class="tr" lang="ja">ゲームを設計し、自らコードで実装して、アイデアを遊べる形にしていきます。</span><span class="tr" lang="zh">设计游戏并亲自用代码实现，把创意变成可以游玩的形态。</span></p>
           <div class="codeline"><span class="c1">while</span>(<span class="c2">awake</span>) { ship(); }<span class="caret"></span></div>
         </div>
       </div>
 
       <div class="stats">
-        <div class="stat reveal"><div class="num g" data-count="2">0</div><div class="lbl"><span class="tr" lang="ko">멤버 <small>MAKERS · 기획부터 출시까지</small></span><span class="tr" lang="en">MAKERS <small>from design to launch</small></span></div></div>
-        <div class="stat reveal d1"><div class="num d" data-count="999">0</div><div class="lbl"><span class="tr" lang="ko">스테이지 <small>STAGES · PuzzleShooter</small></span><span class="tr" lang="en">STAGES <small>in PuzzleShooter</small></span></div></div>
-        <div class="stat reveal d2"><div class="num" style="background:linear-gradient(90deg,var(--frog),var(--dog));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">∞</div><div class="lbl"><span class="tr" lang="ko">만들고 싶은 세계 <small>UNIVERSES · 아직 끝나지 않음</small></span><span class="tr" lang="en">WORLDS TO BUILD <small>never finished</small></span></div></div>
+        <div class="stat reveal"><div class="num g" data-count="2">0</div><div class="lbl"><span class="tr" lang="ko">멤버 <small>MAKERS · 기획부터 출시까지</small></span><span class="tr" lang="en">MAKERS <small>from design to launch</small></span><span class="tr" lang="ja">メンバー <small>MAKERS · 企画からリリースまで</small></span><span class="tr" lang="zh">成员 <small>MAKERS · 从企划到上线</small></span></div></div>
+        <div class="stat reveal d1"><div class="num d" data-count="999">0</div><div class="lbl"><span class="tr" lang="ko">스테이지 <small>STAGES · PuzzleShooter</small></span><span class="tr" lang="en">STAGES <small>in PuzzleShooter</small></span><span class="tr" lang="ja">ステージ <small>STAGES · PuzzleShooter</small></span><span class="tr" lang="zh">关卡 <small>STAGES · PuzzleShooter</small></span></div></div>
+        <div class="stat reveal d2"><div class="num" style="background:linear-gradient(90deg,var(--frog),var(--dog));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">∞</div><div class="lbl"><span class="tr" lang="ko">만들고 싶은 세계 <small>UNIVERSES · 아직 끝나지 않음</small></span><span class="tr" lang="en">WORLDS TO BUILD <small>never finished</small></span><span class="tr" lang="ja">作りたい世界 <small>UNIVERSES · まだ終わらない</small></span><span class="tr" lang="zh">想打造的世界 <small>UNIVERSES · 永不止步</small></span></div></div>
       </div>
     </div>
   </section>
@@ -237,8 +239,8 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="kicker reveal"><span class="dot"></span>// 002 — OUR GAMES</span>
-        <h2 class="reveal d1"><span class="tr" lang="ko">우리가 만든 우주들.</span><span class="tr" lang="en">The worlds we've built.</span></h2>
-        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 두 개의 우주.</span><span class="tr" lang="en">Two universes, made by two.</span></div>
+        <h2 class="reveal d1"><span class="tr" lang="ko">우리가 만든 우주들.</span><span class="tr" lang="en">The worlds we've built.</span><span class="tr" lang="ja">私たちが作った宇宙たち。</span><span class="tr" lang="zh">我们打造的宇宙。</span></h2>
+        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 두 개의 우주.</span><span class="tr" lang="en">Two universes, made by two.</span><span class="tr" lang="ja">2人で作った2つの宇宙。</span><span class="tr" lang="zh">两人打造的两个宇宙。</span></div>
       </div>
 
       <a class="game-panel reveal" href="puzzleshooter.html">
@@ -250,10 +252,10 @@
         <div class="gp-body">
           <div class="gp-tag"><span class="pill">RELEASED</span> PUZZLE · BRICK-BREAKER</div>
           <div class="gp-title">PuzzleShooter</div>
-          <div class="gp-kr"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved</span></div>
-          <p class="gp-desc"><span class="tr" lang="ko">999개의 스테이지. 한 번의 발사에 모든 각도를 계산하는, 중독적인 퍼즐 브레이커.</span><span class="tr" lang="en">999 stages. Calculate every angle in a single shot — an addictive puzzle breaker.</span></p>
+          <div class="gp-kr"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved</span><span class="tr" lang="ja">パズルシューター — ブロック崩しの進化</span><span class="tr" lang="zh">益智弹射 — 打砖块的进化</span></div>
+          <p class="gp-desc"><span class="tr" lang="ko">999개의 스테이지. 한 번의 발사에 모든 각도를 계산하는, 중독적인 퍼즐 브레이커.</span><span class="tr" lang="en">999 stages. Calculate every angle in a single shot — an addictive puzzle breaker.</span><span class="tr" lang="ja">999のステージ。一度の発射であらゆる角度を計算する、中毒性のパズルブレイカー。</span><span class="tr" lang="zh">999个关卡。一次发射算尽所有角度，令人上瘾的弹射解谜。</span></p>
           <div class="gp-meta"><span><b>999</b> STAGES</span><span><b>ANDROID</b></span><span><b>2026</b></span></div>
-          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span> <span class="arrow">→</span></span>
+          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span> <span class="arrow">→</span></span>
         </div>
       </a>
 
@@ -265,10 +267,10 @@
         <div class="gp-body">
           <div class="gp-tag"><span class="pill">IN DEVELOPMENT</span> TOP-DOWN · ADVENTURE</div>
           <div class="gp-title">FD Quest</div>
-          <div class="gp-kr"><span class="tr" lang="ko">에프디 퀘스트 — 환상의 세계로 떠나는 낭만 어드벤처</span><span class="tr" lang="en">FD Quest — a romantic journey into a world of wonder</span></div>
-          <p class="gp-desc"><span class="tr" lang="ko">광활한 환상의 대륙을 가로지르는 탑다운 어드벤처. 끝없이 펼쳐진 세계가 당신을 기다립니다.</span><span class="tr" lang="en">A top-down adventure across a vast continent of wonder. An endless world awaits you.</span></p>
+          <div class="gp-kr"><span class="tr" lang="ko">에프디 퀘스트 — 환상의 세계로 떠나는 낭만 어드벤처</span><span class="tr" lang="en">FD Quest — a romantic journey into a world of wonder</span><span class="tr" lang="ja">FDクエスト — 幻想の世界へ旅立つロマンあふれるアドベンチャー</span><span class="tr" lang="zh">FD Quest — 踏入幻想世界的浪漫冒险</span></div>
+          <p class="gp-desc"><span class="tr" lang="ko">광활한 환상의 대륙을 가로지르는 탑다운 어드벤처. 끝없이 펼쳐진 세계가 당신을 기다립니다.</span><span class="tr" lang="en">A top-down adventure across a vast continent of wonder. An endless world awaits you.</span><span class="tr" lang="ja">広大な幻想の大陸を駆け抜けるトップダウンアドベンチャー。果てしなく広がる世界があなたを待っています。</span><span class="tr" lang="zh">穿越广袤幻想大陆的俯视角冒险。无尽延展的世界正等待着你。</span></p>
           <div class="gp-meta"><span><b>TBA</b></span><span><b>PC · Console</b></span><span><b>WISHLIST</b> SOON</span></div>
-          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span> <span class="arrow">→</span></span>
+          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span> <span class="arrow">→</span></span>
         </div>
       </a>
     </div>
@@ -278,17 +280,17 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <span class="kicker reveal" style="justify-content:center;"><span class="dot"></span>// 003 — SAY HELLO</span>
-      <h2 class="reveal d1" style="margin-top:24px;"><span class="tr" lang="ko">함께 놀아요.</span><span class="tr" lang="en">Let's play together.</span></h2>
-      <div class="kr-title reveal d2" style="color:var(--ink-2);margin-top:12px;"><span class="tr" lang="ko">제안 · 협업 · 그냥 인사도 환영합니다.</span><span class="tr" lang="en">Pitches, collabs, or just a hello — all welcome.</span></div>
+      <h2 class="reveal d1" style="margin-top:24px;"><span class="tr" lang="ko">함께 놀아요.</span><span class="tr" lang="en">Let's play together.</span><span class="tr" lang="ja">一緒に遊びましょう。</span><span class="tr" lang="zh">一起来玩吧。</span></h2>
+      <div class="kr-title reveal d2" style="color:var(--ink-2);margin-top:12px;"><span class="tr" lang="ko">제안 · 협업 · 그냥 인사도 환영합니다.</span><span class="tr" lang="en">Pitches, collabs, or just a hello — all welcome.</span><span class="tr" lang="ja">提案・コラボ・ただの挨拶も大歓迎です。</span><span class="tr" lang="zh">提案 · 合作 · 哪怕只是打个招呼，都欢迎。</span></div>
       <a class="big-mail reveal d2" href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span></span></div>
+  <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span><span class="tr" lang="ja">大韓民国</span><span class="tr" lang="zh">大韩民国</span></span></div>
   <div class="col"><span class="h">Games</span><a href="puzzleshooter.html">PuzzleShooter</a><a href="fd-quest.html">FD Quest</a></div>
-  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span></a></div>
+  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
 
