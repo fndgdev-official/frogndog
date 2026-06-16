@@ -457,6 +457,49 @@ section[id] { scroll-margin-top: 84px; }
 /* game media image slot (when a real <img> replaces the placeholder) */
 .gc-media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 .shot { overflow: hidden; }
+
+/* ============================================================
+   MAXIMAL background — unify detail pages with the home's
+   warp + mesh + godrays + dust cinematic stack
+   ============================================================ */
+#warp { position: fixed; inset: 0; z-index: 0; }
+.mesh { position: fixed; inset: -20%; z-index: 0; pointer-events: none; filter: blur(60px); }
+.mesh .blob { position: absolute; border-radius: 50%; mix-blend-mode: screen; opacity: 0.5; }
+.mesh .b1 { width: 50vw; height: 50vw; left: 2%; top: 6%;  background: radial-gradient(circle, var(--violet), transparent 62%); animation: drift1 calc(34s / var(--motion)) ease-in-out infinite alternate; }
+.mesh .b2 { width: 44vw; height: 44vw; right: 4%; top: 12%; background: radial-gradient(circle, var(--frog), transparent 60%); opacity:.32; animation: drift2 calc(40s / var(--motion)) ease-in-out infinite alternate; }
+.mesh .b3 { width: 48vw; height: 48vw; left: 22%; bottom: 0%; background: radial-gradient(circle, var(--dog), transparent 60%); opacity:.28; animation: drift3 calc(46s / var(--motion)) ease-in-out infinite alternate; }
+.mesh .b4 { width: 36vw; height: 36vw; right: 18%; bottom: 6%; background: radial-gradient(circle, var(--cyan), transparent 62%); opacity:.22; animation: drift1 calc(52s / var(--motion)) ease-in-out infinite alternate-reverse; }
+@keyframes drift1 { to { transform: translate(6%, -8%) scale(1.15); } }
+@keyframes drift2 { to { transform: translate(-8%, 6%) scale(1.1); } }
+@keyframes drift3 { to { transform: translate(5%, -5%) scale(1.2); } }
+
+.spotlight { position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 35%), rgba(150,170,255,0.12), transparent 60%);
+  mix-blend-mode: screen; }
+
+.dust { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.dust i { position: absolute; bottom: -10px; width: 3px; height: 3px; border-radius: 50%; background: rgba(200,210,255,.7);
+  box-shadow: 0 0 6px rgba(150,170,255,.6); opacity: 0; animation: rise linear infinite; }
+@keyframes rise { 0%{ transform: translateY(0) translateX(0); opacity:0; } 10%{opacity:.8;} 90%{opacity:.6;} 100%{ transform: translateY(-104vh) translateX(var(--dx,0)); opacity:0; } }
+
+/* god rays burst inside the detail hero */
+.detail-hero { position: relative; overflow: hidden; }
+.detail-hero .wrap { position: relative; z-index: 2; }
+.godrays { position: absolute; top: 42%; left: 50%; width: 150vw; height: 150vw; transform: translate(-50%,-50%); pointer-events: none; z-index: 0;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(150,170,255,0.00) 0deg, rgba(150,170,255,0.07) 2deg, rgba(150,170,255,0.00) 5deg, rgba(150,170,255,0.00) 9deg);
+  -webkit-mask: radial-gradient(closest-side, #000 0%, transparent 62%); mask: radial-gradient(closest-side, #000 0%, transparent 62%);
+  mix-blend-mode: screen; opacity: .8; filter: blur(2px); animation: rays calc(90s / var(--motion)) linear infinite; }
+.godrays.g2 { background: repeating-conic-gradient(from 12deg at 50% 50%, transparent 0deg, color-mix(in srgb, var(--frog) 30%, transparent) 1.4deg, transparent 4deg, transparent 11deg);
+  opacity:.5; animation: rays calc(120s / var(--motion)) linear infinite reverse; }
+@keyframes rays { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+/* standalone back link in the nav (always visible, no burger needed) */
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); padding: 8px 14px; border-radius: 999px; transition: color .25s, background .25s; white-space: nowrap; }
+.nav-back:hover { color: var(--ink); background: rgba(255,255,255,0.05); }
+@media (max-width: 760px) { .nav-back { display: none; } }
+
+html.no-anim .mesh .blob, html.no-anim .dust i, html.no-anim .godrays { animation: none !important; }
+html.no-anim .dust i { opacity: .4 !important; }
 .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .shot:hover img { transform: scale(1.04); }
 

@@ -43,21 +43,46 @@
 </style>
 </head>
 <body>
-<canvas id="starfield"></canvas>
-<div class="nebula"></div>
+<canvas id="warp"></canvas>
+<div class="mesh"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
+<div class="spotlight"></div>
 <div class="vignette"></div>
 <div class="grain"></div>
-
-<a class="back-link" href="index.html"><span>←</span> <span class="tr" lang="ko">FNDG / 모든 게임</span><span class="tr" lang="en">FNDG / All games</span><span class="tr" lang="ja">FNDG / すべてのゲーム</span><span class="tr" lang="zh">FNDG / 所有游戏</span></a>
-<div class="lang-switch" role="group" aria-label="Language" style="position:fixed;top:13px;right:var(--pad);z-index:51;">
-  <button type="button" data-loc="ko" aria-pressed="true">KO</button>
-  <button type="button" data-loc="en" aria-pressed="false">EN</button>
-  <button type="button" data-loc="ja" aria-pressed="false">JA</button>
-  <button type="button" data-loc="zh" aria-pressed="false">ZH</button>
+<div class="dust" aria-hidden="true">
+  <i style="left:6%;width:3px;height:3px;animation-duration:17s;animation-delay:-2s;--dx:30px"></i>
+  <i style="left:14%;width:2px;height:2px;animation-duration:22s;animation-delay:-9s;--dx:-20px"></i>
+  <i style="left:22%;width:4px;height:4px;animation-duration:15s;animation-delay:-5s;--dx:18px"></i>
+  <i style="left:31%;width:2px;height:2px;animation-duration:24s;animation-delay:-13s;--dx:40px"></i>
+  <i style="left:39%;width:3px;height:3px;animation-duration:19s;animation-delay:-1s;--dx:-30px"></i>
+  <i style="left:47%;width:2px;height:2px;animation-duration:26s;animation-delay:-16s;--dx:24px"></i>
+  <i style="left:55%;width:4px;height:4px;animation-duration:16s;animation-delay:-7s;--dx:-26px"></i>
+  <i style="left:63%;width:2px;height:2px;animation-duration:21s;animation-delay:-11s;--dx:16px"></i>
+  <i style="left:71%;width:3px;height:3px;animation-duration:18s;animation-delay:-3s;--dx:-18px"></i>
+  <i style="left:79%;width:2px;height:2px;animation-duration:25s;animation-delay:-19s;--dx:34px"></i>
+  <i style="left:86%;width:4px;height:4px;animation-duration:14s;animation-delay:-6s;--dx:-22px"></i>
+  <i style="left:93%;width:2px;height:2px;animation-duration:23s;animation-delay:-14s;--dx:20px"></i>
 </div>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="FNDG home">
+    <span class="mark"><span class="orb frog-o"></span><span class="orb dog-o"></span></span>
+    <span class="name">FNDG<small>FROG · DOG</small></span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-back" href="index.html#games"><span class="tr" lang="ko">← 모든 게임</span><span class="tr" lang="en">← All games</span><span class="tr" lang="ja">← すべてのゲーム</span><span class="tr" lang="zh">← 所有游戏</span></a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-loc="en" aria-pressed="false">EN</button>
+      <button type="button" data-loc="ja" aria-pressed="false">JP</button>
+      <button type="button" data-loc="zh" aria-pressed="false">CN</button>
+      <button type="button" data-loc="ko" aria-pressed="true">KR</button>
+    </div>
+  </div>
+</header>
 
 <main>
   <section class="detail-hero">
+    <div class="godrays"></div>
+    <div class="godrays g2"></div>
     <div class="wrap" style="text-align:center;">
       <div class="gc-tag reveal" style="justify-content:center;color:var(--dog);"><span class="pill">IN DEVELOPMENT</span> TOP-DOWN · ADVENTURE</div>
       <h1 class="gc-title reveal d1" style="margin-top:18px;">FD Quest</h1>
@@ -136,7 +161,7 @@
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
 
-<script src="cosmos.js"></script>
+<script src="warp.js"></script>
 <script src="site.js"></script>
 <script src="i18n.js"></script>
 </body>
