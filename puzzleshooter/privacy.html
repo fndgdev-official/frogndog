@@ -23,14 +23,15 @@
 <meta property="og:url" content="https://frogndog.com/puzzleshooter/privacy.html" />
 <meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<script>(function(){try{var V=['ko','en','ja','zh'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':n.indexOf('zh')===0?'zh':'en';}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
+<script>(function(){try{var V=['ko','en','ja','zh','zh-Hant'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':(/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':(n.indexOf('zh')===0?'zh':'en'));}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
 <link rel="stylesheet" href="/site.css" />
 <style>
   :root { --c: var(--frog); }
   /* Legal text is provided in KO/EN only — JA/ZH visitors read the English version.
      The locale preference itself is preserved, so other pages stay in JA/ZH. */
   html[data-locale="ja"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]),
-  html[data-locale="zh"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]) { display: revert !important; }
+  html[data-locale="zh"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]),
+  html[data-locale="zh-Hant"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]) { display: revert !important; }
   .policy { max-width: 780px; margin: 0 auto; }
   .policy .doc-title { font-size: clamp(30px,4.5vw,52px); line-height:1.1; background: linear-gradient(180deg,#eafff0,var(--frog)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .policy .doc-sub { font-family: var(--mono); font-size: 13px; letter-spacing:.12em; text-transform:uppercase; color: var(--frog); margin-top:14px; }
@@ -57,7 +58,7 @@
 <div class="lang-switch" role="group" aria-label="Language" style="position:fixed;top:13px;right:var(--pad);z-index:51;">
   <button type="button" data-loc="en" aria-pressed="false">EN</button>
   <button type="button" data-loc="ja" aria-pressed="false">JP</button>
-  <button type="button" data-loc="zh" aria-pressed="false">CN</button>
+  <button type="button" data-loc="zh" aria-pressed="false">CN</button><button type="button" data-loc="zh-Hant" aria-pressed="false">TW</button>
   <button type="button" data-loc="ko" aria-pressed="true">KR</button>
 </div>
 

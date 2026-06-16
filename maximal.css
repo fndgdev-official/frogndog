@@ -415,12 +415,14 @@ html.no-anim .dust i { opacity: .4 !important; }
 .lang-switch button + button { border-left: 1px solid var(--line); }
 .lang-switch button:hover:not([aria-pressed="true"]) { color: var(--ink); }
 .lang-switch button[aria-pressed="true"] { color: #04120a; background: var(--frog); }
+@media (max-width: 760px) { .lang-switch button { padding: 5px 8px; letter-spacing: 0.08em; } }
 
 /* i18n: show only active locale's text (KO / EN / JA / ZH) */
 html[data-locale="ko"] .tr[lang]:not([lang="ko"]),
 html[data-locale="en"] .tr[lang]:not([lang="en"]),
 html[data-locale="ja"] .tr[lang]:not([lang="ja"]),
-html[data-locale="zh"] .tr[lang]:not([lang="zh"]) { display: none !important; }
+html[data-locale="zh"] .tr[lang]:not([lang="zh"]),
+html[data-locale="zh-Hant"] .tr[lang]:not([lang="zh-Hant"]) { display: none !important; }
 
 /* anchor offset under fixed nav */
 section[id] { scroll-margin-top: 88px; }

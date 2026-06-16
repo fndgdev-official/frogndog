@@ -178,6 +178,7 @@ h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.02; let
 .lang-switch button + button { border-left: 1px solid var(--line); }
 .lang-switch button:hover:not([aria-pressed="true"]) { color: var(--ink); }
 .lang-switch button[aria-pressed="true"] { color: #04120a; background: var(--frog); }
+@media (max-width: 760px) { .lang-switch button { padding: 5px 8px; letter-spacing: 0.08em; } }
 
 @media (max-width: 760px) {
   .nav-links {
@@ -449,7 +450,8 @@ html.no-anim .eclipse-disc::before, html.no-anim .eclipse-disc::after { animatio
 html[data-locale="ko"] .tr[lang]:not([lang="ko"]),
 html[data-locale="en"] .tr[lang]:not([lang="en"]),
 html[data-locale="ja"] .tr[lang]:not([lang="ja"]),
-html[data-locale="zh"] .tr[lang]:not([lang="zh"]) { display: none !important; }
+html[data-locale="zh"] .tr[lang]:not([lang="zh"]),
+html[data-locale="zh-Hant"] .tr[lang]:not([lang="zh-Hant"]) { display: none !important; }
 
 /* anchor offset so fixed nav doesn't cover section tops */
 section[id] { scroll-margin-top: 84px; }
