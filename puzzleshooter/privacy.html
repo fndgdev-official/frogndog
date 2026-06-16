@@ -27,11 +27,6 @@
 <link rel="stylesheet" href="/site.css" />
 <style>
   :root { --c: var(--frog); }
-  /* Legal text is provided in KO/EN only — JA/ZH visitors read the English version.
-     The locale preference itself is preserved, so other pages stay in JA/ZH. */
-  html[data-locale="ja"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]),
-  html[data-locale="zh"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]),
-  html[data-locale="zh-Hant"] .tr[lang="en"]:not([lang="ko"]):not([lang="ja"]) { display: revert !important; }
   .policy { max-width: 780px; margin: 0 auto; }
   .policy .doc-title { font-size: clamp(30px,4.5vw,52px); line-height:1.1; background: linear-gradient(180deg,#eafff0,var(--frog)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .policy .doc-sub { font-family: var(--mono); font-size: 13px; letter-spacing:.12em; text-transform:uppercase; color: var(--frog); margin-top:14px; }
@@ -54,7 +49,7 @@
 <div class="vignette"></div>
 <div class="grain"></div>
 
-<a class="back-link" href="/puzzleshooter.html"><span>←</span> <span class="tr" lang="ko">PuzzleShooter</span><span class="tr" lang="en">PuzzleShooter</span></a>
+<a class="back-link" href="/puzzleshooter.html"><span>←</span> <span class="tr" lang="ko">PuzzleShooter</span><span class="tr" lang="en">PuzzleShooter</span><span class="tr" lang="ja">PuzzleShooter</span><span class="tr" lang="zh">PuzzleShooter</span><span class="tr" lang="zh-Hant">PuzzleShooter</span></a>
 <div class="lang-switch" role="group" aria-label="Language" style="position:fixed;top:13px;right:var(--pad);z-index:51;">
   <button type="button" data-loc="en" aria-pressed="false">EN</button>
   <button type="button" data-loc="ja" aria-pressed="false">JP</button>
@@ -70,10 +65,16 @@
         <h1 class="doc-title">
           <span class="tr" lang="ko">개인정보처리방침</span>
           <span class="tr" lang="en">Privacy Policy</span>
+          <span class="tr" lang="ja">プライバシーポリシー</span>
+          <span class="tr" lang="zh">隐私政策</span>
+          <span class="tr" lang="zh-Hant">隱私政策</span>
         </h1>
         <p class="meta">
           <span class="tr" lang="ko">시행일: 2026년 6월 7일 · 최종 수정일: 2026년 6월 7일</span>
           <span class="tr" lang="en">Effective date: June 7, 2026 · Last updated: June 7, 2026</span>
+          <span class="tr" lang="ja">施行日: 2026年6月7日 · 最終更新日: 2026年6月7日</span>
+          <span class="tr" lang="zh">生效日期：2026年6月7日 · 最后更新：2026年6月7日</span>
+          <span class="tr" lang="zh-Hant">生效日期：2026年6月7日 · 最後更新：2026年6月7日</span>
         </p>
 
         <!-- ===================== KOREAN ===================== -->
@@ -194,6 +195,150 @@
 
           <hr>
           <p class="note">This policy describes standard data handling for a mobile game and is consistent with the App’s Google Play Data Safety declaration (Advertising ID collection: Yes).</p>
+        </div>
+        <div class="tr" lang="ja">
+<h2>1. 概要</h2>
+<p>本プライバシーポリシーは、FNDG(以下「運営者」)がモバイルゲーム<strong>PuzzleShooter</strong>(Androidパッケージ <code>com.fndg.puzzleshooter</code>、以下「本アプリ」)に関連して情報をどのように取り扱うかについて説明するものです。運営者はお客様のプライバシーを尊重し、適用される法令を遵守します。</p>
+<div class="card">
+  <p><strong>運営者</strong>:FNDG(Frog and Dog Games)<br>
+  <strong>事業者登録番号</strong>:601-16-52660<br>
+  <strong>お問い合わせ</strong>:<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
+</div>
+<h2>2. 取り扱う情報とその目的</h2>
+<p>運営者は、お客様の氏名、メールアドレス、電話番号などの個人を特定できる情報を<strong>直接収集することはありません</strong>。ただし、本アプリに組み込まれた第三者サービス(広告、決済、ゲームエンジン)が、そのサービスを提供するために以下の情報を処理する場合があります。</p>
+<h3>a. 広告(Google AdMob)</h3>
+<ul>
+  <li>処理されるデータ:Advertising ID、デバイス情報(機種、OS、言語など)、アプリの操作データ</li>
+  <li>目的:パーソナライズ広告または非パーソナライズ広告を配信し、リワード広告を通じてゲーム内報酬(ハート、コンティニュー、ポイントバフ)を提供するため</li>
+  <li>処理者:Google AdMob / Google Play サービス</li>
+</ul>
+<h3>b. アプリ内課金(Google Play Billing・Unity IAP)</h3>
+<ul>
+  <li>処理されるデータ:購入履歴(例:Supporter Pack やその他のアイテム)</li>
+  <li>目的:決済を処理し、購入したアイテムを提供するため</li>
+  <li>決済は<strong>Google によって処理されます</strong>。運営者は、クレジットカード番号などの決済情報を直接収集または保存することはありません。</li>
+</ul>
+<h3>c. ゲームのセーブデータ</h3>
+<ul>
+  <li>処理されるデータ:ゲームの進行状況、設定など</li>
+  <li>保存:<strong>お客様のデバイス内にのみ</strong>保存されます。</li>
+  <li>本アプリにはアカウントやログイン機能はなく、ゲームのセーブデータを運営者のサーバーに送信することはありません。</li>
+</ul>
+<h2>3. 第三者サービス(SDK)とポリシーへのリンク</h2>
+<p>本アプリは以下の第三者サービスを利用しています。各サービスがデータをどのように処理するかの詳細については、それぞれのポリシーをご参照ください。</p>
+<ul>
+  <li>Google AdMob・Google Play サービス — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity(ゲームエンジン) — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+</ul>
+<h2>4. データの保持と削除</h2>
+<ul>
+  <li>お客様のデバイス内にローカル保存されたゲームデータは、<strong>本アプリをアンインストールすると削除されます</strong>。</li>
+  <li>お客様は、デバイスの設定からいつでも<strong>Advertising ID をリセットしたり、パーソナライズ広告をオプトアウトしたり</strong>することができます。(Android:設定 → Google → 広告)</li>
+</ul>
+<h2>5. 子どものプライバシー</h2>
+<p>本アプリは一般向けのサービスであり、13歳未満の子どもを主たる対象とするものではありません。運営者は、子どもから個人情報を意図的に収集することはありません。</p>
+<h2>6. 本ポリシーの変更</h2>
+<p>本ポリシーは、法令またはサービスの変更を反映するために更新されることがあります。更新内容は、改訂された「最終更新日」とともに本ページに掲載されます。</p>
+<h2>7. お問い合わせ</h2>
+<p>プライバシーに関するご質問は、<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a> までお問い合わせください。</p>
+<hr>
+<p class="note">本ポリシーは、モバイルゲームにおける標準的なデータの取り扱いについて記載したものであり、本アプリの Google Play Data Safety の申告内容(Advertising ID の収集:あり)と一致しています。</p>
+        </div>
+        <div class="tr" lang="zh">
+<h2>1. 概述</h2>
+<p>本隐私政策说明 FNDG（以下称"运营方"）就移动游戏 <strong>PuzzleShooter</strong>（Android 软件包 <code>com.fndg.puzzleshooter</code>，以下称"本应用"）相关的信息处理方式。运营方重视您的隐私，并遵守适用的法律法规。</p>
+<div class="card">
+  <p><strong>运营方</strong>：FNDG (Frog and Dog Games)<br>
+  <strong>营业执照注册号</strong>：601-16-52660<br>
+  <strong>联系方式</strong>：<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
+</div>
+<h2>2. 我们处理的信息及处理目的</h2>
+<p>运营方<strong>不会直接收集</strong>您的姓名、电子邮箱或电话号码等个人身份识别信息。但是，集成于本应用中的第三方服务（广告、支付、游戏引擎）可能会为提供其服务而处理以下信息。</p>
+<h3>a. 广告（Google AdMob）</h3>
+<ul>
+  <li>所处理的数据：Advertising ID、设备信息（型号、OS、语言等）、应用交互数据</li>
+  <li>目的：投放个性化或非个性化广告，并通过激励广告提供游戏内奖励（生命值、继续、积分加成）</li>
+  <li>处理方：Google AdMob / Google Play 服务</li>
+</ul>
+<h3>b. 应用内购买（Google Play Billing · Unity IAP）</h3>
+<ul>
+  <li>所处理的数据：购买记录（例如 Supporter Pack 及其他物品）</li>
+  <li>目的：处理付款并交付所购物品</li>
+  <li>付款<strong>由 Google 处理</strong>。运营方不会直接收集或存储信用卡号等支付明细。</li>
+</ul>
+<h3>c. 游戏存档数据</h3>
+<ul>
+  <li>所处理的数据：游戏进度、设置等</li>
+  <li>存储：<strong>仅存储于您的设备本地</strong>。</li>
+  <li>本应用没有账号或登录功能，也不会将游戏存档数据传输至运营方的服务器。</li>
+</ul>
+<h2>3. 第三方服务（SDK）及政策链接</h2>
+<p>本应用使用以下第三方服务。有关各服务如何处理数据的详细信息，请参阅其各自的政策。</p>
+<ul>
+  <li>Google AdMob · Google Play 服务 — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity（游戏引擎） — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+</ul>
+<h2>4. 数据保留与删除</h2>
+<ul>
+  <li>存储于您设备本地的游戏数据将<strong>在您卸载本应用时被删除</strong>。</li>
+  <li>您可随时在设备设置中<strong>重置您的 Advertising ID 或选择退出个性化广告</strong>。（Android：设置 → Google → 广告）</li>
+</ul>
+<h2>5. 儿童隐私</h2>
+<p>本应用为面向大众的服务，并非主要面向 13 周岁以下儿童。运营方不会在知情的情况下收集儿童的个人信息。</p>
+<h2>6. 本政策的变更</h2>
+<p>本政策可能因法律或服务的变更而更新。更新内容将连同修订后的"最后更新"日期发布于本页面。</p>
+<h2>7. 联系方式</h2>
+<p>如对隐私有任何疑问，请联系 <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>。</p>
+<hr>
+<p class="note">本政策描述了移动游戏的标准数据处理方式，并与本应用的 Google Play Data Safety 声明（Advertising ID 收集：是）保持一致。</p>
+        </div>
+        <div class="tr" lang="zh-Hant">
+<h2>1. 概述</h2>
+<p>本隱私政策說明 FNDG（以下稱"運營方"）就行動遊戲 <strong>PuzzleShooter</strong>（Android 軟體包 <code>com.fndg.puzzleshooter</code>，以下稱"本應用"）相關的資訊處理方式。運營方重視您的隱私，並遵守適用的法律法規。</p>
+<div class="card">
+  <p><strong>運營方</strong>：FNDG (Frog and Dog Games)<br>
+  <strong>營業執照註冊號</strong>：601-16-52660<br>
+  <strong>聯絡方式</strong>：<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
+</div>
+<h2>2. 我們處理的資訊及處理目的</h2>
+<p>運營方<strong>不會直接收集</strong>您的姓名、電子郵件或電話號碼等個人身份識別資訊。但是，整合於本應用中的第三方服務（廣告、支付、遊戲引擎）可能會為提供其服務而處理以下資訊。</p>
+<h3>a. 廣告（Google AdMob）</h3>
+<ul>
+  <li>所處理的資料：Advertising ID、裝置資訊（型號、OS、語言等）、應用互動資料</li>
+  <li>目的：投放個人化或非個人化廣告，並透過激勵廣告提供遊戲內獎勵（生命值、繼續、積分加成）</li>
+  <li>處理方：Google AdMob / Google Play 服務</li>
+</ul>
+<h3>b. 應用內購買（Google Play Billing · Unity IAP）</h3>
+<ul>
+  <li>所處理的資料：購買記錄（例如 Supporter Pack 及其他物品）</li>
+  <li>目的：處理付款並交付所購物品</li>
+  <li>付款<strong>由 Google 處理</strong>。運營方不會直接收集或儲存信用卡號等支付明細。</li>
+</ul>
+<h3>c. 遊戲存檔資料</h3>
+<ul>
+  <li>所處理的資料：遊戲進度、設定等</li>
+  <li>儲存：<strong>僅儲存於您的裝置本地</strong>。</li>
+  <li>本應用沒有帳號或登入功能，也不會將遊戲存檔資料傳輸至運營方的伺服器。</li>
+</ul>
+<h2>3. 第三方服務（SDK）及政策連結</h2>
+<p>本應用使用以下第三方服務。有關各服務如何處理資料的詳細資訊，請參閱其各自的政策。</p>
+<ul>
+  <li>Google AdMob · Google Play 服務 — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity（遊戲引擎） — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+</ul>
+<h2>4. 資料保留與刪除</h2>
+<ul>
+  <li>儲存於您裝置本地的遊戲資料將<strong>在您解除安裝本應用時被刪除</strong>。</li>
+  <li>您可隨時在裝置設定中<strong>重置您的 Advertising ID 或選擇退出個人化廣告</strong>。（Android：設定 → Google → 廣告）</li>
+</ul>
+<h2>5. 兒童隱私</h2>
+<p>本應用為面向大眾的服務，並非主要面向 13 週歲以下兒童。運營方不會在知情的情況下收集兒童的個人資訊。</p>
+<h2>6. 本政策的變更</h2>
+<p>本政策可能因法律或服務的變更而更新。更新內容將連同修訂後的"最後更新"日期發布於本頁面。</p>
+<h2>7. 聯絡方式</h2>
+<p>如對隱私有任何疑問，請聯絡 <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>。</p>
+<hr>
+<p class="note">本政策描述了行動遊戲的標準資料處理方式，並與本應用的 Google Play Data Safety 宣告（Advertising ID 收集：是）保持一致。</p>
         </div>
       </div>
     </div>
