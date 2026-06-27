@@ -16,8 +16,9 @@
       /* FNDG 웹→앱 CTA (게임 캔버스 밖 여백에 표시) */
       #fndg-getapp{position:fixed;z-index:30;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;
         background:#0f9d58;color:#fff;text-decoration:none;padding:11px 16px;border-radius:12px;
-        font:600 14px/1.15 system-ui,-apple-system,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .12s}
+        font:600 14px/1.15 system-ui,-apple-system,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .12s,opacity .35s}
       #fndg-getapp:hover{transform:translateY(-2px)}
+      #fndg-getapp.fndg-hide{opacity:0;pointer-events:none;transform:translateY(8px)}
       #fndg-getapp .pi{font-size:20px;line-height:1}
       #fndg-getapp small{display:block;font-weight:500;opacity:.9;font-size:11px}
       @media (max-width:760px){#fndg-getapp{right:10px;bottom:10px;padding:8px 11px;font-size:12px}
@@ -133,6 +134,21 @@
       canvas.style.height = _ch + "px";
       canvas.style.width = Math.round(_ch * 1080 / 2340) + "px";
       document.querySelector("#unity-loading-bar").style.display = "block";
+
+      // 모바일: 플레이 시작(첫 탭)하면 Google Play CTA 자동 숨김 (게임 안 가리게)
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var _getapp = document.getElementById("fndg-getapp");
+        if (_getapp) {
+          var _hideCta = function(e){
+            if (_getapp.contains(e.target)) return;   // 버튼 자체 탭이면 유지
+            _getapp.classList.add("fndg-hide");
+            window.removeEventListener("pointerdown", _hideCta, true);
+            window.removeEventListener("touchstart", _hideCta, true);
+          };
+          window.addEventListener("pointerdown", _hideCta, true);
+          window.addEventListener("touchstart", _hideCta, true);
+        }
+      }
 
       var script = document.createElement("script");
       script.src = loaderUrl;
