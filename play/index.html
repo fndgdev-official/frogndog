@@ -4,14 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | PuzzleShooter</title>
-    <!-- Google tag (gtag.js) — GA4 frogndog.com -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1ESCDQDS9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-R1ESCDQDS9');
-    </script>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   
@@ -21,10 +13,22 @@
       #unity-container { position:fixed; inset:0; display:flex; justify-content:center; align-items:center; }
       #unity-canvas { background:#11131a; }
       #unity-footer { display:none; }
+      /* FNDG 웹→앱 CTA (게임 캔버스 밖 여백에 표시) */
+      #fndg-getapp{position:fixed;z-index:30;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;
+        background:#0f9d58;color:#fff;text-decoration:none;padding:11px 16px;border-radius:12px;
+        font:600 14px/1.15 system-ui,-apple-system,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .12s}
+      #fndg-getapp:hover{transform:translateY(-2px)}
+      #fndg-getapp .pi{font-size:20px;line-height:1}
+      #fndg-getapp small{display:block;font-weight:500;opacity:.9;font-size:11px}
+      @media (max-width:760px){#fndg-getapp{right:10px;bottom:10px;padding:8px 11px;font-size:12px}
+        #fndg-getapp .pi{font-size:16px}#fndg-getapp small{font-size:10px}}
     </style>
   </head>
   <body>
     <a href="/" title="frogndog.com 홈으로" style="position:fixed;top:12px;left:16px;z-index:20;font:600 15px/1 system-ui,sans-serif;color:#a8e063;text-decoration:none;background:rgba(17,19,26,0.55);padding:7px 12px;border-radius:8px;">← FNDG</a>
+    <a id="fndg-getapp" href="https://play.google.com/store/apps/details?id=com.fndg.puzzleshooter&referrer=utm_source%3Dfrogndog%26utm_medium%3Dweb_play%26utm_campaign%3Dweb2app" target="_blank" rel="noopener" title="Google Play에서 받기">
+      <span class="pi">▶</span><span>Google Play로 받기<small>안드로이드 무료 설치</small></span>
+    </a>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
