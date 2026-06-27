@@ -135,18 +135,19 @@
       canvas.style.width = Math.round(_ch * 1080 / 2340) + "px";
       document.querySelector("#unity-loading-bar").style.display = "block";
 
-      // 모바일: 플레이 시작(첫 탭)하면 Google Play CTA 자동 숨김 (게임 안 가리게)
+      // 모바일: 플레이 중(탭 활동 있을 때)만 Google Play CTA 숨김.
+      // 일정 시간(6초) 탭이 없으면(로비/게임오버/대기) 다시 표시.
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var _getapp = document.getElementById("fndg-getapp");
         if (_getapp) {
-          var _hideCta = function(e){
-            if (_getapp.contains(e.target)) return;   // 버튼 자체 탭이면 유지
+          var _idle;
+          var _onTouch = function(e){
+            if (_getapp.contains(e.target)) return;   // 버튼 자체 탭이면 무시
             _getapp.classList.add("fndg-hide");
-            window.removeEventListener("pointerdown", _hideCta, true);
-            window.removeEventListener("touchstart", _hideCta, true);
+            clearTimeout(_idle);
+            _idle = setTimeout(function(){ _getapp.classList.remove("fndg-hide"); }, 6000);
           };
-          window.addEventListener("pointerdown", _hideCta, true);
-          window.addEventListener("touchstart", _hideCta, true);
+          window.addEventListener("pointerdown", _onTouch, true);
         }
       }
 
