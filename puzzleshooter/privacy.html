@@ -70,11 +70,11 @@
           <span class="tr" lang="zh-Hant">隱私政策</span>
         </h1>
         <p class="meta">
-          <span class="tr" lang="ko">시행일: 2026년 6월 7일 · 최종 수정일: 2026년 6월 7일</span>
-          <span class="tr" lang="en">Effective date: June 7, 2026 · Last updated: June 7, 2026</span>
-          <span class="tr" lang="ja">施行日: 2026年6月7日 · 最終更新日: 2026年6月7日</span>
-          <span class="tr" lang="zh">生效日期：2026年6月7日 · 最后更新：2026年6月7日</span>
-          <span class="tr" lang="zh-Hant">生效日期：2026年6月7日 · 最後更新：2026年6月7日</span>
+          <span class="tr" lang="ko">최초 시행일: 2026년 6월 7일 · 최종 수정일: 2026년 9월 8일</span>
+          <span class="tr" lang="en">Original effective date: June 7, 2026 · Last updated: September 8, 2026</span>
+          <span class="tr" lang="ja">初回施行日: 2026年6月7日 · 最終更新日: 2026年9月8日</span>
+          <span class="tr" lang="zh">首次生效日期：2026年6月7日 · 最后更新：2026年9月8日</span>
+          <span class="tr" lang="zh-Hant">首次生效日期：2026年6月7日 · 最後更新：2026年9月8日</span>
         </p>
 
         <!-- ===================== KOREAN ===================== -->
@@ -86,42 +86,57 @@
             <strong>사업자등록번호</strong>: 601-16-52660<br>
             <strong>문의</strong>: <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
           </div>
+          <p><strong>버전 구분:</strong> 아래의 v27은 Android 버전 코드 27인 무료 업데이트를 뜻합니다. v27은 광고·광고 ID 사용·신규 인앱 결제가 없습니다. v26(버전 코드 26) 및 이전 버전을 계속 사용하거나 해당 버전이 배포되는 경우에는 아래의 이전 버전 설명도 적용됩니다. 앱의 표시 버전명만으로 이 구분을 판단하지 마세요.</p>
 
           <h2>2. 수집하는 정보와 이용 목적</h2>
-          <p>운영자는 이용자의 이름·이메일·전화번호 등 개인을 직접 식별할 수 있는 정보를 <strong>직접 수집하지 않습니다</strong>. 다만 본 앱에 포함된 제3자 서비스(광고·결제·게임 엔진)가 서비스 제공을 위해 아래와 같은 정보를 처리할 수 있습니다.</p>
+          <p>본 앱은 운영자 계정이나 이름·이메일·전화번호 입력을 요구하지 않습니다. 다만 이용자가 자발적으로 이메일로 문의하면 운영자는 회신 주소와 문의 내용을 받습니다. 게임의 로컬 저장, 스토어 서비스, 문의 응대, 이 웹사이트의 분석 및 앱의 진단 데이터 처리는 아래와 같이 구분됩니다.</p>
 
-          <h3>가. 광고 (Google AdMob)</h3>
+          <h3>가. 버전별 광고 및 광고 ID</h3>
           <ul>
-            <li>처리 정보: 광고 식별자(Advertising ID), 기기 정보(모델·OS·언어 등), 앱 상호작용 데이터</li>
-            <li>이용 목적: 맞춤형 또는 비맞춤형 광고 제공. 리워드 광고(하트, 이어하기, 포인트 버프 보상)를 통한 게임 내 혜택 제공</li>
-            <li>처리 주체: Google AdMob / Google Play 서비스</li>
+            <li><strong>v27:</strong> 광고를 표시하지 않으며 Android 광고 식별자(Advertising ID, AAID)를 사용하지 않습니다. AdMob 광고 SDK는 제거되었습니다.</li>
+            <li><strong>v26 및 이전 버전:</strong> Google AdMob / Google Play 서비스를 통한 맞춤형·비맞춤형 광고와 리워드 광고(하트, 이어하기, 포인트 버프)를 포함할 수 있습니다.</li>
+            <li>이전 버전의 광고 서비스는 광고 제공·보상, 분석 및 부정행위 방지를 위해 광고·기기 식별자, 기기 정보(모델·OS·언어 등), IP 주소와 그로부터 추정한 대략적인 위치, 앱 상호작용 및 진단·성능 데이터를 자동 수집하고 공유할 수 있습니다. 이 설명은 v27에 AdMob 광고나 그 수집 기능이 있다는 뜻이 아닙니다.</li>
           </ul>
 
-          <h3>나. 인앱 결제 (Google Play 결제 · Unity IAP)</h3>
+          <h3>나. 기존 구매 복원 및 이전 버전의 결제</h3>
           <ul>
-            <li>처리 정보: 구매 내역(예: Supporter Pack 등 상품 구매 기록)</li>
-            <li>이용 목적: 결제 처리 및 구매 상품 지급</li>
-            <li>결제는 <strong>Google이 처리</strong>하며, 운영자는 신용카드 번호 등 결제 수단 정보를 직접 수집하거나 저장하지 않습니다.</li>
+            <li><strong>v27은 새 결제를 시작하지 않습니다.</strong> 기존 Supporter Pack 소유 여부를 확인·복원하기 위해 Google Play 결제와 Unity IAP는 유지합니다.</li>
+            <li>앱 시작 시 및 이용자의 복원 요청 시 스토어 연결과 과거 구매 조회가 이뤄질 수 있습니다. 구매 내역, 거래 식별자, 상품 정보, 구매 상태, 영수증을 처리하며, 필요한 기존 주문에는 소유 여부를 저장한 뒤 확인 응답(acknowledgement)을 보낼 수 있습니다.</li>
+            <li>앱은 구매 소유 여부를 기기에 저장합니다. v26 및 이전 버전에서는 신규 상품 구매와 지급 기능이 제공될 수 있으며, 관련 스토어 처리가 이뤄집니다.</li>
+            <li>스토어 결제는 <strong>Google이 처리</strong>합니다. 운영자는 이 결제 과정에서 신용카드 번호 등 결제 수단 정보를 직접 수집하거나 저장하지 않습니다.</li>
           </ul>
 
           <h3>다. 게임 저장 데이터</h3>
           <ul>
-            <li>처리 정보: 게임 진행도, 환경 설정 등</li>
-            <li>저장 위치: 이용자 <strong>기기 내부(로컬)에만</strong> 저장됩니다.</li>
+            <li>처리 정보: 스테이지 진행도, 포인트, 강화, 챌린지 기록, 하트 상태, 환경 설정 및 기존 구매 소유 여부</li>
+            <li>앱의 저장 위치: 이용자 <strong>기기 내부(로컬)</strong>. 운영체제의 백업·복원은 별도의 기기 설정에 따라 달라질 수 있습니다.</li>
             <li>본 앱은 별도의 계정/로그인 기능이 없으며, 게임 저장 데이터를 운영자 서버로 전송하지 않습니다.</li>
           </ul>
 
+          <h3>라. 자발적인 고객 문의</h3>
+          <p>이메일 문의 시 운영자는 이메일 주소와 이용자가 보내는 내용을 문의 응대에 사용합니다. 이메일 서비스 제공업체가 해당 통신을 처리할 수 있습니다. 비밀번호, 신용카드 정보 또는 불필요한 민감정보는 보내지 마세요.</p>
+
+          <h3>마. 이 웹사이트의 Google Analytics</h3>
+          <p>이 개인정보처리방침 웹페이지는 방문 통계와 웹사이트 개선을 위해 Google Analytics(GA4)를 로드합니다. Google은 페이지 방문, 브라우저·기기 정보 및 쿠키 등의 온라인 식별자를 처리할 수 있습니다. 이는 <strong>웹사이트</strong>에 관한 설명이며, 모바일 게임에서 GA4를 사용한다는 뜻이 아닙니다.</p>
+
+          <h3>바. 앱의 Unity 진단 데이터</h3>
+          <p>v27은 <strong>Unity Engine Diagnostics</strong>를 사용합니다. Unity는 FNDG를 대신하여 앱의 충돌 로그, 응답 없음(ANR) 오류, 오류 추적, 기타 진단·앱 성능 데이터와 설치별 고유 식별자를 수집·처리합니다. 목적은 충돌과 오류의 조사·해결 및 앱의 안정성·호환성·성능 개선입니다. 이 설치 식별자는 Android 광고 ID(AAID)와 다릅니다. 이 진단 처리에서 FNDG는 개인정보처리의 책임 주체(컨트롤러), Unity는 처리 수탁자(프로세서) 역할을 합니다.</p>
+
           <h2>3. 제3자 서비스(SDK) 및 정책 링크</h2>
-          <p>본 앱은 아래 제3자 서비스를 사용합니다. 각 서비스의 데이터 처리에 관한 자세한 내용은 해당 정책을 참고하시기 바랍니다.</p>
+          <p>서비스는 앱 버전과 게임·웹사이트 이용 여부에 따라 구분됩니다. 각 서비스의 데이터 처리에 관한 자세한 내용은 해당 정책을 참고하시기 바랍니다.</p>
           <ul>
-            <li>Google AdMob · Google Play 서비스 — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-            <li>Unity (게임 엔진) — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+            <li>Google Play 결제·스토어 서비스, Google Analytics(웹사이트), Google AdMob(이전 앱 버전) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+            <li>Unity (게임 엔진·Diagnostics·Unity IAP) — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">게임 이용자 개인정보처리방침</a> · <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 개인정보 처리 안내</a></li>
           </ul>
 
           <h2>4. 데이터 보관 및 삭제</h2>
           <ul>
-            <li>기기 내 로컬에 저장된 게임 데이터는 <strong>앱을 삭제하면 함께 제거</strong>됩니다.</li>
-            <li>광고 식별자(Advertising ID)는 기기 설정에서 언제든지 <strong>재설정하거나 맞춤 광고를 옵트아웃</strong>할 수 있습니다. (Android: 설정 → Google → 광고)</li>
+            <li>앱 삭제 또는 앱 저장공간 지우기로 로컬 진행도와 설정을 잃을 수 있습니다. 운영체제 백업에서 복원되는지는 기기 설정과 해당 서비스에 따라 달라집니다.</li>
+            <li>앱의 플레이 데이터 초기화는 모든 설정이나 기존 구매 소유 여부를 삭제하지 않습니다. 구매 복원은 게임 진행도의 백업이 아닙니다.</li>
+            <li>앱을 삭제해도 Google Play의 구매 기록이 자동 삭제되지는 않습니다. 스토어 기록, 웹사이트 분석 정보 등 제공업체가 처리하는 데이터는 각 서비스의 정책과 설정에 따라 보관·삭제됩니다.</li>
+            <li>Unity의 <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 공식 안내</a>는 개인정보의 기본 보관 기간을 90일로 설명합니다. 앱 삭제가 이미 전송된 진단 데이터의 즉시 삭제를 뜻하지는 않습니다. 진단 데이터 열람·삭제는 아래 이메일로 요청할 수 있으며, 운영자가 Unity의 지원·삭제 절차에 따라 처리합니다. 해당 설치의 기록을 찾기 위한 정보가 필요할 수 있습니다.</li>
+            <li>문의 이메일은 문의 해결 및 적용되는 의무 이행에 필요한 범위에서 보관합니다. 문의 정보의 확인·정정·삭제를 요청하려면 아래 이메일로 연락해 주세요. 필요한 보관 사유가 있으면 안내합니다.</li>
+            <li>이전 버전의 광고 이용자는 기기의 광고 ID·광고 개인정보 설정을, 웹사이트 방문자는 브라우저의 쿠키·사이트 데이터 설정을 이용할 수 있습니다. 제공되는 제어는 기기·브라우저에 따라 다릅니다.</li>
           </ul>
 
           <h2>5. 아동의 개인정보</h2>
@@ -134,7 +149,7 @@
           <p>개인정보 처리에 관한 문의는 <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a> 으로 연락해 주시기 바랍니다.</p>
 
           <hr>
-          <p class="note">본 방침은 표준적인 모바일 게임 데이터 처리 수준을 안내하기 위한 것으로, Google Play 데이터 보안(Data Safety) 신고 내용과 일관됩니다(광고 식별자 수집: 예).</p>
+          <p class="note">Google Play 데이터 보안(Data Safety)은 현재 Google Play에서 배포 중인 모든 관련 버전·트랙의 데이터 처리를 고려해야 합니다. v27의 광고 ID 미사용은 데이터 처리가 전혀 없다는 뜻이 아니며, 이전 버전의 광고나 현재의 구매 복원까지 없다는 뜻도 아닙니다. 광고 ID 선언과 전체 Data Safety 범위는 구분됩니다.</p>
         </div>
 
         <!-- ===================== ENGLISH ===================== -->
@@ -146,42 +161,57 @@
             <strong>Business Registration No.</strong>: 601-16-52660<br>
             <strong>Contact</strong>: <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
           </div>
+          <p><strong>Version scope:</strong> v27 below means the free update with Android version code 27. It has no ads, Advertising ID use, or new in-app purchases. The legacy sections also apply when v26 (version code 26) or earlier versions remain in use or distribution. The displayed app version name alone does not identify this distinction.</p>
 
           <h2>2. Information We Process and Why</h2>
-          <p>The Operator does <strong>not directly collect</strong> personally identifying information such as your name, email, or phone number. However, third-party services bundled in the App (advertising, payments, game engine) may process the following information to provide their services.</p>
+          <p>The App does not require an Operator account or entry of your name, email, or phone number. If you voluntarily email us, however, the Operator receives your return address and message. Local game storage, store services, support correspondence, this website's analytics, and app diagnostics are distinguished below.</p>
 
-          <h3>a. Advertising (Google AdMob)</h3>
+          <h3>a. Advertising and Advertising ID by Version</h3>
           <ul>
-            <li>Data processed: Advertising ID, device information (model, OS, language, etc.), app interaction data</li>
-            <li>Purpose: To serve personalized or non-personalized ads, and to provide in-game rewards through rewarded ads (hearts, continue, point buff)</li>
-            <li>Processed by: Google AdMob / Google Play services</li>
+            <li><strong>v27:</strong> No ads are displayed and the Android Advertising ID (AAID) is not used. The AdMob advertising SDK has been removed.</li>
+            <li><strong>v26 and earlier:</strong> These versions may include personalized or non-personalized ads and rewarded ads (hearts, continue, point buffs) through Google AdMob / Google Play services.</li>
+            <li>The legacy advertising services may automatically collect and share advertising/device identifiers, device information (model, OS, language, etc.), IP addresses and approximate location inferred from them, app interactions, and diagnostic/performance data for ads and rewards, analytics and fraud prevention. This does not mean that v27 contains AdMob ads or that SDK's collection functionality.</li>
           </ul>
 
-          <h3>b. In-App Purchases (Google Play Billing · Unity IAP)</h3>
+          <h3>b. Legacy Purchase Restoration and Earlier Purchase Flows</h3>
           <ul>
-            <li>Data processed: Purchase history (e.g., Supporter Pack and other items)</li>
-            <li>Purpose: To process payments and deliver purchased items</li>
-            <li>Payments are <strong>processed by Google</strong>. The Operator does not directly collect or store payment details such as credit card numbers.</li>
+            <li><strong>v27 does not initiate new payments.</strong> Google Play Billing and Unity IAP remain to verify and restore existing Supporter Pack ownership.</li>
+            <li>Store connections and queries of previous purchases may occur at app startup and when you request restoration. Purchase history, transaction identifiers, product information, purchase status and receipts are processed; existing orders requiring acknowledgement may be acknowledged after ownership is saved.</li>
+            <li>The App stores an ownership flag on your device. v26 and earlier versions may still offer new purchases and item delivery, with the associated store processing.</li>
+            <li>Store payments are <strong>processed by Google</strong>. The Operator does not directly collect or store credit card numbers or other payment-method details as part of that billing process.</li>
           </ul>
 
           <h3>c. Game Save Data</h3>
           <ul>
-            <li>Data processed: Game progress, settings, etc.</li>
-            <li>Storage: Stored <strong>only locally on your device</strong>.</li>
+            <li>Data processed: Stage progress, points, upgrades, challenge records, heart state, settings and previous purchase ownership</li>
+            <li>The App stores this data <strong>locally on your device</strong>. Operating-system backup and restore may depend on separate device settings.</li>
             <li>The App has no account or login feature and does not transmit game save data to the Operator’s servers.</li>
           </ul>
 
+          <h3>d. Voluntary Support Requests</h3>
+          <p>If you email us, the Operator uses your email address and the information you send to respond to your request. The email service provider may handle that correspondence. Do not send passwords, credit card information or unnecessary sensitive information.</p>
+
+          <h3>e. Google Analytics on This Website</h3>
+          <p>This policy webpage loads Google Analytics (GA4) for website usage statistics and improvement. Google may process page visits, browser/device information and online identifiers such as cookies. This describes the <strong>website</strong>, not GA4 use within the mobile game.</p>
+
+          <h3>f. Unity Diagnostics in the App</h3>
+          <p>v27 uses <strong>Unity Engine Diagnostics</strong>. On FNDG's behalf, Unity collects and processes crash logs, Application Not Responding (ANR) errors, error traces, other diagnostic and app-performance data, and a unique installation-specific identifier. This helps investigate and resolve crashes and errors and improve app stability, compatibility and performance. The installation identifier is not the Android Advertising ID (AAID). For this diagnostic processing, FNDG acts as the data controller and Unity as the processor.</p>
+
           <h2>3. Third-Party Services (SDKs) and Policy Links</h2>
-          <p>The App uses the third-party services below. For details on how each service processes data, please refer to its policy.</p>
+          <p>The services differ by app version and whether you use the game or website. For details on each service's data processing, please refer to its policy.</p>
           <ul>
-            <li>Google AdMob · Google Play services — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-            <li>Unity (game engine) — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+            <li>Google Play Billing and store services, Google Analytics (website), Google AdMob (legacy app versions) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+            <li>Unity (game engine, Diagnostics and Unity IAP) — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Game Player and App User Privacy Policy</a> · <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics privacy overview</a></li>
           </ul>
 
           <h2>4. Data Retention and Deletion</h2>
           <ul>
-            <li>Game data stored locally on your device is <strong>removed when you uninstall the App</strong>.</li>
-            <li>You can <strong>reset your Advertising ID or opt out of personalized ads</strong> at any time in your device settings. (Android: Settings → Google → Ads)</li>
+            <li>Uninstalling the App or clearing its storage can remove local progress and settings. Restoration from operating-system backups depends on your device settings and the relevant service.</li>
+            <li>The in-app play-data reset does not delete all settings or previous purchase ownership. Purchase restoration is not a backup of game progress.</li>
+            <li>Uninstalling does not automatically delete Google Play purchase records. Provider-handled data, including store records and website analytics, is retained or deleted under the respective services' policies and settings.</li>
+            <li>Unity's <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics documentation</a> states a default personal-data retention period of 90 days. Uninstalling does not immediately delete diagnostic data already transmitted. Contact the email below to request access to or deletion of diagnostic data; the Operator handles these requests through Unity's support and deletion procedures. Information to locate the relevant installation's records may be needed.</li>
+            <li>Support correspondence is retained as needed to resolve your request and meet applicable obligations. Contact the address below to request access, correction or deletion of support information; any necessary retention reason will be explained.</li>
+            <li>Users of legacy ads can use their device's advertising-ID/privacy controls; website visitors can use browser cookie/site-data controls. Available controls vary by device and browser.</li>
           </ul>
 
           <h2>5. Children’s Privacy</h2>
@@ -194,7 +224,7 @@
           <p>For any questions about privacy, please contact <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>.</p>
 
           <hr>
-          <p class="note">This policy describes standard data handling for a mobile game and is consistent with the App’s Google Play Data Safety declaration (Advertising ID collection: Yes).</p>
+          <p class="note">Google Play Data Safety must consider relevant data handling across all versions and tracks currently distributed through Google Play. v27's lack of Advertising ID use does not mean that no data is processed, nor that legacy ads or current purchase restoration do not exist. The Advertising ID declaration and the full Data Safety scope are distinct.</p>
         </div>
         <div class="tr" lang="ja">
 <h2>1. 概要</h2>
@@ -204,36 +234,48 @@
   <strong>事業者登録番号</strong>:601-16-52660<br>
   <strong>お問い合わせ</strong>:<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
 </div>
+<p><strong>バージョンの区分:</strong> 以下の v27 は Android バージョンコード 27 の無料アップデートを指します。広告、Advertising ID の使用、新規アプリ内課金はありません。v26（バージョンコード 26）以前が引き続き利用・配信される場合には、旧バージョンの説明も適用されます。表示されるアプリのバージョン名だけでは区別できません。</p>
 <h2>2. 取り扱う情報とその目的</h2>
-<p>運営者は、お客様の氏名、メールアドレス、電話番号などの個人を特定できる情報を<strong>直接収集することはありません</strong>。ただし、本アプリに組み込まれた第三者サービス(広告、決済、ゲームエンジン)が、そのサービスを提供するために以下の情報を処理する場合があります。</p>
-<h3>a. 広告(Google AdMob)</h3>
+<p>本アプリは運営者のアカウントや氏名・メールアドレス・電話番号の入力を求めません。ただし、お客様が任意でメールによる問い合わせを行う場合、運営者は返信先のメールアドレスと本文を受け取ります。ゲームのローカル保存、ストアサービス、問い合わせ対応、本ウェブサイトの分析、アプリの診断データ処理を以下で区別して説明します。</p>
+<h3>a. バージョン別の広告と Advertising ID</h3>
 <ul>
-  <li>処理されるデータ:Advertising ID、デバイス情報(機種、OS、言語など)、アプリの操作データ</li>
-  <li>目的:パーソナライズ広告または非パーソナライズ広告を配信し、リワード広告を通じてゲーム内報酬(ハート、コンティニュー、ポイントバフ)を提供するため</li>
-  <li>処理者:Google AdMob / Google Play サービス</li>
+  <li><strong>v27:</strong> 広告を表示せず、Android の広告識別子（Advertising ID、AAID）を使用しません。AdMob 広告 SDK は削除されています。</li>
+  <li><strong>v26 以前:</strong> Google AdMob / Google Play サービスによるパーソナライズ広告・非パーソナライズ広告やリワード広告（ハート、コンティニュー、ポイントバフ）を含む場合があります。</li>
+  <li>旧バージョンの広告サービスは、広告・報酬の提供、分析、不正行為の防止のため、広告・端末の識別子、端末情報（機種・OS・言語など）、IP アドレスとそれから推定されるおおよその位置、アプリの操作、診断・パフォーマンスデータを自動的に収集・共有する場合があります。これは v27 に AdMob 広告や同 SDK の収集機能が含まれるという意味ではありません。</li>
 </ul>
-<h3>b. アプリ内課金(Google Play Billing・Unity IAP)</h3>
+<h3>b. 過去の購入の復元と旧バージョンの購入処理</h3>
 <ul>
-  <li>処理されるデータ:購入履歴(例:Supporter Pack やその他のアイテム)</li>
-  <li>目的:決済を処理し、購入したアイテムを提供するため</li>
-  <li>決済は<strong>Google によって処理されます</strong>。運営者は、クレジットカード番号などの決済情報を直接収集または保存することはありません。</li>
+  <li><strong>v27 は新規決済を開始しません。</strong> 過去の Supporter Pack の所有確認・復元のため、Google Play Billing と Unity IAP を保持しています。</li>
+  <li>アプリ起動時や復元要求時に、ストアへの接続と過去の購入の照会が行われる場合があります。購入履歴、取引識別子、商品情報、購入状態、レシートを処理し、確認が必要な既存注文には所有状態の保存後に確認応答（acknowledgement）を送る場合があります。</li>
+  <li>本アプリは所有状態を端末に保存します。v26 以前では新規購入や購入商品の提供、および関連するストア処理が行われる場合があります。</li>
+  <li>ストアでの決済は<strong>Google が処理</strong>します。運営者は、その決済処理でクレジットカード番号などの決済手段情報を直接収集・保存しません。</li>
 </ul>
 <h3>c. ゲームのセーブデータ</h3>
 <ul>
-  <li>処理されるデータ:ゲームの進行状況、設定など</li>
-  <li>保存:<strong>お客様のデバイス内にのみ</strong>保存されます。</li>
+  <li>処理する情報:ステージ進行、ポイント、強化、チャレンジ記録、ハートの状態、設定、過去の購入の所有状態</li>
+  <li>本アプリはこれらを<strong>端末内にローカル保存</strong>します。OS によるバックアップ・復元は別途端末の設定に左右されます。</li>
   <li>本アプリにはアカウントやログイン機能はなく、ゲームのセーブデータを運営者のサーバーに送信することはありません。</li>
 </ul>
+<h3>d. 任意のお問い合わせ</h3>
+<p>メールでお問い合わせいただいた場合、運営者はメールアドレスと送信された情報を回答のために使用します。メールサービス提供者がその通信を処理する場合があります。パスワード、クレジットカード情報、不必要な機微情報は送信しないでください。</p>
+<h3>e. 本ウェブサイトの Google Analytics</h3>
+<p>このポリシーページは、ウェブサイトの利用統計と改善のため Google Analytics（GA4）を読み込みます。Google はページ訪問、ブラウザ・端末情報、Cookie などのオンライン識別子を処理する場合があります。これは<strong>ウェブサイト</strong>についての説明であり、モバイルゲーム内での GA4 の使用を意味しません。</p>
+<h3>f. アプリの Unity 診断データ</h3>
+<p>v27 は <strong>Unity Engine Diagnostics</strong> を使用します。Unity は FNDG の代理として、クラッシュログ、応答なし（ANR）エラー、エラートレース、その他の診断・アプリのパフォーマンスデータ、インストールごとの一意の識別子を収集・処理します。目的はクラッシュやエラーの調査・解決と、アプリの安定性・互換性・パフォーマンスの改善です。このインストール識別子は Android の広告識別子（AAID）とは異なります。この診断処理では、FNDG がデータ管理者（コントローラー）、Unity が処理者（プロセッサー）として機能します。</p>
 <h2>3. 第三者サービス(SDK)とポリシーへのリンク</h2>
-<p>本アプリは以下の第三者サービスを利用しています。各サービスがデータをどのように処理するかの詳細については、それぞれのポリシーをご参照ください。</p>
+<p>サービスはアプリのバージョンとゲーム・ウェブサイトの利用によって異なります。各サービスのデータ処理については、それぞれのポリシーをご参照ください。</p>
 <ul>
-  <li>Google AdMob・Google Play サービス — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-  <li>Unity(ゲームエンジン) — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+  <li>Google Play Billing・ストアサービス、Google Analytics（ウェブサイト）、Google AdMob（旧アプリバージョン） — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity（ゲームエンジン・Diagnostics・Unity IAP） — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">ゲームプレイヤーとアプリ利用者向けプライバシーポリシー</a> · <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics のプライバシーに関する案内</a></li>
 </ul>
 <h2>4. データの保持と削除</h2>
 <ul>
-  <li>お客様のデバイス内にローカル保存されたゲームデータは、<strong>本アプリをアンインストールすると削除されます</strong>。</li>
-  <li>お客様は、デバイスの設定からいつでも<strong>Advertising ID をリセットしたり、パーソナライズ広告をオプトアウトしたり</strong>することができます。(Android:設定 → Google → 広告)</li>
+  <li>アンインストールやアプリのストレージ消去によって、ローカルの進行状況や設定を失う場合があります。OS のバックアップから復元されるかは端末の設定と当該サービスによります。</li>
+  <li>アプリ内のプレイデータ初期化は、すべての設定や過去の購入の所有状態を削除するものではありません。購入の復元はゲーム進行のバックアップではありません。</li>
+  <li>アンインストールしても Google Play の購入記録は自動削除されません。ストア記録やウェブサイト分析など提供者が処理するデータは、各サービスのポリシーと設定に従って保持・削除されます。</li>
+  <li>Unity の <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 公式文書</a>は、個人データの既定の保持期間を 90 日としています。アンインストールしても、送信済みの診断データが直ちに削除されるわけではありません。診断データへのアクセス・削除は下記メールアドレスに依頼でき、運営者が Unity のサポート・削除手続きに従って対応します。対象のインストールの記録を特定するための情報が必要になる場合があります。</li>
+  <li>問い合わせの通信は、対応と適用される義務の履行に必要な範囲で保持します。問い合わせ情報の確認・訂正・削除は下記のメールアドレスにご連絡ください。保持が必要な理由があれば説明します。</li>
+  <li>旧バージョンの広告利用者は端末の広告 ID・プライバシー設定を、ウェブサイト訪問者はブラウザの Cookie・サイトデータ設定を利用できます。利用できる制御は端末・ブラウザによって異なります。</li>
 </ul>
 <h2>5. 子どものプライバシー</h2>
 <p>本アプリは一般向けのサービスであり、13歳未満の子どもを主たる対象とするものではありません。運営者は、子どもから個人情報を意図的に収集することはありません。</p>
@@ -242,7 +284,7 @@
 <h2>7. お問い合わせ</h2>
 <p>プライバシーに関するご質問は、<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a> までお問い合わせください。</p>
 <hr>
-<p class="note">本ポリシーは、モバイルゲームにおける標準的なデータの取り扱いについて記載したものであり、本アプリの Google Play Data Safety の申告内容(Advertising ID の収集:あり)と一致しています。</p>
+<p class="note">Google Play Data Safety では、現在 Google Play で配信されるすべての関連バージョン・トラックのデータ処理を考慮する必要があります。v27 が Advertising ID を使用しないことは、データ処理が一切ないことや、旧バージョンの広告・現在の購入復元が存在しないことを意味しません。Advertising ID の申告と Data Safety 全体の範囲は別です。</p>
         </div>
         <div class="tr" lang="zh">
 <h2>1. 概述</h2>
@@ -252,36 +294,48 @@
   <strong>营业执照注册号</strong>：601-16-52660<br>
   <strong>联系方式</strong>：<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
 </div>
+<p><strong>版本范围：</strong>下文的 v27 指 Android 版本代码为 27 的免费更新，不展示广告、不使用 Advertising ID，也不提供新的应用内购买。如果 v26（版本代码 26）及更早版本仍在使用或分发，则下文的旧版本说明也适用。仅凭应用显示的版本名称无法区分这些版本。</p>
 <h2>2. 我们处理的信息及处理目的</h2>
-<p>运营方<strong>不会直接收集</strong>您的姓名、电子邮箱或电话号码等个人身份识别信息。但是，集成于本应用中的第三方服务（广告、支付、游戏引擎）可能会为提供其服务而处理以下信息。</p>
-<h3>a. 广告（Google AdMob）</h3>
+<p>本应用不要求注册运营方账号或输入姓名、电子邮箱、电话号码。但如果您自愿通过电子邮件咨询，运营方会收到您的回复地址和邮件内容。游戏本地存储、商店服务、客服通信、本网站的分析及应用诊断数据处理分别说明如下。</p>
+<h3>a. 各版本的广告与 Advertising ID</h3>
 <ul>
-  <li>所处理的数据：Advertising ID、设备信息（型号、OS、语言等）、应用交互数据</li>
-  <li>目的：投放个性化或非个性化广告，并通过激励广告提供游戏内奖励（生命值、继续、积分加成）</li>
-  <li>处理方：Google AdMob / Google Play 服务</li>
+  <li><strong>v27：</strong>不展示广告，也不使用 Android 广告标识符（Advertising ID，AAID）。AdMob 广告 SDK 已移除。</li>
+  <li><strong>v26 及更早版本：</strong>可能包含由 Google AdMob / Google Play 服务提供的个性化或非个性化广告，以及激励广告（生命值、继续、积分加成）。</li>
+  <li>旧版本的广告服务可能自动收集和共享广告或设备标识符、设备信息（型号、OS、语言等）、IP 地址及据此推测的大致位置、应用交互及诊断或性能数据，用于广告和奖励、分析及防止欺诈。这不表示 v27 包含 AdMob 广告或该 SDK 的收集功能。</li>
 </ul>
-<h3>b. 应用内购买（Google Play Billing · Unity IAP）</h3>
+<h3>b. 恢复既有购买与旧版本的购买流程</h3>
 <ul>
-  <li>所处理的数据：购买记录（例如 Supporter Pack 及其他物品）</li>
-  <li>目的：处理付款并交付所购物品</li>
-  <li>付款<strong>由 Google 处理</strong>。运营方不会直接收集或存储信用卡号等支付明细。</li>
+  <li><strong>v27 不会发起新付款。</strong>为验证和恢复已有 Supporter Pack 的拥有状态，仍保留 Google Play Billing 和 Unity IAP。</li>
+  <li>应用启动或您请求恢复时，可能连接商店并查询过去的购买。处理的信息包括购买记录、交易标识符、商品信息、购买状态及收据；对于需要确认的既有订单，可在保存拥有状态后发送确认应答（acknowledgement）。</li>
+  <li>本应用将拥有状态标记保存在设备上。v26 及更早版本仍可能提供新购买、商品交付及相关商店处理。</li>
+  <li>商店付款<strong>由 Google 处理</strong>。运营方不会在该支付流程中直接收集或存储信用卡号等支付方式信息。</li>
 </ul>
 <h3>c. 游戏存档数据</h3>
 <ul>
-  <li>所处理的数据：游戏进度、设置等</li>
-  <li>存储：<strong>仅存储于您的设备本地</strong>。</li>
+  <li>处理的信息：关卡进度、积分、强化、挑战记录、生命值状态、设置以及既有购买的拥有状态</li>
+  <li>本应用将这些数据<strong>存储于设备本地</strong>。操作系统的备份和恢复可能取决于单独的设备设置。</li>
   <li>本应用没有账号或登录功能，也不会将游戏存档数据传输至运营方的服务器。</li>
 </ul>
+<h3>d. 自愿提交的客服咨询</h3>
+<p>如果您发送咨询邮件，运营方会使用您的电子邮箱地址和您发送的信息来回复请求。电子邮件服务提供商可能处理该通信。请勿发送密码、信用卡信息或不必要的敏感信息。</p>
+<h3>e. 本网站的 Google Analytics</h3>
+<p>本政策网页加载 Google Analytics（GA4），用于网站使用统计和改进。Google 可能处理页面访问、浏览器或设备信息以及 Cookie 等在线标识符。此说明针对<strong>网站</strong>，不表示移动游戏内使用 GA4。</p>
+<h3>f. 应用的 Unity 诊断数据</h3>
+<p>v27 使用 <strong>Unity Engine Diagnostics</strong>。Unity 代表 FNDG 收集和处理崩溃日志、应用无响应（ANR）错误、错误跟踪、其他诊断及应用性能数据，以及每次安装专用的唯一标识符。目的是调查和解决崩溃与错误，并改进应用的稳定性、兼容性和性能。该安装标识符不是 Android 广告标识符（AAID）。在此诊断处理中，FNDG 是数据控制者，Unity 是受托处理者。</p>
 <h2>3. 第三方服务（SDK）及政策链接</h2>
-<p>本应用使用以下第三方服务。有关各服务如何处理数据的详细信息，请参阅其各自的政策。</p>
+<p>相关服务取决于应用版本以及您使用的是游戏还是网站。有关各服务的数据处理，请参阅其各自的政策。</p>
 <ul>
-  <li>Google AdMob · Google Play 服务 — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-  <li>Unity（游戏引擎） — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+  <li>Google Play Billing 和商店服务、Google Analytics（网站）、Google AdMob（旧应用版本） — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity（游戏引擎、Diagnostics 及 Unity IAP） — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">游戏玩家和应用用户隐私政策</a> · <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 隐私说明</a></li>
 </ul>
 <h2>4. 数据保留与删除</h2>
 <ul>
-  <li>存储于您设备本地的游戏数据将<strong>在您卸载本应用时被删除</strong>。</li>
-  <li>您可随时在设备设置中<strong>重置您的 Advertising ID 或选择退出个性化广告</strong>。（Android：设置 → Google → 广告）</li>
+  <li>卸载应用或清除其存储空间可能导致本地进度和设置丢失。是否从操作系统备份恢复，取决于设备设置和相关服务。</li>
+  <li>应用内重置游戏数据不会删除所有设置或既有购买的拥有状态。恢复购买并不等于备份游戏进度。</li>
+  <li>卸载应用不会自动删除 Google Play 的购买记录。商店记录、网站分析等由提供商处理的数据，按照各服务的政策和设置保留或删除。</li>
+  <li>Unity 的 <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 官方文档</a>说明，个人数据的默认保留期限为 90 天。卸载应用不会立即删除已经传输的诊断数据。您可通过下方邮箱请求访问或删除诊断数据，运营方将按照 Unity 的支持和删除流程处理。可能需要用于定位相关安装记录的信息。</li>
+  <li>客服通信按解决请求及履行适用义务所需的范围保留。如需查询、更正或删除咨询信息，请联系下方邮箱；若有必要保留的理由，我们会予以说明。</li>
+  <li>旧版本的广告用户可使用设备的广告 ID 或广告隐私控制；网站访问者可使用浏览器的 Cookie 或网站数据控制。可用控制因设备和浏览器而异。</li>
 </ul>
 <h2>5. 儿童隐私</h2>
 <p>本应用为面向大众的服务，并非主要面向 13 周岁以下儿童。运营方不会在知情的情况下收集儿童的个人信息。</p>
@@ -290,7 +344,7 @@
 <h2>7. 联系方式</h2>
 <p>如对隐私有任何疑问，请联系 <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>。</p>
 <hr>
-<p class="note">本政策描述了移动游戏的标准数据处理方式，并与本应用的 Google Play Data Safety 声明（Advertising ID 收集：是）保持一致。</p>
+<p class="note">Google Play Data Safety 需要考虑当前通过 Google Play 分发的所有相关版本和轨道的数据处理。v27 不使用 Advertising ID，不意味着完全没有数据处理，也不意味着旧版本广告或当前购买恢复不存在。Advertising ID 声明与完整的 Data Safety 范围应予区分。</p>
         </div>
         <div class="tr" lang="zh-Hant">
 <h2>1. 概述</h2>
@@ -300,36 +354,48 @@
   <strong>營業執照註冊號</strong>：601-16-52660<br>
   <strong>聯絡方式</strong>：<a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></p>
 </div>
+<p><strong>版本範圍：</strong>下文的 v27 指 Android 版本代碼為 27 的免費更新，不顯示廣告、不使用 Advertising ID，也不提供新的應用內購買。如果 v26（版本代碼 26）及更早版本仍在使用或發布，則下文的舊版本說明也適用。僅憑應用顯示的版本名稱無法區分這些版本。</p>
 <h2>2. 我們處理的資訊及處理目的</h2>
-<p>運營方<strong>不會直接收集</strong>您的姓名、電子郵件或電話號碼等個人身份識別資訊。但是，整合於本應用中的第三方服務（廣告、支付、遊戲引擎）可能會為提供其服務而處理以下資訊。</p>
-<h3>a. 廣告（Google AdMob）</h3>
+<p>本應用不要求註冊運營方帳號或輸入姓名、電子郵件、電話號碼。但如果您自願透過電子郵件諮詢，運營方會收到您的回覆地址和郵件內容。遊戲本機儲存、商店服務、客服通訊、本網站的分析及應用診斷資料處理分別說明如下。</p>
+<h3>a. 各版本的廣告與 Advertising ID</h3>
 <ul>
-  <li>所處理的資料：Advertising ID、裝置資訊（型號、OS、語言等）、應用互動資料</li>
-  <li>目的：投放個人化或非個人化廣告，並透過激勵廣告提供遊戲內獎勵（生命值、繼續、積分加成）</li>
-  <li>處理方：Google AdMob / Google Play 服務</li>
+  <li><strong>v27：</strong>不顯示廣告，也不使用 Android 廣告識別碼（Advertising ID，AAID）。AdMob 廣告 SDK 已移除。</li>
+  <li><strong>v26 及更早版本：</strong>可能包含由 Google AdMob / Google Play 服務提供的個人化或非個人化廣告，以及獎勵式廣告（生命值、繼續、積分加成）。</li>
+  <li>舊版本的廣告服務可能自動收集與分享廣告或裝置識別碼、裝置資訊（型號、OS、語言等）、IP 位址及據此推測的大略位置、應用互動及診斷或效能資料，用於廣告與獎勵、分析及防範詐欺。這不表示 v27 包含 AdMob 廣告或該 SDK 的收集功能。</li>
 </ul>
-<h3>b. 應用內購買（Google Play Billing · Unity IAP）</h3>
+<h3>b. 還原既有購買與舊版本的購買流程</h3>
 <ul>
-  <li>所處理的資料：購買記錄（例如 Supporter Pack 及其他物品）</li>
-  <li>目的：處理付款並交付所購物品</li>
-  <li>付款<strong>由 Google 處理</strong>。運營方不會直接收集或儲存信用卡號等支付明細。</li>
+  <li><strong>v27 不會發起新付款。</strong>為驗證及還原既有 Supporter Pack 的擁有狀態，仍保留 Google Play Billing 和 Unity IAP。</li>
+  <li>應用啟動或您要求還原時，可能連接商店並查詢過去的購買。處理的資訊包括購買記錄、交易識別碼、商品資訊、購買狀態及收據；對於需要確認的既有訂單，可在儲存擁有狀態後傳送確認回應（acknowledgement）。</li>
+  <li>本應用將擁有狀態標記儲存在裝置上。v26 及更早版本仍可能提供新購買、商品交付及相關商店處理。</li>
+  <li>商店付款<strong>由 Google 處理</strong>。運營方不會在該付款流程中直接收集或儲存信用卡號等付款方式資訊。</li>
 </ul>
 <h3>c. 遊戲存檔資料</h3>
 <ul>
-  <li>所處理的資料：遊戲進度、設定等</li>
-  <li>儲存：<strong>僅儲存於您的裝置本地</strong>。</li>
+  <li>處理的資訊：關卡進度、積分、強化、挑戰記錄、生命值狀態、設定以及既有購買的擁有狀態</li>
+  <li>本應用將這些資料<strong>儲存於裝置本機</strong>。作業系統的備份與還原可能取決於個別裝置設定。</li>
   <li>本應用沒有帳號或登入功能，也不會將遊戲存檔資料傳輸至運營方的伺服器。</li>
 </ul>
+<h3>d. 自願提出的客服諮詢</h3>
+<p>如果您寄送諮詢郵件，運營方會使用您的電子郵件地址及您傳送的資訊來回覆要求。電子郵件服務提供者可能處理該通訊。請勿傳送密碼、信用卡資訊或不必要的敏感資訊。</p>
+<h3>e. 本網站的 Google Analytics</h3>
+<p>本政策網頁載入 Google Analytics（GA4），用於網站使用統計與改善。Google 可能處理頁面造訪、瀏覽器或裝置資訊以及 Cookie 等線上識別碼。此說明針對<strong>網站</strong>，不表示行動遊戲內使用 GA4。</p>
+<h3>f. 應用的 Unity 診斷資料</h3>
+<p>v27 使用 <strong>Unity Engine Diagnostics</strong>。Unity 代表 FNDG 收集與處理當機記錄、應用程式無回應（ANR）錯誤、錯誤追蹤、其他診斷及應用效能資料，以及每次安裝專用的唯一識別碼。目的是調查與解決當機和錯誤，並改善應用的穩定性、相容性與效能。該安裝識別碼不是 Android 廣告識別碼（AAID）。在此診斷處理中，FNDG 是資料控制者，Unity 是受託處理者。</p>
 <h2>3. 第三方服務（SDK）及政策連結</h2>
-<p>本應用使用以下第三方服務。有關各服務如何處理資料的詳細資訊，請參閱其各自的政策。</p>
+<p>相關服務取決於應用版本以及您使用的是遊戲還是網站。有關各服務的資料處理，請參閱其各自的政策。</p>
 <ul>
-  <li>Google AdMob · Google Play 服務 — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
-  <li>Unity（遊戲引擎） — <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">unity.com/legal/privacy-policy</a></li>
+  <li>Google Play Billing 與商店服務、Google Analytics（網站）、Google AdMob（舊應用版本） — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Unity（遊戲引擎、Diagnostics 與 Unity IAP） — <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">遊戲玩家與應用使用者隱私政策</a> · <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 隱私說明</a></li>
 </ul>
 <h2>4. 資料保留與刪除</h2>
 <ul>
-  <li>儲存於您裝置本地的遊戲資料將<strong>在您解除安裝本應用時被刪除</strong>。</li>
-  <li>您可隨時在裝置設定中<strong>重置您的 Advertising ID 或選擇退出個人化廣告</strong>。（Android：設定 → Google → 廣告）</li>
+  <li>解除安裝應用或清除其儲存空間可能導致本機進度與設定遺失。是否從作業系統備份還原，取決於裝置設定與相關服務。</li>
+  <li>應用內重設遊戲資料不會刪除所有設定或既有購買的擁有狀態。還原購買不等於備份遊戲進度。</li>
+  <li>解除安裝應用不會自動刪除 Google Play 的購買記錄。商店記錄、網站分析等由提供者處理的資料，按照各服務的政策與設定保留或刪除。</li>
+  <li>Unity 的 <a href="https://docs.unity.com/en-us/cloud/developer-data/privacy-overview" target="_blank" rel="noopener">Diagnostics 官方文件</a>說明，個人資料的預設保留期間為 90 天。解除安裝應用不會立即刪除已傳輸的診斷資料。您可透過下方信箱要求存取或刪除診斷資料，運營方將按照 Unity 的支援與刪除程序處理。可能需要用於找出相關安裝記錄的資訊。</li>
+  <li>客服通訊按解決要求及履行適用義務所需的範圍保留。如需查詢、更正或刪除諮詢資訊，請聯絡下方信箱；若有必要保留的理由，我們會予以說明。</li>
+  <li>舊版本的廣告使用者可使用裝置的廣告 ID 或廣告隱私控制；網站訪客可使用瀏覽器的 Cookie 或網站資料控制。可用控制因裝置和瀏覽器而異。</li>
 </ul>
 <h2>5. 兒童隱私</h2>
 <p>本應用為面向大眾的服務，並非主要面向 13 週歲以下兒童。運營方不會在知情的情況下收集兒童的個人資訊。</p>
@@ -338,7 +404,7 @@
 <h2>7. 聯絡方式</h2>
 <p>如對隱私有任何疑問，請聯絡 <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>。</p>
 <hr>
-<p class="note">本政策描述了行動遊戲的標準資料處理方式，並與本應用的 Google Play Data Safety 宣告（Advertising ID 收集：是）保持一致。</p>
+<p class="note">Google Play Data Safety 需要考量目前透過 Google Play 發布的所有相關版本與發布管道的資料處理。v27 不使用 Advertising ID，不代表完全沒有資料處理，也不代表舊版本廣告或目前的購買還原不存在。Advertising ID 宣告與完整的 Data Safety 範圍應予區分。</p>
         </div>
       </div>
     </div>
