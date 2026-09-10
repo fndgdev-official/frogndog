@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrow Puzzle: Calm Escape — FNDG</title>
+  <meta name="description" content="Find a clear path through 1,000 minimalist arrow puzzles. Free hints, no timer or lives, and progress saved on your device. Coming to Google Play; in review.">
+  <meta name="theme-color" content="#f8f8f2">
+  <link rel="canonical" href="https://frogndog.com/arrowpuzzle.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FNDG — Frog and Dog Games">
+  <meta property="og:title" content="Arrow Puzzle: Calm Escape">
+  <meta property="og:description" content="Find a path. Clear your mind. 1,000 arrow puzzles, free hints and no timer. Coming to Google Play · In review.">
+  <meta property="og:url" content="https://frogndog.com/arrowpuzzle.html">
+  <meta property="og:image" content="https://frogndog.com/arrowpuzzle/media/feature.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Arrow Puzzle: Calm Escape — Find a path. Clear your mind.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arrow Puzzle: Calm Escape">
+  <meta name="twitter:description" content="1,000 minimalist arrow puzzles. Free hints, no timer or lives. Coming to Google Play · In review.">
+  <meta name="twitter:image" content="https://frogndog.com/arrowpuzzle/media/feature.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f8f2;
+      --ink: #283a33;
+      --muted: #53675e;
+      --green: #326b55;
+      --line: #cbd6ce;
+      --mint: #e6eee6;
+      --night: #090d16;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-size: 17px; line-height: 1.65; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { line-height: 1.14; letter-spacing: -.035em; }
+    a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    img, video { display: block; max-width: 100%; height: auto; }
+    a:focus-visible, video:focus-visible { outline: 3px solid #1f7852; outline-offset: 5px; border-radius: 3px; }
+    ::selection { background: #cce7d7; color: #182e23; }
+    .wrap { width: min(100% - 80px, 1120px); margin-inline: auto; }
+    .skip-link { position: absolute; top: 12px; left: 16px; z-index: 20; padding: 10px 18px; background: var(--paper); color: var(--ink); transform: translateY(-180%); }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { background: var(--night); color: #f0f4f1; }
+    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { width: 30px; height: 28px; position: relative; flex: none; }
+    .brand-mark::before, .brand-mark::after { content: ""; position: absolute; top: 5px; width: 18px; height: 18px; border-radius: 50%; }
+    .brand-mark::before { background: #7cff9b; left: 0; }
+    .brand-mark::after { background: #ffc061; right: 0; }
+    .brand-name { font-size: 20px; font-weight: 750; line-height: 1.2; letter-spacing: -.02em; }
+    .brand-name small { display: block; color: #b0bbb9; font-size: 12px; letter-spacing: .12em; font-weight: 500; margin-top: 3px; }
+    .nav-back { padding: 10px 0 10px 12px; font-size: 15px; text-decoration: none; color: #e0e9e2; }
+    .nav-back:hover { text-decoration: underline; }
+    .site-header a:focus-visible, .site-footer a:focus-visible { outline-color: #7cff9b; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); align-items: center; gap: clamp(40px, 7vw, 100px); padding-block: 66px 76px; }
+    .game-icon { width: 76px; height: 76px; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 27px; }
+    .eyebrow { color: var(--green); font-size: 14px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(42px, 5.6vw, 68px); margin-block: 14px 24px; font-weight: 650; }
+    h1 span { display: block; color: var(--green); font-weight: 400; }
+    .intro { max-width: 45ch; color: var(--muted); font-size: clamp(18px, 1.65vw, 20px); }
+    .status { display: inline-flex; align-items: center; gap: 9px; color: #365c48; background: var(--mint); border: 1px solid #cbd9cc; border-radius: 999px; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 8px 13px; margin-top: 26px; }
+    .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex: none; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 25px; margin-top: 24px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; padding: 14px 23px; min-height: 52px; border-radius: 8px; background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; }
+    .button:hover { background: var(--green); }
+    .text-link { color: var(--green); font-size: 16px; padding-block: 10px; }
+    .hero-image { justify-self: center; width: min(100%, 316px); }
+    .hero-image img { width: 100%; border: 1px solid #c1cec4; border-radius: 20px; box-shadow: 0 18px 48px #25443112; }
+    .hero-image figcaption { margin-top: 14px; color: var(--muted); text-align: center; font-size: 14px; }
+    .facts { list-style: none; padding: 27px 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); gap: 25px; }
+    .facts li { padding-right: 16px; }
+    .facts strong { display: block; font-size: 23px; font-weight: 600; letter-spacing: -.025em; line-height: 1.3; }
+    .facts span { display: block; color: var(--muted); font-size: 14px; margin-top: 5px; }
+    .section { padding-block: 88px; }
+    .section-heading { margin-bottom: 32px; }
+    h2 { font-size: clamp(30px, 3.5vw, 44px); font-weight: 600; margin-top: 12px; }
+    .section-heading > p:last-child { max-width: 58ch; color: var(--muted); margin-top: 17px; }
+    .gameplay { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(45px, 8vw, 110px); align-items: center; }
+    .how-to { padding: 0; list-style: none; counter-reset: steps; margin: 31px 0 27px; }
+    .how-to li { counter-increment: steps; display: grid; grid-template-columns: 32px 1fr; gap: 15px; margin-top: 22px; }
+    .how-to li::before { content: "0" counter(steps); font-size: 14px; padding-top: 1px; font-weight: 600; color: var(--green); }
+    .how-to strong { display: block; font-size: 19px; line-height: 1.35; font-weight: 600; }
+    .how-to p { color: var(--muted); font-size: 16px; margin-top: 6px; }
+    .save-note { color: var(--muted); font-size: 16px; border-top: 1px solid var(--line); padding-top: 24px; }
+    .video-figure { width: min(100%, 336px); justify-self: center; }
+    .video-figure video { width: 100%; aspect-ratio: 9 / 16; object-fit: contain; border: 1px solid #c1cec4; border-radius: 16px; background: var(--paper); }
+    .video-figure figcaption { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 15px; }
+    .gallery-section { background: #edf1e9; border-block: 1px solid var(--line); }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; }
+    .gallery figure { min-width: 0; }
+    .gallery a { display: block; border-radius: 13px; }
+    .gallery a:hover img { border-color: var(--green); }
+    .gallery img { width: 100%; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 13px; border: 1px solid #c1cec4; }
+    .gallery figcaption { margin-top: 13px; line-height: 1.45; }
+    .gallery strong { display: block; font-weight: 600; font-size: 17px; }
+    .gallery figcaption span { font-size: 14px; color: var(--muted); }
+    .details { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(35px, 8vw, 110px); }
+    .ad-copy p { color: var(--muted); margin-bottom: 18px; }
+    .ad-copy strong { color: var(--ink); font-weight: 600; }
+    .ad-copy p:last-child { margin-bottom: 0; }
+    .support { padding: 28px 0 42px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .support p { font-size: 16px; color: var(--muted); }
+    .support-links { display: flex; flex-wrap: wrap; gap: 8px 25px; font-size: 16px; }
+    .support-links a { padding-block: 10px; color: var(--green); }
+    .site-footer { background: var(--night); color: #f0f4f1; padding-block: 35px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer-inner p { color: #b0bbb9; font-size: 14px; }
+    .footer-inner strong { color: #f0f4f1; font-weight: 600; }
+    .footer-inner a { font-size: 14px; padding-block: 10px; }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 48px, 660px); }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding-block: 44px 50px; }
+      .hero-copy { max-width: 560px; }
+      .hero-image { width: min(75%, 316px); }
+      .game-icon { width: 64px; height: 64px; margin-bottom: 23px; }
+      h1 { font-size: clamp(40px, 7.5vw, 60px); }
+      .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+      .section { padding-block: 60px; }
+      .gameplay { grid-template-columns: 1fr; gap: 35px; }
+      .video-figure { width: min(85%, 336px); }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+      .details { grid-template-columns: 1fr; gap: 24px; }
+      .details .section-heading { margin-bottom: 0; }
+      .support { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 36px); }
+      .nav { min-height: 78px; gap: 12px; }
+      .brand { gap: 8px; }
+      .brand-name small { font-size: 12px; }
+      .nav-back { font-size: 14px; }
+      .hero-image { width: min(88%, 300px); }
+      .status { font-size: 14px; padding-inline: 11px; max-width: 100%; }
+      .facts strong { font-size: 21px; }
+      .gallery { gap: 26px 14px; }
+      .gallery strong { font-size: 16px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="FNDG home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">FNDG<small>FROG · DOG</small></span>
+      </a>
+      <a class="nav-back" href="index.html#games">← All games</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="game-title">
+      <div class="hero-copy">
+        <img class="game-icon" src="arrowpuzzle/media/icon.png" alt="Arrow Puzzle icon: three arrows finding their way out" width="512" height="512">
+        <p class="eyebrow">A quiet puzzle by FNDG</p>
+        <h1 id="game-title">Arrow Puzzle: <span>Calm Escape</span></h1>
+        <p class="intro">Find a path. Clear your mind. Tap an arrow with a clear way out, then untangle the board one move at a time.</p>
+        <p class="status">Coming to Google Play · In review</p>
+        <div class="hero-actions">
+          <a class="button" href="#gameplay">Watch gameplay <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#screenshots">Explore the puzzles</a>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="arrowpuzzle/media/03-dense-level-1000.png" alt="Level 1000: a dense board of 118 interlocking arrows, with Restart and Hint controls" width="1080" height="1920" fetchpriority="high">
+        <figcaption>Level 1000 · One clear path at a time.</figcaption>
+      </figure>
+    </section>
+
+    <div class="wrap">
+      <ul class="facts" aria-label="Game features">
+        <li><strong>1,000 levels</strong><span>From first steps to dense boards</span></li>
+        <li><strong>Free hints</strong><span>A little help whenever you need it</span></li>
+        <li><strong>No timer. No lives.</strong><span>Room to think at your own pace</span></li>
+        <li><strong>Every arrow saved</strong><span>Progress stays on your device</span></li>
+      </ul>
+    </div>
+
+    <section id="gameplay" class="wrap section gameplay" aria-labelledby="gameplay-title">
+      <div>
+        <p class="eyebrow">Gameplay</p>
+        <h2 id="gameplay-title">A small move.<br>A little more space.</h2>
+        <ol class="how-to">
+          <li><div><strong>Find an open path.</strong><p>Look in the direction an arrow points. It needs a clear route to leave the board.</p></div></li>
+          <li><div><strong>Tap to let it go.</strong><p>Each arrow you remove makes room for the next. Read the board and choose your order.</p></div></li>
+          <li><div><strong>Take your time.</strong><p>Clear the board at your own pace. Hints are free, with no timer or lives to manage.</p></div></li>
+        </ol>
+        <p class="save-note">Leave a puzzle halfway through and return to the arrows you left. Progress saves after each arrow on your device; there is no account or FNDG cloud sync.</p>
+      </div>
+      <figure class="video-figure">
+        <video controls playsinline preload="metadata" poster="arrowpuzzle/media/03-dense-level-1000.png" width="1080" height="1920" aria-label="Arrow Puzzle gameplay video" aria-describedby="gameplay-description">
+          <source src="arrowpuzzle/media/gameplay.mp4" type="video/mp4">
+          Your browser does not support this video. <a href="arrowpuzzle/media/gameplay.mp4">Open the gameplay video.</a>
+        </video>
+        <figcaption id="gameplay-description">Watch Level 1 clear, then explore dense boards and gourd, horse and dog shapes. Actual game capture recorded on Windows. Sound effects; no spoken dialogue.</figcaption>
+      </figure>
+    </section>
+
+    <section id="screenshots" class="section gallery-section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Inside the game</p>
+          <h2 id="gallery-title">Simple beginnings.<br>Unexpected shapes.</h2>
+          <p>Six views from the actual game. Select a screenshot to see it at full size.</p>
+        </div>
+        <div class="gallery">
+          <figure>
+            <a href="arrowpuzzle/media/01-early-level-0001.png" aria-label="View Level 1 screenshot at full size"><img src="arrowpuzzle/media/01-early-level-0001.png" alt="Level 1 with three arrows and the instruction to tap an arrow with a clear path" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 1 · First steps</strong><span>Three arrows. A clear place to begin.</span></figcaption>
+          </figure>
+          <figure>
+            <a href="arrowpuzzle/media/02-mid-level-0350.png" aria-label="View Level 350 screenshot at full size"><img src="arrowpuzzle/media/02-mid-level-0350.png" alt="Level 350 with 57 arrows forming a tall rectangular puzzle" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 350 · Winding paths</strong><span>A rectangular web of 57 arrows.</span></figcaption>
+          </figure>
+          <figure>
+            <a href="arrowpuzzle/media/03-dense-level-1000.png" aria-label="View Level 1000 screenshot at full size"><img src="arrowpuzzle/media/03-dense-level-1000.png" alt="Level 1000 with 118 arrows filling a dense rectangular board" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 1000 · Dense escape</strong><span>118 arrows, ready to untangle.</span></figcaption>
+          </figure>
+          <figure>
+            <a href="arrowpuzzle/media/04-gourd-level-0665.png" aria-label="View Level 665 gourd screenshot at full size"><img src="arrowpuzzle/media/04-gourd-level-0665.png" alt="Level 665 with 94 arrows arranged in a gourd silhouette" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 665 · Gourd</strong><span>A familiar shape, 94 small decisions.</span></figcaption>
+          </figure>
+          <figure>
+            <a href="arrowpuzzle/media/05-horse-level-0655.png" aria-label="View Level 655 horse screenshot at full size"><img src="arrowpuzzle/media/05-horse-level-0655.png" alt="Level 655 with 86 arrows forming the silhouette of a horse" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 655 · Horse</strong><span>Find a way through 86 arrows.</span></figcaption>
+          </figure>
+          <figure>
+            <a href="arrowpuzzle/media/06-dog-level-0670.png" aria-label="View Level 670 dog screenshot at full size"><img src="arrowpuzzle/media/06-dog-level-0670.png" alt="Level 670 with 100 arrows arranged in a dog silhouette" width="1080" height="1920" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Level 670 · Dog</strong><span>A hundred arrows with a little character.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section details" aria-labelledby="ads-title">
+      <div class="section-heading">
+        <p class="eyebrow">Free to play</p>
+        <h2 id="ads-title">Space to solve.<br>A clear ad policy.</h2>
+      </div>
+      <div class="ad-copy">
+        <p><strong>Levels 1–30 show no ads.</strong> After those levels, an ad may appear between puzzles on your day's 5th new level clear, then your 15th, 25th and every 10 new clears after that.</p>
+        <p>New clears in levels 1–30 still count toward that daily total, even though those levels show no ads. Clear <strong>up to four new levels a day</strong> and no ads appear.</p>
+        <p><strong>No ads interrupt a puzzle.</strong> Unavailable ads are skipped so you can continue. Hints stay free.</p>
+      </div>
+    </section>
+
+    <div class="wrap support">
+      <p>Game interface: English.<br>Questions about Arrow Puzzle?</p>
+      <div class="support-links">
+        <a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a>
+        <a href="/arrowpuzzle/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>FNDG — Frog and Dog Games</strong><br>© 2026 FNDG</p>
+      <a href="index.html#games">← Back to all games</a>
+    </div>
+  </footer>
+</body>
+</html>

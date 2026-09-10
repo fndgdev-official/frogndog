@@ -19,7 +19,7 @@
   });
 </script>
 <title>FNDG — Frog and Dog Games</title>
-<meta name="description" content="FNDG (Frog and Dog Games) — 한국의 2인 인디 게임 스튜디오. PuzzleShooter · Ghost Chase · FD Quest를 만듭니다. An indie game studio from Korea." />
+<meta name="description" content="FNDG (Frog and Dog Games) — 한국의 2인 인디 게임 스튜디오. PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · FD Quest를 만듭니다. An indie game studio from Korea." />
 <link rel="canonical" href="https://frogndog.com/" />
 <meta name="theme-color" content="#040409" />
 
@@ -29,7 +29,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="FNDG — Frog and Dog Games" />
 <meta property="og:title" content="FNDG — Frog and Dog Games" />
-<meta property="og:description" content="한국의 2인 인디 게임 스튜디오. 개구리와 강아지가 만드는 작은 우주 — PuzzleShooter & FD Quest." />
+<meta property="og:description" content="한국의 2인 인디 게임 스튜디오. PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · FD Quest." />
 <meta property="og:url" content="https://frogndog.com/" />
 <meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -38,7 +38,7 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="FNDG — Frog and Dog Games" />
-<meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — PuzzleShooter & FD Quest." />
+<meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · FD Quest." />
 <meta name="twitter:image" content="https://frogndog.com/og-cover.jpg" />
 
 <script>(function(){try{var V=['ko','en','ja','zh','zh-Hant'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':(/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':(n.indexOf('zh')===0?'zh':'en'));}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
@@ -47,6 +47,12 @@
 <style>
   .puzzleshooter-panel .gp-media { background: #69adbf; }
   .puzzleshooter-panel .gp-media img { object-fit: contain; }
+  .arrowpuzzle-panel { --c: #aed4b9; }
+  .arrowpuzzle-panel .gp-media { background: #f6f3eb; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 36px 24px; }
+  .arrowpuzzle-panel .gp-media img { position: static; width: 100%; height: auto; max-height: 510px; object-fit: contain; border: 1px solid #d9dece; border-radius: 16px; box-shadow: 0 12px 28px #243e2520; }
+  .arrowpuzzle-panel .gp-tag { flex-wrap: wrap; letter-spacing: .1em; }
+  .arrowpuzzle-panel .gp-title small { display: block; margin-top: 14px; color: var(--c); font-size: .43em; font-weight: 500; letter-spacing: .02em; }
+  @media (max-width: 880px) { .arrowpuzzle-panel .gp-media { min-height: 0; padding: 28px 20px; gap: 14px; } .arrowpuzzle-panel .gp-media img { max-height: 430px; } }
   @media (max-width: 880px) { .puzzleshooter-panel .gp-media { min-height: 0; aspect-ratio: 1024 / 500; } }
 </style>
 
@@ -58,11 +64,12 @@
   "alternateName": "Frog and Dog Games",
   "url": "https://frogndog.com/",
   "email": "fndgdev@gmail.com",
-  "description": "An indie game studio from Korea. Makers of PuzzleShooter and FD Quest.",
+  "description": "An indie game studio from Korea. Makers of PuzzleShooter, Ghost Chase, Arrow Puzzle: Calm Escape and FD Quest.",
   "foundingLocation": "Republic of Korea",
   "makesOffer": [
     { "@type": "VideoGame", "name": "PuzzleShooter", "gamePlatform": "Android" },
     { "@type": "VideoGame", "name": "Ghost Chase", "gamePlatform": ["Web", "Android"] },
+    { "@type": "VideoGame", "name": "Arrow Puzzle: Calm Escape", "gamePlatform": "Android", "url": "https://frogndog.com/arrowpuzzle.html", "inLanguage": "en" },
     { "@type": "VideoGame", "name": "FD Quest", "gamePlatform": ["PC", "Console"] }
   ]
 }
@@ -246,7 +253,7 @@
       <div class="sec-head">
         <span class="kicker reveal"><span class="dot"></span>// 002 — OUR GAMES</span>
         <h2 class="reveal d1"><span class="tr" lang="ko">우리가 만든 우주들.</span><span class="tr" lang="en">The worlds we've built.</span><span class="tr" lang="ja">私たちが作った宇宙たち。</span><span class="tr" lang="zh">我们打造的宇宙。</span><span class="tr" lang="zh-Hant">我們打造的宇宙。</span></h2>
-        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 세 개의 우주.</span><span class="tr" lang="en">Three universes, made by two.</span><span class="tr" lang="ja">2人で作った3つの宇宙。</span><span class="tr" lang="zh">两人打造的三个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的三個宇宙。</span></div>
+        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 네 개의 우주.</span><span class="tr" lang="en">Four universes, made by two.</span><span class="tr" lang="ja">2人で作った4つの宇宙。</span><span class="tr" lang="zh">两人打造的四个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的四個宇宙。</span></div>
       </div>
 
       <a class="game-panel reveal puzzleshooter-panel" href="puzzleshooter.html">
@@ -281,6 +288,21 @@
         </div>
       </a>
 
+      <a class="game-panel arrowpuzzle-panel reveal" href="arrowpuzzle.html">
+        <div class="gp-media">
+          <img src="arrowpuzzle/media/03-dense-level-1000.png" alt="Arrow Puzzle level 1000 with a dense board of winding arrows" width="1080" height="1920" loading="lazy">
+          <img src="arrowpuzzle/media/06-dog-level-0670.png" alt="Arrow Puzzle level 670 with arrows arranged in the shape of a dog" width="1080" height="1920" loading="lazy">
+        </div>
+        <div class="gp-body">
+          <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">출시 심사 중</span><span class="tr" lang="en">IN REVIEW</span><span class="tr" lang="ja">審査中</span><span class="tr" lang="zh">审核中</span><span class="tr" lang="zh-Hant">審核中</span></span> LOGIC · ARROW PUZZLE</div>
+          <div class="gp-title">Arrow Puzzle: <small>Calm Escape</small></div>
+          <div class="gp-kr"><span class="tr" lang="ko">길을 비우고, 생각을 쉬게 하는 화살표 퍼즐</span><span class="tr" lang="en">Clear a path. Give your mind a little room.</span><span class="tr" lang="ja">道を開いて、ひと息つける矢印パズル</span><span class="tr" lang="zh">清出一条路，让思绪歇一歇</span><span class="tr" lang="zh-Hant">清出一條路，讓思緒歇一歇</span></div>
+          <p class="gp-desc"><span class="tr" lang="ko">나갈 수 있는 화살표를 톡 눌러 보드를 비워보세요. 간단한 첫 판부터 촘촘한 모양 퍼즐까지 1,000스테이지. 화살표 하나마다 진행이 저장됩니다.</span><span class="tr" lang="en">Tap an arrow with a clear path and make room for the next. Explore 1,000 levels, from a simple first board to intricate shapes. Every arrow you clear is saved.</span><span class="tr" lang="ja">進路の空いた矢印をタップして、盤面を空にしましょう。簡単な最初の問題から緻密な形のパズルまで全1,000ステージ。矢印を消すたびに進行を保存します。</span><span class="tr" lang="zh">轻点前路畅通的箭头，逐步清空棋盘。从简单入门到密集的造型谜题，共1,000关。每移走一支箭头都会保存进度。</span><span class="tr" lang="zh-Hant">輕點前路暢通的箭頭，逐步清空棋盤。從簡單入門到密集的造型謎題，共1,000關。每移走一支箭頭都會儲存進度。</span></p>
+          <div class="gp-meta"><span><b>1,000</b> LEVELS</span><span><b>FREE</b></span><span><b>ANDROID</b></span><span><b>ENGLISH</b></span></div>
+          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span><span class="tr" lang="zh-Hant">查看詳情</span> <span class="arrow">→</span></span>
+        </div>
+      </a>
+
       <a class="game-panel amber reveal" href="fd-quest.html">
         <div class="gp-media">
           <img src="fdq-map-1.jpg" alt="FD Quest world map art" loading="lazy">
@@ -311,8 +333,8 @@
 
 <footer class="footer">
   <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span><span class="tr" lang="ja">大韓民国</span><span class="tr" lang="zh">大韩民国</span><span class="tr" lang="zh-Hant">大韓民國</span></span></div>
-  <div class="col"><span class="h">Games</span><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="fd-quest.html">FD Quest</a></div>
-  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/ghostchase/privacy.html"><span class="tr" lang="ko">Ghost Chase 개인정보처리방침</span><span class="tr" lang="en">Ghost Chase Privacy Policy</span><span class="tr" lang="ja">Ghost Chase プライバシーポリシー</span><span class="tr" lang="zh">Ghost Chase 隐私政策</span><span class="tr" lang="zh-Hant">Ghost Chase 隱私政策</span></a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span><span class="tr" lang="zh-Hant">PuzzleShooter 隱私政策</span></a></div>
+  <div class="col"><span class="h">Games</span><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="fd-quest.html">FD Quest</a></div>
+  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/ghostchase/privacy.html"><span class="tr" lang="ko">Ghost Chase 개인정보처리방침</span><span class="tr" lang="en">Ghost Chase Privacy Policy</span><span class="tr" lang="ja">Ghost Chase プライバシーポリシー</span><span class="tr" lang="zh">Ghost Chase 隐私政策</span><span class="tr" lang="zh-Hant">Ghost Chase 隱私政策</span></a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span><span class="tr" lang="zh-Hant">PuzzleShooter 隱私政策</span></a><a href="/arrowpuzzle/privacy.html"><span class="tr" lang="ko">Arrow Puzzle 개인정보처리방침</span><span class="tr" lang="en">Arrow Puzzle Privacy Policy</span><span class="tr" lang="ja">Arrow Puzzle プライバシーポリシー</span><span class="tr" lang="zh">Arrow Puzzle 隐私政策</span><span class="tr" lang="zh-Hant">Arrow Puzzle 隱私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
 
