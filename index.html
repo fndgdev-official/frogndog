@@ -14,8 +14,9 @@
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a'); if(!a) return;
     var h = a.getAttribute('href') || '';
-    if(h.indexOf('play.google.com') > -1){ gtag('event','store_click',{store:'google_play', game:'puzzleshooter'}); }
-    else if(h.charAt(0)==='/' && h.indexOf('/play') === 0){ gtag('event','web_play_click',{game:'puzzleshooter'}); }
+    var game = h.indexOf('arrowpuzzle') > -1 ? 'arrowpuzzle' : h.indexOf('ghostchase') > -1 ? 'ghostchase' : 'puzzleshooter';
+    if(h.indexOf('play.google.com') > -1){ gtag('event','store_click',{store:'google_play', game:game}); }
+    else if(h.charAt(0)==='/' && h.indexOf('/play') === 0){ gtag('event','web_play_click',{game:game}); }
   });
 </script>
 <title>FNDG — Frog and Dog Games</title>
@@ -48,10 +49,15 @@
   .puzzleshooter-panel .gp-media { background: #69adbf; }
   .puzzleshooter-panel .gp-media img { object-fit: contain; }
   .arrowpuzzle-panel { --c: #aed4b9; }
-  .arrowpuzzle-panel .gp-media { background: #f6f3eb; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 36px 24px; }
+  .arrowpuzzle-panel .gp-media { background: radial-gradient(ellipse at 50% 70%, #aed4b915, transparent 70%); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 36px 24px; }
   .arrowpuzzle-panel .gp-media img { position: static; width: 100%; height: auto; max-height: 510px; object-fit: contain; border: 1px solid #d9dece; border-radius: 16px; box-shadow: 0 12px 28px #243e2520; }
   .arrowpuzzle-panel .gp-tag { flex-wrap: wrap; letter-spacing: .1em; }
   .arrowpuzzle-panel .gp-title small { display: block; margin-top: 14px; color: var(--c); font-size: .43em; font-weight: 500; letter-spacing: .02em; }
+  .arrowpuzzle-panel .gp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 22px; }
+  .arrowpuzzle-panel .gp-actions .gp-link { margin-top: 0; min-height: 44px; }
+  .arrowpuzzle-panel .gp-play { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 20px; border-radius: 999px; background: var(--c); color: #08130d; font-weight: 700; text-align: center; }
+  .arrowpuzzle-panel .gp-actions a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+  .arrowpuzzle-panel .gp-availability { margin-top: 16px; color: var(--ink-2); font-size: 13px; line-height: 1.6; }
   @media (max-width: 880px) { .arrowpuzzle-panel .gp-media { min-height: 0; padding: 28px 20px; gap: 14px; } .arrowpuzzle-panel .gp-media img { max-height: 430px; } }
   @media (max-width: 880px) { .puzzleshooter-panel .gp-media { min-height: 0; aspect-ratio: 1024 / 500; } }
 </style>
@@ -69,7 +75,7 @@
   "makesOffer": [
     { "@type": "VideoGame", "name": "PuzzleShooter", "gamePlatform": "Android" },
     { "@type": "VideoGame", "name": "Ghost Chase", "gamePlatform": ["Web", "Android"] },
-    { "@type": "VideoGame", "name": "Arrow Puzzle: Calm Escape", "gamePlatform": "Android", "url": "https://frogndog.com/arrowpuzzle.html", "inLanguage": "en" },
+    { "@type": "VideoGame", "name": "Arrow Puzzle: Calm Escape", "gamePlatform": ["Web", "Android"], "url": "https://frogndog.com/arrowpuzzle.html", "inLanguage": "en" },
     { "@type": "VideoGame", "name": "FD Quest", "gamePlatform": ["PC", "Console"] }
   ]
 }
@@ -288,20 +294,24 @@
         </div>
       </a>
 
-      <a class="game-panel arrowpuzzle-panel reveal" href="arrowpuzzle.html">
+      <article class="game-panel arrowpuzzle-panel reveal" aria-label="Arrow Puzzle: Calm Escape">
         <div class="gp-media">
           <img src="arrowpuzzle/media/03-dense-level-1000.png" alt="Arrow Puzzle level 1000 with a dense board of winding arrows" width="1080" height="1920" loading="lazy">
           <img src="arrowpuzzle/media/06-dog-level-0670.png" alt="Arrow Puzzle level 670 with arrows arranged in the shape of a dog" width="1080" height="1920" loading="lazy">
         </div>
         <div class="gp-body">
-          <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">출시 심사 중</span><span class="tr" lang="en">IN REVIEW</span><span class="tr" lang="ja">審査中</span><span class="tr" lang="zh">审核中</span><span class="tr" lang="zh-Hant">審核中</span></span> LOGIC · ARROW PUZZLE</div>
+          <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">웹에서 무료 플레이</span><span class="tr" lang="en">PLAY FREE ON WEB</span><span class="tr" lang="ja">ブラウザで無料プレイ</span><span class="tr" lang="zh">网页免费畅玩</span><span class="tr" lang="zh-Hant">網頁免費暢玩</span></span> LOGIC · ARROW PUZZLE</div>
           <div class="gp-title">Arrow Puzzle: <small>Calm Escape</small></div>
           <div class="gp-kr"><span class="tr" lang="ko">길을 비우고, 생각을 쉬게 하는 화살표 퍼즐</span><span class="tr" lang="en">Clear a path. Give your mind a little room.</span><span class="tr" lang="ja">道を開いて、ひと息つける矢印パズル</span><span class="tr" lang="zh">清出一条路，让思绪歇一歇</span><span class="tr" lang="zh-Hant">清出一條路，讓思緒歇一歇</span></div>
           <p class="gp-desc"><span class="tr" lang="ko">나갈 수 있는 화살표를 톡 눌러 보드를 비워보세요. 간단한 첫 판부터 촘촘한 모양 퍼즐까지 1,000스테이지. 화살표 하나마다 진행이 저장됩니다.</span><span class="tr" lang="en">Tap an arrow with a clear path and make room for the next. Explore 1,000 levels, from a simple first board to intricate shapes. Every arrow you clear is saved.</span><span class="tr" lang="ja">進路の空いた矢印をタップして、盤面を空にしましょう。簡単な最初の問題から緻密な形のパズルまで全1,000ステージ。矢印を消すたびに進行を保存します。</span><span class="tr" lang="zh">轻点前路畅通的箭头，逐步清空棋盘。从简单入门到密集的造型谜题，共1,000关。每移走一支箭头都会保存进度。</span><span class="tr" lang="zh-Hant">輕點前路暢通的箭頭，逐步清空棋盤。從簡單入門到密集的造型謎題，共1,000關。每移走一支箭頭都會儲存進度。</span></p>
-          <div class="gp-meta"><span><b>1,000</b> LEVELS</span><span><b>FREE</b></span><span><b>ANDROID</b></span><span><b>ENGLISH</b></span></div>
-          <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span><span class="tr" lang="zh-Hant">查看詳情</span> <span class="arrow">→</span></span>
+          <div class="gp-meta"><span><b>1,000</b> LEVELS</span><span><b>FREE</b></span><span><b>WEB</b></span><span><b>ENGLISH</b></span></div>
+          <div class="gp-actions">
+            <a class="gp-play" href="/play-arrowpuzzle/"><span class="tr" lang="ko">브라우저에서 무료로 플레이</span><span class="tr" lang="en">Play free in browser</span><span class="tr" lang="ja">ブラウザで無料プレイ</span><span class="tr" lang="zh">在浏览器中免费畅玩</span><span class="tr" lang="zh-Hant">在瀏覽器中免費暢玩</span></a>
+            <a class="gp-link" href="arrowpuzzle.html"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span><span class="tr" lang="zh-Hant">查看詳情</span> <span class="arrow">→</span></a>
+          </div>
+          <p class="gp-availability"><span class="tr" lang="ko">웹 버전은 광고 없이 무료 · Android 버전은 Google Play 심사 중</span><span class="tr" lang="en">Free, ad-free web play · Android version under Google Play review</span><span class="tr" lang="ja">Web版は無料・広告なし · Android版はGoogle Play審査中</span><span class="tr" lang="zh">网页版免费且无广告 · Android版正在接受Google Play审核</span><span class="tr" lang="zh-Hant">網頁版免費且無廣告 · Android版正在接受Google Play審核</span></p>
         </div>
-      </a>
+      </article>
 
       <a class="game-panel amber reveal" href="fd-quest.html">
         <div class="gp-media">
