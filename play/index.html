@@ -1,183 +1,123 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | PuzzleShooter</title>
-    <!-- Google tag (gtag.js) — GA4 frogndog.com -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1ESCDQDS9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-R1ESCDQDS9');
-      gtag('event','web_play_start',{game:'puzzleshooter'});
-    </script>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  
-    <style>
-      /* FNDG-WEB-STYLE */
-      body { margin:0; background:#11131a; overflow:hidden; }
-      #unity-container { position:fixed; inset:0; display:flex; justify-content:center; align-items:center; }
-      #unity-canvas { background:#11131a; }
-      #unity-footer { display:none; }
-      /* FNDG 웹→앱 CTA (게임 캔버스 밖 여백에 표시) */
-      #fndg-getapp{position:fixed;z-index:30;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;
-        background:#0f9d58;color:#fff;text-decoration:none;padding:11px 16px;border-radius:12px;
-        font:600 14px/1.15 system-ui,-apple-system,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .12s,opacity .35s}
-      #fndg-getapp:hover{transform:translateY(-2px)}
-      #fndg-getapp.fndg-hide{opacity:0;pointer-events:none;transform:translateY(8px)}
-      #fndg-getapp .pi{font-size:20px;line-height:1}
-      #fndg-getapp small{display:block;font-weight:500;opacity:.9;font-size:11px}
-      @media (max-width:760px){#fndg-getapp{right:10px;bottom:10px;padding:8px 11px;font-size:12px}
-        #fndg-getapp .pi{font-size:16px}#fndg-getapp small{font-size:10px}}
-    </style>
-  </head>
-  <body>
-    <a href="/" title="frogndog.com 홈으로" style="position:fixed;top:12px;left:16px;z-index:20;font:600 15px/1 system-ui,sans-serif;color:#a8e063;text-decoration:none;background:rgba(17,19,26,0.55);padding:7px 12px;border-radius:8px;">← FNDG</a>
-    <a id="fndg-getapp" href="https://play.google.com/store/apps/details?id=com.fndg.puzzleshooter&referrer=utm_source%3Dfrogndog%26utm_medium%3Dweb_play%26utm_campaign%3Dweb2app" target="_blank" rel="noopener" title="Google Play에서 받기">
-      <span class="pi">▶</span><span>Google Play로 받기<small>안드로이드 무료 설치</small></span>
-    </a>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">PuzzleShooter</div>
-      </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9eed3">
+  <title>Play PuzzleShooter — Toy Sky | FNDG</title>
+  <link rel="icon" type="image/png" href="../puzzleshooter/media/toy-sky-20260910/icon.png">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; overflow: hidden; }
+    body { display: flex; flex-direction: column; color: #61442e; background: radial-gradient(ellipse at 50% 35%, #b5e5ec, #498eac); font: 14px/1.4 system-ui, sans-serif; }
+    header { flex: 0 0 auto; display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 8px max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left)); background: #f9eed3; border-bottom: 2px solid #d7b77f; }
+    a { color: inherit; }
+    .home { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 750; }
+    .home img { width: 32px; height: 32px; border-radius: 9px; }
+    .store { padding: 7px 11px; background: #eb7846; border: 1px solid #c66535; border-radius: 9px; color: #fff; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    main { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    #unity-canvas { display: block; background: #66b3cf; border-radius: 5px; outline-offset: -3px; box-shadow: 0 0 0 2px #d9be89, 0 10px 45px #264c6855; touch-action: none; }
+    #loading { position: absolute; width: min(290px, 85%); padding: 28px 22px; text-align: center; border: 2px solid #d6b77e; border-radius: 20px; background: #fff4dc; box-shadow: 0 12px 36px #23495744; }
+    #loading[hidden] { display: none; }
+    #loading img { width: 112px; height: 112px; border-radius: 26px; }
+    #loading h1 { margin: 13px 0 4px; font-size: 23px; }
+    #status { margin: 8px 0 14px; }
+    progress { width: 100%; height: 12px; accent-color: #ed8148; }
+    #warning { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: min(480px, 92%); max-height: 50%; overflow: auto; z-index: 5; }
+    #warning > div { margin-bottom: 8px; padding: 14px; border: 2px solid #b76235; border-radius: 10px; background: #fff2d5; overflow-wrap: anywhere; }
+    footer { flex: 0 0 auto; display: flex; gap: 8px; align-items: center; justify-content: center; padding: 6px 12px max(6px, env(safe-area-inset-bottom)); background: #f9eed3; font-size: 11px; text-align: center; }
+    footer p { margin: 0; }
+    footer a { white-space: nowrap; }
+    @media (max-width: 380px) { header { gap: 6px; font-size: 12px; } footer { font-size: 10px; } }
+    @media (max-height: 480px) { header { padding-top: 3px; padding-bottom: 3px; } footer { padding: 2px 8px; } .home img { width: 25px; height: 25px; } }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1ESCDQDS9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-R1ESCDQDS9');
+  </script>
+</head>
+<body>
+  <header>
+    <a class="home" href="/puzzleshooter.html"><img src="../puzzleshooter/media/toy-sky-20260910/icon.png" alt="" width="32" height="32">← PuzzleShooter</a>
+    <a class="store" id="get-app" href="https://play.google.com/store/apps/details?id=com.fndg.puzzleshooter&amp;referrer=utm_source%3Dfrogndog%26utm_medium%3Dweb_play%26utm_campaign%3Dweb2app" target="_blank" rel="noopener">Free on Google Play</a>
+  </header>
+  <main id="game-area">
+    <canvas id="unity-canvas" width="432" height="936" tabindex="0" aria-label="PuzzleShooter game"></canvas>
+    <div id="loading" role="status" aria-live="polite">
+      <img src="../puzzleshooter/media/toy-sky-20260910/icon.png" width="112" height="112" alt="">
+      <h1>PuzzleShooter</h1>
+      <p id="status">Loading the sky…</p>
+      <progress id="progress" max="1" value="0" aria-label="Game loading"></progress>
     </div>
-    <script>
-      var canvas = document.querySelector("#unity-canvas");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/WebGL.data.unityweb",
-        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "FNDG",
-        productName: "PuzzleShooter",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-        // errorHandler: function(err, url, line) {
-        //    alert("error " + err + " occurred at line " + line);
-        //    // Return 'true' if you handled this error and don't want Unity
-        //    // to process it further, 'false' otherwise.
-        //    return true;
-        // },
-      };
-
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      var _ch = Math.min(window.innerHeight - 16, 900); /* FNDG-WEB-CANVAS */
-      canvas.style.height = _ch + "px";
-      canvas.style.width = Math.round(_ch * 1080 / 2340) + "px";
-      document.querySelector("#unity-loading-bar").style.display = "block";
-
-      // 모바일: 플레이 중(탭 활동 있을 때)만 Google Play CTA 숨김.
-      // 일정 시간(6초) 탭이 없으면(로비/게임오버/대기) 다시 표시.
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        var _getapp = document.getElementById("fndg-getapp");
-        if (_getapp) {
-          var _idle;
-          var _onTouch = function(e){
-            if (_getapp.contains(e.target)) return;   // 버튼 자체 탭이면 무시
-            _getapp.classList.add("fndg-hide");
-            clearTimeout(_idle);
-            _idle = setTimeout(function(){ _getapp.classList.remove("fndg-hide"); }, 6000);
-          };
-          window.addEventListener("pointerdown", _onTouch, true);
-        }
-      }
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-  </body>
+    <div id="warning" role="alert"></div>
+  </main>
+  <footer><p id="save-note">Saves stay in this browser. Android progress is separate.</p><a id="privacy" href="/puzzleshooter/privacy.html" target="_blank" rel="noopener">Privacy</a></footer>
+  <noscript>JavaScript is required to play PuzzleShooter.</noscript>
+  <script>
+    'use strict';
+    const language = (navigator.language || 'en').toLowerCase();
+    const messages = language.startsWith('ko')
+      ? ['Google Play 무료 설치', '하늘을 불러오는 중…', '이 브라우저에 저장됩니다. Android 진행도와는 별도입니다.', '개인정보', '게임을 불러오지 못했습니다. 연결을 확인하고 새로고침해 주세요.']
+      : language.startsWith('ja')
+      ? ['Google Play 無料', '空を読み込み中…', 'このブラウザに保存。Android の進行状況とは別です。', 'プライバシー', '読み込めませんでした。接続を確認して再読み込みしてください。']
+      : language.startsWith('zh')
+      ? (language.includes('tw') || language.includes('hk') || language.includes('hant')
+        ? ['Google Play 免費', '正在載入天空…', '存檔保存在此瀏覽器，與 Android 進度分開。', '隱私', '載入失敗。請檢查連線並重新整理。']
+        : ['Google Play 免费', '正在加载天空…', '存档保存在此浏览器，与 Android 进度分开。', '隐私', '加载失败。请检查连接并刷新。'])
+      : ['Free on Google Play', 'Loading the sky…', 'Saves stay in this browser. Android progress is separate.', 'Privacy', 'Unable to load the game. Check your connection and reload.'];
+    document.documentElement.lang = language;
+    ['get-app', 'status', 'save-note', 'privacy'].forEach((id, i) => document.getElementById(id).textContent = messages[i]);
+    const canvas = document.getElementById('unity-canvas');
+    const area = document.getElementById('game-area');
+    const loading = document.getElementById('loading');
+    function fitCanvas() {
+      const bounds = area.getBoundingClientRect();
+      const height = Math.max(1, Math.min(bounds.height - 8, (bounds.width - 8) * 19.5 / 9, 1100));
+      canvas.style.height = height + 'px';
+      canvas.style.width = (height * 9 / 19.5) + 'px';
+    }
+    new ResizeObserver(fitCanvas).observe(area);
+    fitCanvas();
+    function showBanner(message, type) {
+      const banner = document.createElement('div');
+      banner.textContent = String(message);
+      document.getElementById('warning').appendChild(banner);
+      if (type !== 'error') setTimeout(() => banner.remove(), 6000);
+    }
+    function showLoadError(detail) {
+      loading.hidden = true;
+      showBanner(messages[4], 'error');
+      console.error('PuzzleShooter load failed:', detail);
+    }
+    const buildUrl = 'Build';
+    const config = {
+      arguments: [],
+      dataUrl: buildUrl + '/0247150e22879da930b1d1910bc38a16.data.unityweb',
+      frameworkUrl: buildUrl + '/2c16d14b667e4a3d8232cc1937b5a4d1.framework.js.unityweb',
+      codeUrl: buildUrl + '/4dba0b6c9a0f1d4ce645f3af9aa68fc9.wasm.unityweb',
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'FNDG',
+      productName: 'PuzzleShooter',
+      productVersion: '1.0',
+      autoSyncPersistentDataPath: true,
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      showBanner
+    };
+    const loader = document.createElement('script');
+    loader.src = buildUrl + '/e5a9a65beae0e76c12ca2c1c9c363b38.loader.js';
+    loader.onerror = () => showLoadError('loader unavailable');
+    loader.onload = () => {
+      createUnityInstance(canvas, config, progress => {
+        document.getElementById('progress').value = progress;
+      }).then(() => {
+        loading.hidden = true;
+        gtag('event', 'web_play_start', {game: 'puzzleshooter'});
+      }).catch(showLoadError);
+    };
+    document.body.appendChild(loader);
+  </script>
+</body>
 </html>

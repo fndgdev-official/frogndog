@@ -44,6 +44,11 @@
 <script>(function(){try{var V=['ko','en','ja','zh','zh-Hant'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':(/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':(n.indexOf('zh')===0?'zh':'en'));}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
 
 <link rel="stylesheet" href="maximal.css" />
+<style>
+  .puzzleshooter-panel .gp-media { background: #69adbf; }
+  .puzzleshooter-panel .gp-media img { object-fit: contain; }
+  @media (max-width: 880px) { .puzzleshooter-panel .gp-media { min-height: 0; aspect-ratio: 1024 / 500; } }
+</style>
 
 <script type="application/ld+json">
 {
@@ -244,14 +249,14 @@
         <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 세 개의 우주.</span><span class="tr" lang="en">Three universes, made by two.</span><span class="tr" lang="ja">2人で作った3つの宇宙。</span><span class="tr" lang="zh">两人打造的三个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的三個宇宙。</span></div>
       </div>
 
-      <a class="game-panel reveal" href="puzzleshooter.html">
+      <a class="game-panel reveal puzzleshooter-panel" href="puzzleshooter.html">
         <div class="gp-media">
-          <img src="pss-feature.jpg" alt="PuzzleShooter key art" loading="lazy">
+          <img src="puzzleshooter/media/toy-sky-20260910/feature.png" alt="PuzzleShooter Toy Sky cannon and floating islands" width="1024" height="500" loading="lazy">
           <div class="scan"></div><div class="floatglow"></div>
           <div class="marquee"><div>999 · 998 · 997 · 996 · 995 · 994 · 993 · 992 · 999 · 998 · 997 · 996 · 995 · 994 · 993 · 992 · </div></div>
         </div>
         <div class="gp-body">
-          <div class="gp-tag"><span class="pill">RELEASED</span> PUZZLE · BRICK-BREAKER</div>
+          <div class="gp-tag"><span class="pill">TOY SKY UPDATE</span> PUZZLE · BRICK-BREAKER</div>
           <div class="gp-title">PuzzleShooter</div>
           <div class="gp-kr"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved</span><span class="tr" lang="ja">パズルシューター — ブロック崩しの進化</span><span class="tr" lang="zh">益智弹射 — 打砖块的进化</span><span class="tr" lang="zh-Hant">益智彈射 — 打磚塊的進化</span></div>
           <p class="gp-desc"><span class="tr" lang="ko">999개의 스테이지. 한 번의 발사에 모든 각도를 계산하는, 중독적인 퍼즐 브레이커.</span><span class="tr" lang="en">999 stages. Calculate every angle in a single shot — an addictive puzzle breaker.</span><span class="tr" lang="ja">999のステージ。一度の発射であらゆる角度を計算する、中毒性のパズルブレイカー。</span><span class="tr" lang="zh">999个关卡。一次发射算尽所有角度，令人上瘾的弹射解谜。</span><span class="tr" lang="zh-Hant">999個關卡。一次發射算盡所有角度，令人上癮的彈射解謎。</span></p>

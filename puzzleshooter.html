@@ -34,6 +34,12 @@
 <style>
   :root { --c: var(--frog); }
   .detail-hero .gc-title { background: linear-gradient(180deg,#eafff0,var(--frog)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .pss-icon { display:block; width:88px; height:88px; margin:0 auto 20px; border-radius:20px; }
+  .shot-grid.phones .shot { aspect-ratio:9 / 16; }
+  .shot-grid.phones .shot img { object-fit:contain; }
+  .shot:hover img { transform:none; }
+  .pss-trailer { max-width:420px; margin:0 auto; aspect-ratio:9 / 16; }
+  .pss-trailer video { height:100%; object-fit:contain; }
 </style>
 </head>
 <body>
@@ -78,7 +84,8 @@
     <div class="godrays"></div>
     <div class="godrays g2"></div>
     <div class="wrap" style="text-align:center;">
-      <div class="gc-tag reveal" style="justify-content:center;color:var(--frog);"><span class="pill">RELEASED · 2026</span> PUZZLE · BRICK-BREAKER</div>
+      <img class="pss-icon" src="puzzleshooter/media/toy-sky-20260910/icon.png" alt="PuzzleShooter Toy Sky icon" width="88" height="88">
+      <div class="gc-tag reveal" style="justify-content:center;color:var(--frog);"><span class="pill">TOY SKY UPDATE · 2026</span> PUZZLE · BRICK-BREAKER</div>
       <h1 class="gc-title reveal d1" style="margin-top:18px;">PuzzleShooter</h1>
       <div class="gc-kr reveal d2" style="font-size:clamp(16px,2vw,22px);margin-top:8px;"><span class="tr" lang="ko">퍼즐 슈터 — 벽돌깨기의 진화 🐸</span><span class="tr" lang="en">Puzzle shooter — brick-breaking, evolved 🐸</span><span class="tr" lang="ja">パズルシューター — ブロック崩しの進化 🐸</span><span class="tr" lang="zh">益智弹射 — 打砖块的进化 🐸</span><span class="tr" lang="zh-Hant">益智彈射 — 打磚塊的進化 🐸</span></div>
       <p class="lead reveal d2" style="margin:24px auto 0;text-align:center;"><span class="tr" lang="ko">한 번의 발사에 모든 각도를 계산하는 중독적인 퍼즐 브레이커. 999개의 스테이지가 당신을 기다립니다.</span><span class="tr" lang="en">An addictive puzzle breaker where a single shot calculates every angle. 999 stages are waiting for you.</span><span class="tr" lang="ja">一度の発射であらゆる角度を計算する、中毒性のパズルブレイカー。999のステージがあなたを待っています。</span><span class="tr" lang="zh">一次发射算尽所有角度，令人上瘾的弹射解谜。999个关卡正等待着你。</span><span class="tr" lang="zh-Hant">一次發射算盡所有角度，令人上癮的彈射解謎。999個關卡正等待著你。</span></p>
@@ -92,7 +99,7 @@
 
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="shot reveal" style="aspect-ratio:1024/500;margin-bottom:24px;"><img src="pss-feature.jpg" alt="PuzzleShooter key art"></div>
+      <div class="shot reveal" style="aspect-ratio:1024/500;margin-bottom:24px;"><img src="puzzleshooter/media/toy-sky-20260910/feature.png" alt="PuzzleShooter Toy Sky cannon and floating islands" width="1024" height="500" loading="lazy"></div>
     </div>
   </section>
 
@@ -100,8 +107,8 @@
   <section style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// TRAILER</span><h2 class="reveal d1 tr" lang="ko" style="font-size:clamp(30px,4.5vw,58px);">움직이는 걸 보세요.</h2><h2 class="reveal d1 tr" lang="en" style="font-size:clamp(30px,4.5vw,58px);">See it in motion.</h2><h2 class="reveal d1 tr" lang="ja" style="font-size:clamp(30px,4.5vw,58px);">動きを見てください。</h2><h2 class="reveal d1 tr" lang="zh" style="font-size:clamp(30px,4.5vw,58px);">看它动起来。</h2><h2 class="reveal d1 tr" lang="zh-Hant" style="font-size:clamp(30px,4.5vw,58px);">看它動起來。</h2></div>
-      <div class="video-frame reveal">
-        <video src="pss-promo.mp4" poster="pss-promo-poster.jpg" controls playsinline preload="none"></video>
+      <div class="video-frame reveal pss-trailer">
+        <video src="puzzleshooter/media/toy-sky-20260910/gameplay.mp4" poster="puzzleshooter/media/toy-sky-20260910/scatter.png" width="1080" height="1920" aria-label="PuzzleShooter Toy Sky gameplay trailer" controls playsinline preload="none"></video>
       </div>
     </div>
   </section>
@@ -121,12 +128,12 @@
     <div class="wrap">
       <div class="sec-head"><span class="kicker reveal"><span class="dot"></span>// GALLERY</span></div>
       <div class="shot-grid phones">
-        <div class="shot reveal"><img src="pss-1.jpg" alt="PuzzleShooter lobby"></div>
-        <div class="shot reveal d1"><img src="pss-2.jpg" alt="PuzzleShooter blocks"></div>
-        <div class="shot reveal d2"><img src="pss-3.jpg" alt="PuzzleShooter laser skill"></div>
-        <div class="shot reveal"><img src="pss-4.jpg" alt="PuzzleShooter explosion skill"></div>
-        <div class="shot reveal d1"><img src="pss-5.jpg" alt="PuzzleShooter chain skill"></div>
-        <div class="shot reveal d2"><img src="pss-6.jpg" alt="PuzzleShooter stage 999"></div>
+        <div class="shot reveal"><img src="puzzleshooter/media/toy-sky-20260910/scatter.png" alt="Scatter skill ricochets between Toy Sky blocks" width="1080" height="1920" loading="lazy"></div>
+        <div class="shot reveal d1"><img src="puzzleshooter/media/toy-sky-20260910/laser.png" alt="Laser skill in actual PuzzleShooter gameplay" width="1080" height="1920" loading="lazy"></div>
+        <div class="shot reveal d2"><img src="puzzleshooter/media/toy-sky-20260910/explosion.png" alt="Explosion skill in actual PuzzleShooter gameplay" width="1080" height="1920" loading="lazy"></div>
+        <div class="shot reveal"><img src="puzzleshooter/media/toy-sky-20260910/ricochet.png" alt="Balls bouncing between blocks" width="1080" height="1920" loading="lazy"></div>
+        <div class="shot reveal d1"><img src="puzzleshooter/media/toy-sky-20260910/lobby.png" alt="PuzzleShooter Toy Sky lobby" width="1080" height="1920" loading="lazy"></div>
+        <div class="shot reveal d2"><img src="puzzleshooter/media/toy-sky-20260910/growth.png" alt="PuzzleShooter ball and damage upgrades" width="1080" height="1920" loading="lazy"></div>
       </div>
     </div>
   </section>
