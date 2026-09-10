@@ -95,9 +95,9 @@
     const buildUrl = 'Build';
     const config = {
       arguments: [],
-      dataUrl: buildUrl + '/0247150e22879da930b1d1910bc38a16.data.unityweb',
-      frameworkUrl: buildUrl + '/2c16d14b667e4a3d8232cc1937b5a4d1.framework.js.unityweb',
-      codeUrl: buildUrl + '/4dba0b6c9a0f1d4ce645f3af9aa68fc9.wasm.unityweb',
+      dataUrl: buildUrl + '/84ae95ae7488dacb544f922d09acf324.data.unityweb',
+      frameworkUrl: buildUrl + '/ef1bbf10383d7ef7657aa2dbaf96c076.framework.js.unityweb',
+      codeUrl: buildUrl + '/c4b9b3397ffa6ea6927f440e18ad9052.wasm.unityweb',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'FNDG',
       productName: 'PuzzleShooter',
@@ -107,7 +107,7 @@
       showBanner
     };
     const loader = document.createElement('script');
-    loader.src = buildUrl + '/e5a9a65beae0e76c12ca2c1c9c363b38.loader.js';
+    loader.src = buildUrl + '/b6d2833ec02b23057dc297d2e8ed2cb8.loader.js';
     loader.onerror = () => showLoadError('loader unavailable');
     loader.onload = () => {
       createUnityInstance(canvas, config, progress => {
