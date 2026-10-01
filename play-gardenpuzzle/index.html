@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14241e">
+  <title>정원의 퍼즐 · GardenPuzzle 플레이 — FNDG</title>
+  <meta name="description" content="브라우저에서 즐기는 정원의 퍼즐. 시간 제한 없이 꽃과 잎사귀 블록을 놓아보세요. Play GardenPuzzle free in your browser.">
+  <link rel="canonical" href="https://frogndog.com/play-gardenpuzzle/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="play.css">
+  <script defer src="build-config.js"></script>
+  <script defer src="play.js"></script>
+</head>
+<body>
+  <header class="play-header">
+    <a href="../gardenpuzzle.html" data-copy="back">← 게임 소개</a>
+    <span class="game-name">GardenPuzzle</span>
+    <a href="../index.html#games">FNDG</a>
+  </header>
+  <main id="game-area">
+    <canvas id="unity-canvas" width="432" height="768" tabindex="0" aria-label="GardenPuzzle game" aria-hidden="true"></canvas>
+    <section id="loading" aria-labelledby="loading-title">
+      <p class="eyebrow">A LITTLE GARDEN</p>
+      <h1 id="loading-title" data-copy="title">정원의 퍼즐</h1>
+      <p id="status" role="status" aria-live="polite">정원을 준비하고 있어요…</p>
+      <progress id="progress" max="1" value="0" aria-label="Game loading"></progress>
+      <button id="retry" type="button" hidden data-copy="retry">다시 시도</button>
+      <p class="load-note" data-copy="tip">블록을 끌어 놓아 한 줄이나 3×3 구획을 채워보세요.</p>
+      <p class="load-note" id="download-note">첫 실행 시 약 100MB의 게임 데이터를 불러옵니다.</p>
+    </section>
+    <div id="notice" role="status" hidden></div>
+    <noscript><p class="no-script">JavaScript is required to play. <a href="../gardenpuzzle.html">Game info</a></p></noscript>
+  </main>
+  <footer class="play-footer">
+    <p data-copy="save">최고점수·정산한 포인트·설정은 이 브라우저에 저장됩니다. 진행 중인 보드는 저장되지 않습니다.</p>
+    <a href="../gardenpuzzle.html#browser-notes" data-copy="notes">웹 버전 안내</a>
+  </footer>
+</body>
+</html>
