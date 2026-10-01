@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "source": "ParkSouls_Gameplay_Intro_20261001.mp4",
+  "source_sha256": "6cd7ab7c926297b8b83c6da6a0cc3f78c205fc8e42ebd65c83458c99af13c294",
+  "source_type": "Actual game capture edited into a gameplay introduction",
+  "video": {
+    "file": "gameplay-trailer.mp4",
+    "sha256": "84122ea54b9e5a5684fa50ad85f5cc5a03774952bbd66e754bb51181f8114e3a",
+    "bytes": 20857971,
+    "duration_seconds": 100,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "video_codec": "H.264 High Level 4.0",
+    "pixel_format": "yuv420p",
+    "audio_codec": "AAC-LC",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "fast_start": true,
+    "original_timing": true,
+    "original_game_audio": true
+  },
+  "poster": {
+    "file": "trailer-poster.jpg",
+    "source": "ParkSoulsTitle.png",
+    "source_type": "Original in-game title/lobby artwork, without menu UI",
+    "source_sha256": "f5456acb252b65933f94f96a9fd92ddb320f5ef3fb3a0eb073c07d56a36b57ef",
+    "width": 1600,
+    "height": 900,
+    "bytes": 255834,
+    "alt_en": "PARK SOULS title above an orange SUV in a wet, narrow underground parking garage."
+  },
+  "screenshots": [
+    {
+      "file": "01-minibuses.jpg",
+      "source_time_seconds": 22.0,
+      "width": 1600,
+      "height": 900,
+      "alt_en": "Driver view approaching an illegally parked minibus among parked cars on B2."
+    },
+    {
+      "file": "02-folded-mirrors.jpg",
+      "source_time_seconds": 39.0,
+      "width": 1600,
+      "height": 900,
+      "alt_en": "Folding the side mirrors causes a camera error on the surround-view display."
+    },
+    {
+      "file": "03-tight-corner.jpg",
+      "source_time_seconds": 44.0,
+      "width": 1600,
+      "height": 900,
+      "alt_en": "The long SUV enters a tight right-angle underground ramp with its mirrors folded."
+    },
+    {
+      "file": "04-electrical-cabinet.jpg",
+      "source_time_seconds": 71.0,
+      "width": 1600,
+      "height": 900,
+      "alt_en": "An electrical cabinet protrudes into a narrow corner on the route toward B4."
+    },
+    {
+      "file": "05-repair-bill.jpg",
+      "source_time_seconds": 91.7,
+      "width": 1600,
+      "height": 900,
+      "alt_en": "A collision triggers a repair charge message on the dashboard and reduces the remaining budget."
+    }
+  ],
+  "validation": {
+    "full_decode_exit_code": 0,
+    "sample_peak_dbfs": -3.1,
+    "mean_volume_dbfs": -25.3,
+    "moov_before_mdat": true,
+    "visually_reviewed": [
+      "All five screenshots",
+      "Web encode frame at 22 seconds",
+      "1600x900 original lobby artwork cover and poster",
+      "1280x720 YouTube thumbnail, title and vehicle fully visible"
+    ],
+    "content_changes": "Video timing and content unchanged; gameplay stills extracted from final trailer. Lobby cover, poster and YouTube thumbnail resized from original in-game title artwork without regenerating or changing the title or vehicle."
+  },
+  "lobby_cover": {
+    "file": "lobby-cover.jpg",
+    "source": "ParkSoulsTitle.png",
+    "source_sha256": "f5456acb252b65933f94f96a9fd92ddb320f5ef3fb3a0eb073c07d56a36b57ef",
+    "width": 1600,
+    "height": 900,
+    "bytes": 255834,
+    "alt_en": "PARK SOULS title above an orange SUV in a wet, narrow underground parking garage."
+  },
+  "youtube_thumbnail_delivery": {
+    "file": "ParkSouls_YouTube_Thumbnail_1280x720.jpg",
+    "location": "Local Downloads folder; not uploaded to YouTube",
+    "source": "ParkSoulsTitle.png",
+    "source_sha256": "f5456acb252b65933f94f96a9fd92ddb320f5ef3fb3a0eb073c07d56a36b57ef",
+    "width": 1280,
+    "height": 720,
+    "bytes": 190474
+  }
+}

@@ -76,6 +76,42 @@
 .parksouls-detail .unsupported p,.parksouls-detail .script-note { color:var(--ink-2);font-size:13px;line-height:1.75;margin-top:8px; }
 .parksouls-detail .hidden { display:none!important; }
 .parksouls-detail .footer { background:rgba(5,5,16,.2); }
+/* Shared five-language showcase, with landscape gameplay media. */
+.parksouls-detail .tr { font:inherit;letter-spacing:inherit;color:inherit; }
+.parksouls-detail .facts .tr { display:inline;margin:0;font:inherit;color:inherit; }
+.parksouls-detail .hero-sublinks { display:flex;flex-wrap:wrap;gap:12px 28px; }
+.parksouls-detail .parksouls-video { max-width:none;margin:0;aspect-ratio:16/9;border-radius:20px;border-color:rgba(255,192,97,.25);box-shadow:0 25px 75px -40px #000; }
+.parksouls-detail .parksouls-video video { display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain;background:#06070a; }
+.parksouls-detail .trailer-figure figcaption { font-size:10px;padding-top:20px; }
+.parksouls-detail .trailer-figure figcaption a { text-decoration:underline;text-underline-offset:4px; }
+.parksouls-detail .descent-section { border-block:1px solid var(--line); }
+.parksouls-detail .floor-grid { padding:0;margin:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px; }
+.parksouls-detail .floor-grid li { border-top:1px solid rgba(255,192,97,.3);padding-top:24px; }
+.parksouls-detail .floor-label { font:500 clamp(42px,5vw,70px)/1 var(--display);letter-spacing:-.06em;color:var(--dog);display:block;margin-bottom:28px; }
+.parksouls-detail .floor-grid h3 { font-size:20px;line-height:1.45;margin:0 0 15px; }
+.parksouls-detail .floor-grid p { font-size:14px;line-height:1.85;color:var(--ink-2); }
+.parksouls-detail .parksouls-gallery { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px; }
+.parksouls-detail .gallery-shot { min-width:0; }
+.parksouls-detail .gallery-shot:first-child { grid-column:1/-1; }
+.parksouls-detail .gallery-shot a { display:block;overflow:hidden;border-radius:15px;border:1px solid var(--line-2);background:#090b10; }
+.parksouls-detail .gallery-shot img { width:100%;height:auto;aspect-ratio:16/9;object-fit:contain; }
+.parksouls-detail .gallery-shot figcaption { display:flex;flex-direction:column;gap:5px;padding:18px 3px 0;letter-spacing:0;font-family:var(--body); }
+.parksouls-detail .gallery-shot figcaption strong { font-size:19px;line-height:1.5;color:var(--ink);font-weight:500; }
+.parksouls-detail .gallery-shot figcaption>span { font-size:12px;line-height:1.7; }
+.parksouls-detail .driving-section { border-top:1px solid var(--line); }
+.parksouls-detail .driving-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
+.parksouls-detail .driving-card { padding:30px;border:1px solid var(--line-2);background:rgba(8,8,26,.45);border-radius:18px; }
+.parksouls-detail .driving-card h3 { font-size:28px;margin:16px 0 12px; }
+.parksouls-detail .driving-card p,.parksouls-detail .wheel-note { color:var(--ink-2);font-size:15px;line-height:1.9; }
+.parksouls-detail .wheel-note { margin-top:28px;max-width:85ch; }
+.parksouls-detail .wheel-note strong { color:var(--ink);font-weight:500; }
+.parksouls-detail .control-item { display:flex;gap:6px;align-items:center; }
+.parksouls-detail .controls .tr { display:inline; }
+.parksouls-detail .control-caption { margin-top:16px;color:var(--ink-2);font-size:12px;line-height:1.8; }
+.parksouls-nav .lang-switch { flex-shrink:0; }
+.parksouls-nav .lang-switch button { min-height:40px;min-width:35px; }
+.parksouls-detail [id] { scroll-margin-top:110px; }
+.parksouls-detail .footer .legal { overflow-wrap:anywhere;max-width:350px; }
 @media(max-width:1100px) {
   .parksouls-hero-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px; }
   .parksouls-detail .hero-actions .btn { flex:1 1 220px; }
@@ -94,10 +130,15 @@
   .parksouls-detail .parksouls-section { padding-block:62px; }
   .parksouls-detail .help-section { grid-template-columns:1fr;gap:12px; }
   .parksouls-detail .help-section .section-heading { margin-bottom:12px; }
+  .parksouls-detail .floor-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 24px; }
+  .parksouls-nav .nav-play { display:none; }
 }
 @media(max-width:600px) {
   .parksouls-nav { padding:12px var(--pad);background:rgba(5,5,16,.7);backdrop-filter:blur(14px);gap:14px; }
   .parksouls-nav .nav-right { gap:4px; }
+  .parksouls-nav .nav-back { display:none; }
+  .parksouls-nav .lang-switch { gap:0; }
+  .parksouls-nav .lang-switch button { min-width:30px;min-height:40px;padding:5px 7px; }
   .parksouls-nav .nav-back { padding:8px;font-size:10px;letter-spacing:.015em; }
   .parksouls-nav .nav-right a[href="#setup"] { display:none; }
   .parksouls-nav .brand { gap:8px; }
@@ -112,6 +153,13 @@
   .parksouls-detail .feature { padding:26px; }
   .parksouls-detail .controls { gap:18px;flex-direction:column; }
   .parksouls-detail .end-cta { padding-block:30px 75px; }
+  .parksouls-detail .parksouls-gallery,.parksouls-detail .driving-grid { grid-template-columns:1fr; }
+  .parksouls-detail .floor-grid { gap:28px 18px; }
+  .parksouls-detail .floor-grid h3 { font-size:18px; }
+  .parksouls-detail .floor-grid p { font-size:13px; }
+  .parksouls-detail .floor-label { font-size:48px;margin-bottom:20px; }
+  .parksouls-detail .driving-card { padding:26px; }
+  .parksouls-detail .trailer-figure figcaption { flex-wrap:wrap;gap:8px; }
 }
 @media(prefers-reduced-motion:reduce) {
   .parksouls-detail .mesh .blob,.parksouls-detail .dust i,.parksouls-detail .godrays { animation:none!important; }
