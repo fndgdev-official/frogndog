@@ -52,14 +52,28 @@
   .parksouls-logo { position:relative;display:block;width:100%;aspect-ratio:1152 / 152;overflow:hidden;mix-blend-mode:screen; }
   .parksouls-logo img { position:absolute;display:block;width:145.138889%;max-width:none;height:auto;left:-24.479167%;top:-117.105263%;filter:url(#parksouls-ink); }
   .parksouls-logo--compact { width:114px; }
-  .parksouls-panel .gp-title { max-width:490px;line-height:1; }
+  .parksouls-panel .gp-title { max-width:490px;line-height:1;margin:0; }
   .parksouls-panel { --c: #d2bb75; }
-  .parksouls-panel .gp-media { background: #101713; }
-  .parksouls-panel .gp-media img { object-fit: contain; }
+  .parksouls-panel .gp-media { background: radial-gradient(ellipse at center, #18211b, #080d0b 78%); padding: 22px; }
+  .parksouls-panel .park-video-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid #d2bb7545; box-shadow: 0 18px 70px #0009; border-radius: 12px; overflow: hidden; }
+  .parksouls-panel .park-video-stage video { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .parksouls-panel .park-video-play { position: absolute; z-index: 2; left: 50%; top: 55%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; gap: 13px; max-width: calc(100% - 28px); padding: 12px 20px 12px 12px; border: 1px solid #e5cf9299; border-radius: 999px; background: #0b100df2; color: #f6e9bf; font: 600 15px/1.3 var(--body); cursor: pointer; box-shadow: 0 8px 30px #000a; }
+  .parksouls-panel .park-video-play[hidden], .parksouls-panel [data-video-error][hidden] { display: none; }
+  .parksouls-panel [data-video-error] { margin: 12px 16px; color: #f6e9bf; font-size: 14px; text-align: center; }
+  .parksouls-panel [data-video-error] a { text-decoration: underline; text-underline-offset: 4px; }
+  .parksouls-panel .park-video-play:hover { background: #222719; border-color: #f6e9bf; }
+  .parksouls-panel .park-video-play:focus-visible, .parksouls-panel a:focus-visible { outline: 3px solid #f6e9bf; outline-offset: 5px; }
+  .parksouls-panel .park-video-play-icon { width: 46px; height: 46px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #d2bb75; color: #12160e; }
+  .parksouls-panel .park-video-play-icon svg { width: 20px; height: 20px; margin-left: 3px; }
+  .parksouls-panel .park-video-play-label { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; }
+  .parksouls-panel .park-video-play-time { font: 11px/1.3 var(--mono); letter-spacing: .09em; color: #c9c6b9; }
+  .parksouls-panel .gp-title a { display: block; }
+  .parksouls-panel .gp-link { align-self: flex-start; padding: 13px 19px; border: 1px solid #d2bb7560; border-radius: 999px; background: #d2bb750a; }
+  .parksouls-panel .gp-link:hover { color: #f6e9bf; border-color: #d2bb75; background: #d2bb7519; }
   .parksouls-panel .gp-tag { flex-wrap: wrap; letter-spacing: .07em; }
   .parksouls-panel .gp-availability { margin-top: 20px; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
-  .parksouls-panel:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
-  @media (max-width: 880px) { .parksouls-panel .gp-media { min-height: 0; aspect-ratio: 16 / 9; } }
+  @media (max-width: 880px) { .parksouls-panel .gp-media { min-height: 0; padding: 0; } .parksouls-panel .park-video-stage { border-radius: 0; border: 0; } }
+  @media (max-width: 420px) { .parksouls-panel .park-video-play { padding: 8px 14px 8px 8px; gap: 9px; font-size: 13px; } .parksouls-panel .park-video-play-icon { width: 36px; height: 36px; } }
   .puzzleshooter-panel .gp-media { background: #69adbf; }
   .puzzleshooter-panel .gp-media img { object-fit: contain; }
   .arrowpuzzle-panel { --c: #aed4b9; }
@@ -72,6 +86,7 @@
   @media (max-width: 880px) { .arrowpuzzle-panel .gp-media { min-height: 0; padding: 28px 20px; gap: 14px; } .arrowpuzzle-panel .gp-media img { max-height: 430px; } }
   @media (max-width: 880px) { .puzzleshooter-panel .gp-media { min-height: 0; aspect-ratio: 1024 / 500; } }
 </style>
+<noscript><style>#intro{display:none!important}.parksouls-panel.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
 <script type="application/ld+json">
 {
@@ -278,20 +293,30 @@
         <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 일곱 개의 우주.</span><span class="tr" lang="en">Seven universes, made by two.</span><span class="tr" lang="ja">2人で作った7つの宇宙。</span><span class="tr" lang="zh">两人打造的七个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的七個宇宙。</span></div>
       </div>
 
-      <a class="game-panel parksouls-panel reveal" href="/park-souls/" aria-labelledby="parksouls-card-title">
+      <article class="game-panel parksouls-panel reveal" aria-labelledby="parksouls-card-title">
         <div class="gp-media">
-          <img src="park-souls/media/lobby-cover.jpg" alt="Park Souls lobby artwork: gold title above an orange SUV in a dark underground garage" width="1600" height="900" loading="lazy">
+          <div class="park-video-stage" data-park-video>
+            <video id="parksouls-home-video" tabindex="0" controls playsinline preload="none" poster="park-souls/media/lobby-cover.jpg" width="1280" height="720" aria-label="Park Souls">
+              <source src="park-souls/media/gameplay-trailer.mp4" type="video/mp4">
+              <a href="park-souls/media/gameplay-trailer.mp4"><span class="tr" lang="ko">플레이 영상 열기</span><span class="tr" lang="en">Open gameplay video</span><span class="tr" lang="ja">プレイ映像を開く</span><span class="tr" lang="zh">打开实机视频</span><span class="tr" lang="zh-Hant">開啟實機影片</span></a>
+            </video>
+            <button class="park-video-play" data-video-play type="button" aria-controls="parksouls-home-video" hidden>
+              <span class="park-video-play-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M5 2.5 17 10 5 17.5Z"/></svg></span>
+              <span class="park-video-play-label"><span><span class="tr" lang="ko">플레이 영상 보기</span><span class="tr" lang="en">Watch gameplay</span><span class="tr" lang="ja">プレイ映像を見る</span><span class="tr" lang="zh">观看实机演示</span><span class="tr" lang="zh-Hant">觀看實機演示</span></span><span class="park-video-play-time">1:40</span></span>
+            </button>
+          </div>
+          <p data-video-error hidden role="status"><a href="park-souls/media/gameplay-trailer.mp4"><span class="tr" lang="ko">영상 재생이 안 되나요? 영상 파일 열기</span><span class="tr" lang="en">Video not playing? Open the video file</span><span class="tr" lang="ja">再生できませんか？動画ファイルを開く</span><span class="tr" lang="zh">无法播放？打开视频文件</span><span class="tr" lang="zh-Hant">無法播放？開啟影片檔案</span></a></p>
         </div>
         <div class="gp-body">
           <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">Windows 체험판 · 개발 중</span><span class="tr" lang="en">WINDOWS PREVIEW · IN DEVELOPMENT</span><span class="tr" lang="ja">Windows体験版 · 開発中</span><span class="tr" lang="zh">Windows试玩版 · 开发中</span><span class="tr" lang="zh-Hant">Windows試玩版 · 開發中</span></span> DRIVING · PARKING</div>
-          <div class="gp-title" id="parksouls-card-title"><span class="parksouls-logo"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls" loading="lazy"></span></div>
+          <h3 class="gp-title" id="parksouls-card-title"><a href="/park-souls/"><span class="parksouls-logo"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls" loading="lazy"></span></a></h3>
           <div class="gp-kr"><span class="tr" lang="ko">덩치는 크고, 여유는 없다.</span><span class="tr" lang="en">A very large SUV. A very small margin for error.</span><span class="tr" lang="ja">大きすぎるSUV。小さすぎる余裕。</span><span class="tr" lang="zh">车很大，余地很小。</span><span class="tr" lang="zh-Hant">車很大，餘地很小。</span></div>
           <p class="gp-desc"><span class="tr" lang="ko">좁은 램프, 튀어나온 불법주차, 쌓여가는 수리비. 거대한 SUV를 지하 4층까지 몰고 가 마지막 한 자리에 주차하세요. FNDG의 주차 시뮬레이터를 Windows 체험판으로 만나보세요.</span><span class="tr" lang="en">Tight ramps, badly parked cars and repair bills that keep climbing. Take an oversized SUV down to B4 and claim the last parking space. Try FNDG's parking simulator on your Windows PC.</span><span class="tr" lang="ja">狭いスロープ、はみ出した違法駐車、増え続ける修理代。巨大なSUVで地下4階へ降り、最後の1台分に駐車してください。FNDGの駐車シミュレーターをWindows体験版で。</span><span class="tr" lang="zh">狭窄的坡道、挡路的违停车、不断上涨的维修账单。驾驶大型SUV下到地下四层，停进最后一个车位。在Windows电脑上体验FNDG的停车模拟游戏。</span><span class="tr" lang="zh-Hant">狹窄的坡道、擋路的違停車、不斷上漲的維修帳單。駕駛大型SUV下到地下四層，停進最後一個車位。在Windows電腦上體驗FNDG的停車模擬遊戲。</span></p>
           <div class="gp-meta"><span><b>UNREAL ENGINE 5</b></span><span><b>WINDOWS PC</b></span><span><b>B1 → B4</b></span></div>
-          <span class="gp-link"><span class="tr" lang="ko">게임 소개 · 영상 · 플레이</span><span class="tr" lang="en">Discover · Watch · Play</span><span class="tr" lang="ja">紹介・映像・プレイ</span><span class="tr" lang="zh">介绍 · 视频 · 游玩</span><span class="tr" lang="zh-Hant">介紹 · 影片 · 遊玩</span> <span class="arrow">→</span></span>
+          <a class="gp-link" href="/park-souls/"><span class="tr" lang="ko">게임 소개 · 영상 · 플레이</span><span class="tr" lang="en">Discover · Watch · Play</span><span class="tr" lang="ja">紹介・映像・プレイ</span><span class="tr" lang="zh">介绍 · 视频 · 游玩</span><span class="tr" lang="zh-Hant">介紹 · 影片 · 遊玩</span> <span class="arrow">→</span></a>
           <p class="gp-availability"><span class="tr" lang="ko">Windows PC 키보드·마우스 필요 · 모바일 미지원. 처음 한 번 다운로드·설정한 뒤 이 홈페이지에서 실행합니다. 로그인은 필요 없습니다.</span><span class="tr" lang="en">Windows PC with keyboard and mouse · No mobile support. Download and set up once, then launch from this homepage. No login required.</span><span class="tr" lang="ja">Windows PCのキーボード・マウス必須 · モバイル非対応。初回ダウンロード・設定後、このホームページから起動できます。ログイン不要。</span><span class="tr" lang="zh">仅支持Windows电脑、键盘和鼠标 · 不支持手机。首次下载并设置后，即可从本网站启动。无需登录。</span><span class="tr" lang="zh-Hant">僅支援Windows電腦、鍵盤和滑鼠 · 不支援手機。首次下載並設定後，即可從本網站啟動。無需登入。</span></p>
         </div>
-      </a>
+      </article>
 
       <a class="game-panel reveal puzzleshooter-panel" href="puzzleshooter.html">
         <div class="gp-media">
@@ -406,5 +431,6 @@
 <script src="warp.js"></script>
 <script src="maximal.js"></script>
 <script src="i18n.js"></script>
+<script src="/park-souls/video.js?v=20261001-prominent"></script>
 </body>
 </html>
