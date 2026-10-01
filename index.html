@@ -20,7 +20,7 @@
   });
 </script>
 <title>FNDG — Frog and Dog Games</title>
-<meta name="description" content="FNDG (Frog and Dog Games) — 한국의 2인 인디 게임 스튜디오. PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest를 만듭니다. An indie game studio from Korea." />
+<meta name="description" content="FNDG (Frog and Dog Games) — 한국의 2인 인디 게임 스튜디오. Park Souls · PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest를 만듭니다. An indie game studio from Korea." />
 <link rel="canonical" href="https://frogndog.com/" />
 <meta name="theme-color" content="#040409" />
 
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="FNDG — Frog and Dog Games" />
 <meta property="og:title" content="FNDG — Frog and Dog Games" />
-<meta property="og:description" content="한국의 2인 인디 게임 스튜디오. PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest." />
+<meta property="og:description" content="한국의 2인 인디 게임 스튜디오. Park Souls · PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest." />
 <meta property="og:url" content="https://frogndog.com/" />
 <meta property="og:image" content="https://frogndog.com/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -39,7 +39,7 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="FNDG — Frog and Dog Games" />
-<meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest." />
+<meta name="twitter:description" content="개구리와 강아지가 만드는 작은 우주 — Park Souls · PuzzleShooter · Ghost Chase · Arrow Puzzle: Calm Escape · GardenPuzzle · FD Quest." />
 <meta name="twitter:image" content="https://frogndog.com/og-cover.jpg" />
 
 <script>(function(){try{var V=['ko','en','ja','zh','zh-Hant'];var l=localStorage.getItem('fndg-locale');if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':(/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':(n.indexOf('zh')===0?'zh':'en'));}var h=document.documentElement;h.setAttribute('data-locale',l);h.setAttribute('lang',l);}catch(e){}})();</script>
@@ -47,6 +47,13 @@
 <link rel="stylesheet" href="maximal.css" />
 <link rel="stylesheet" href="gardenpuzzle/card.css" />
 <style>
+  .parksouls-panel { --c: #d2bb75; }
+  .parksouls-panel .gp-media { background: #101713; }
+  .parksouls-panel .gp-media img { object-fit: contain; }
+  .parksouls-panel .gp-tag { flex-wrap: wrap; letter-spacing: .07em; }
+  .parksouls-panel .gp-availability { margin-top: 20px; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
+  .parksouls-panel:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+  @media (max-width: 880px) { .parksouls-panel .gp-media { min-height: 0; aspect-ratio: 16 / 9; } }
   .puzzleshooter-panel .gp-media { background: #69adbf; }
   .puzzleshooter-panel .gp-media img { object-fit: contain; }
   .arrowpuzzle-panel { --c: #aed4b9; }
@@ -73,9 +80,10 @@
   "alternateName": "Frog and Dog Games",
   "url": "https://frogndog.com/",
   "email": "fndgdev@gmail.com",
-  "description": "An indie game studio from Korea. Makers of PuzzleShooter, Ghost Chase, Arrow Puzzle: Calm Escape, GardenPuzzle and FD Quest.",
+  "description": "An indie game studio from Korea. Makers of Park Souls, PuzzleShooter, Ghost Chase, Arrow Puzzle: Calm Escape, GardenPuzzle and FD Quest.",
   "foundingLocation": "Republic of Korea",
   "makesOffer": [
+    { "@type": "VideoGame", "name": "Park Souls", "gamePlatform": "Windows PC", "url": "https://frogndog.com/park-souls/", "description": "An in-development parking simulator. Download the Windows game once, then launch it from the FNDG homepage. Keyboard and mouse required." },
     { "@type": "VideoGame", "name": "PuzzleShooter", "gamePlatform": "Android" },
     { "@type": "VideoGame", "name": "Ghost Chase", "gamePlatform": ["Web", "Android"] },
     { "@type": "VideoGame", "name": "Arrow Puzzle: Calm Escape", "gamePlatform": ["Web", "Android"], "url": "https://frogndog.com/arrowpuzzle.html", "inLanguage": "en" },
@@ -156,6 +164,7 @@
       <a href="#manifesto"><span class="tr" lang="ko">매니페스토</span><span class="tr" lang="en">Manifesto</span><span class="tr" lang="ja">マニフェスト</span><span class="tr" lang="zh">宣言</span><span class="tr" lang="zh-Hant">宣言</span></a>
       <a href="#studio"><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">Studio</span><span class="tr" lang="ja">スタジオ</span><span class="tr" lang="zh">工作室</span><span class="tr" lang="zh-Hant">工作室</span></a>
       <a href="#games"><span class="tr" lang="ko">게임</span><span class="tr" lang="en">Games</span><span class="tr" lang="ja">ゲーム</span><span class="tr" lang="zh">游戏</span><span class="tr" lang="zh-Hant">遊戲</span></a>
+      <a href="/park-souls/">Park Souls</a>
       <a class="nav-cta" href="#games"><span class="tr" lang="ko">플레이</span><span class="tr" lang="en">Play</span><span class="tr" lang="ja">プレイ</span><span class="tr" lang="zh">开始游玩</span><span class="tr" lang="zh-Hant">開始遊玩</span> ↗</a>
     </nav>
     <button class="nav-burger" aria-label="menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
@@ -263,8 +272,23 @@
       <div class="sec-head">
         <span class="kicker reveal"><span class="dot"></span>// 002 — OUR GAMES</span>
         <h2 class="reveal d1"><span class="tr" lang="ko">우리가 만든 우주들.</span><span class="tr" lang="en">The worlds we've built.</span><span class="tr" lang="ja">私たちが作った宇宙たち。</span><span class="tr" lang="zh">我们打造的宇宙。</span><span class="tr" lang="zh-Hant">我們打造的宇宙。</span></h2>
-        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 다섯 개의 우주.</span><span class="tr" lang="en">Five universes, made by two.</span><span class="tr" lang="ja">2人で作った5つの宇宙。</span><span class="tr" lang="zh">两人打造的五个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的五個宇宙。</span></div>
+        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 여섯 개의 우주.</span><span class="tr" lang="en">Six universes, made by two.</span><span class="tr" lang="ja">2人で作った6つの宇宙。</span><span class="tr" lang="zh">两人打造的六个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的六個宇宙。</span></div>
       </div>
+
+      <a class="game-panel parksouls-panel reveal" href="/park-souls/" aria-labelledby="parksouls-card-title">
+        <div class="gp-media">
+          <img src="park-souls-preview.png" alt="Park Souls cockpit gameplay: a large orange SUV squeezing between minibuses in an underground car park" width="1600" height="900" loading="lazy">
+        </div>
+        <div class="gp-body">
+          <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">Windows 체험판 · 개발 중</span><span class="tr" lang="en">WINDOWS PREVIEW · IN DEVELOPMENT</span><span class="tr" lang="ja">Windows体験版 · 開発中</span><span class="tr" lang="zh">Windows试玩版 · 开发中</span><span class="tr" lang="zh-Hant">Windows試玩版 · 開發中</span></span> DRIVING · PARKING</div>
+          <div class="gp-title" id="parksouls-card-title">Park Souls</div>
+          <div class="gp-kr"><span class="tr" lang="ko">덩치는 크고, 여유는 없다.</span><span class="tr" lang="en">A very large SUV. A very small margin for error.</span><span class="tr" lang="ja">大きすぎるSUV。小さすぎる余裕。</span><span class="tr" lang="zh">车很大，余地很小。</span><span class="tr" lang="zh-Hant">車很大，餘地很小。</span></div>
+          <p class="gp-desc"><span class="tr" lang="ko">좁은 램프, 튀어나온 불법주차, 쌓여가는 수리비. 거대한 SUV를 지하 4층까지 몰고 가 마지막 한 자리에 주차하세요. FNDG의 주차 시뮬레이터를 Windows 체험판으로 만나보세요.</span><span class="tr" lang="en">Tight ramps, badly parked cars and repair bills that keep climbing. Take an oversized SUV down to B4 and claim the last parking space. Try FNDG's parking simulator on your Windows PC.</span><span class="tr" lang="ja">狭いスロープ、はみ出した違法駐車、増え続ける修理代。巨大なSUVで地下4階へ降り、最後の1台分に駐車してください。FNDGの駐車シミュレーターをWindows体験版で。</span><span class="tr" lang="zh">狭窄的坡道、挡路的违停车、不断上涨的维修账单。驾驶大型SUV下到地下四层，停进最后一个车位。在Windows电脑上体验FNDG的停车模拟游戏。</span><span class="tr" lang="zh-Hant">狹窄的坡道、擋路的違停車、不斷上漲的維修帳單。駕駛大型SUV下到地下四層，停進最後一個車位。在Windows電腦上體驗FNDG的停車模擬遊戲。</span></p>
+          <div class="gp-meta"><span><b>UNREAL ENGINE 5</b></span><span><b>WINDOWS PC</b></span><span><b>B1 → B4</b></span></div>
+          <span class="gp-link"><span class="tr" lang="ko">다운로드 · 게임 실행</span><span class="tr" lang="en">Download &amp; launch</span><span class="tr" lang="ja">ダウンロード・起動</span><span class="tr" lang="zh">下载与启动</span><span class="tr" lang="zh-Hant">下載與啟動</span> <span class="arrow">→</span></span>
+          <p class="gp-availability"><span class="tr" lang="ko">Windows PC 키보드·마우스 전용 · 모바일 미지원. 처음 한 번 다운로드·설정한 뒤 이 홈페이지에서 실행합니다. 로그인은 필요 없습니다.</span><span class="tr" lang="en">Windows PC with keyboard and mouse · No mobile support. Download and set up once, then launch from this homepage. No login required.</span><span class="tr" lang="ja">Windows PCのキーボード・マウス専用 · モバイル非対応。初回ダウンロード・設定後、このホームページから起動できます。ログイン不要。</span><span class="tr" lang="zh">仅支持Windows电脑、键盘和鼠标 · 不支持手机。首次下载并设置后，即可从本网站启动。无需登录。</span><span class="tr" lang="zh-Hant">僅支援Windows電腦、鍵盤和滑鼠 · 不支援手機。首次下載並設定後，即可從本網站啟動。無需登入。</span></p>
+        </div>
+      </a>
 
       <a class="game-panel reveal puzzleshooter-panel" href="puzzleshooter.html">
         <div class="gp-media">
@@ -350,7 +374,7 @@
 
 <footer class="footer">
   <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span><span class="tr" lang="ja">大韓民国</span><span class="tr" lang="zh">大韩民国</span><span class="tr" lang="zh-Hant">大韓民國</span></span></div>
-  <div class="col"><span class="h">Games</span><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="fd-quest.html">FD Quest</a></div>
+  <div class="col"><span class="h">Games</span><a href="/park-souls/">Park Souls</a><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="fd-quest.html">FD Quest</a></div>
   <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/ghostchase/privacy.html"><span class="tr" lang="ko">Ghost Chase 개인정보처리방침</span><span class="tr" lang="en">Ghost Chase Privacy Policy</span><span class="tr" lang="ja">Ghost Chase プライバシーポリシー</span><span class="tr" lang="zh">Ghost Chase 隐私政策</span><span class="tr" lang="zh-Hant">Ghost Chase 隱私政策</span></a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span><span class="tr" lang="zh-Hant">PuzzleShooter 隱私政策</span></a><a href="/arrowpuzzle/privacy.html"><span class="tr" lang="ko">Arrow Puzzle 개인정보처리방침</span><span class="tr" lang="en">Arrow Puzzle Privacy Policy</span><span class="tr" lang="ja">Arrow Puzzle プライバシーポリシー</span><span class="tr" lang="zh">Arrow Puzzle 隐私政策</span><span class="tr" lang="zh-Hant">Arrow Puzzle 隱私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
