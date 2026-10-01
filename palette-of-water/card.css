@@ -4,5 +4,8 @@
 .palette-of-water-panel .gp-title { font-size: clamp(38px, 5vw, 70px); line-height: 1.08; }
 .palette-of-water-panel .gp-tag { flex-wrap: wrap; letter-spacing: .06em; }
 .palette-of-water-panel .gp-availability { margin-top: 16px; color: var(--ink-2); font-size: 13px; line-height: 1.7; }
+.palette-of-water-panel .gp-actions { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.palette-of-water-panel .gp-actions a { min-height: 44px; }
+.palette-of-water-panel .gp-actions a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 .palette-of-water-panel:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 @media (max-width: 880px) { .palette-of-water-panel .gp-media { min-height: 0; padding: 28px 20px; gap: 14px; } .palette-of-water-panel .gp-media img { max-height: 430px; } }
