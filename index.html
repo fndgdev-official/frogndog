@@ -47,6 +47,11 @@
 <link rel="stylesheet" href="maximal.css" />
 <link rel="stylesheet" href="gardenpuzzle/card.css" />
 <style>
+  /* The original in-game title pixels, cropped by a viewport; no substitute web font. */
+  .parksouls-logo { position:relative;display:block;width:100%;aspect-ratio:1152 / 152;overflow:hidden;mix-blend-mode:screen; }
+  .parksouls-logo img { position:absolute;display:block;width:145.138889%;max-width:none;height:auto;left:-24.479167%;top:-117.105263%;filter:url(#parksouls-ink); }
+  .parksouls-logo--compact { width:114px; }
+  .parksouls-panel .gp-title { max-width:490px;line-height:1; }
   .parksouls-panel { --c: #d2bb75; }
   .parksouls-panel .gp-media { background: #101713; }
   .parksouls-panel .gp-media img { object-fit: contain; }
@@ -89,6 +94,7 @@
 </script>
 </head>
 <body>
+<svg class="parksouls-filter-defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><filter id="parksouls-ink" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  4 4 4 0 -1"/></filter></defs></svg>
 
 <!-- ===== Background stack ===== -->
 <canvas id="warp"></canvas>
@@ -159,7 +165,7 @@
       <a href="#manifesto"><span class="tr" lang="ko">매니페스토</span><span class="tr" lang="en">Manifesto</span><span class="tr" lang="ja">マニフェスト</span><span class="tr" lang="zh">宣言</span><span class="tr" lang="zh-Hant">宣言</span></a>
       <a href="#studio"><span class="tr" lang="ko">스튜디오</span><span class="tr" lang="en">Studio</span><span class="tr" lang="ja">スタジオ</span><span class="tr" lang="zh">工作室</span><span class="tr" lang="zh-Hant">工作室</span></a>
       <a href="#games"><span class="tr" lang="ko">게임</span><span class="tr" lang="en">Games</span><span class="tr" lang="ja">ゲーム</span><span class="tr" lang="zh">游戏</span><span class="tr" lang="zh-Hant">遊戲</span></a>
-      <a href="/park-souls/">Park Souls</a>
+      <a href="/park-souls/"><span class="parksouls-logo parksouls-logo--compact"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls"></span></a>
       <a class="nav-cta" href="#games"><span class="tr" lang="ko">플레이</span><span class="tr" lang="en">Play</span><span class="tr" lang="ja">プレイ</span><span class="tr" lang="zh">开始游玩</span><span class="tr" lang="zh-Hant">開始遊玩</span> ↗</a>
     </nav>
     <button class="nav-burger" aria-label="menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
@@ -276,7 +282,7 @@
         </div>
         <div class="gp-body">
           <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">Windows 체험판 · 개발 중</span><span class="tr" lang="en">WINDOWS PREVIEW · IN DEVELOPMENT</span><span class="tr" lang="ja">Windows体験版 · 開発中</span><span class="tr" lang="zh">Windows试玩版 · 开发中</span><span class="tr" lang="zh-Hant">Windows試玩版 · 開發中</span></span> DRIVING · PARKING</div>
-          <div class="gp-title" id="parksouls-card-title">Park Souls</div>
+          <div class="gp-title" id="parksouls-card-title"><span class="parksouls-logo"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls" loading="lazy"></span></div>
           <div class="gp-kr"><span class="tr" lang="ko">덩치는 크고, 여유는 없다.</span><span class="tr" lang="en">A very large SUV. A very small margin for error.</span><span class="tr" lang="ja">大きすぎるSUV。小さすぎる余裕。</span><span class="tr" lang="zh">车很大，余地很小。</span><span class="tr" lang="zh-Hant">車很大，餘地很小。</span></div>
           <p class="gp-desc"><span class="tr" lang="ko">좁은 램프, 튀어나온 불법주차, 쌓여가는 수리비. 거대한 SUV를 지하 4층까지 몰고 가 마지막 한 자리에 주차하세요. FNDG의 주차 시뮬레이터를 Windows 체험판으로 만나보세요.</span><span class="tr" lang="en">Tight ramps, badly parked cars and repair bills that keep climbing. Take an oversized SUV down to B4 and claim the last parking space. Try FNDG's parking simulator on your Windows PC.</span><span class="tr" lang="ja">狭いスロープ、はみ出した違法駐車、増え続ける修理代。巨大なSUVで地下4階へ降り、最後の1台分に駐車してください。FNDGの駐車シミュレーターをWindows体験版で。</span><span class="tr" lang="zh">狭窄的坡道、挡路的违停车、不断上涨的维修账单。驾驶大型SUV下到地下四层，停进最后一个车位。在Windows电脑上体验FNDG的停车模拟游戏。</span><span class="tr" lang="zh-Hant">狹窄的坡道、擋路的違停車、不斷上漲的維修帳單。駕駛大型SUV下到地下四層，停進最後一個車位。在Windows電腦上體驗FNDG的停車模擬遊戲。</span></p>
           <div class="gp-meta"><span><b>UNREAL ENGINE 5</b></span><span><b>WINDOWS PC</b></span><span><b>B1 → B4</b></span></div>
@@ -366,7 +372,7 @@
 
 <footer class="footer">
   <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span><span class="tr" lang="ja">大韓民国</span><span class="tr" lang="zh">大韩民国</span><span class="tr" lang="zh-Hant">大韓民國</span></span></div>
-  <div class="col"><span class="h">Games</span><a href="/park-souls/">Park Souls</a><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="fd-quest.html">FD Quest</a></div>
+  <div class="col"><span class="h">Games</span><a href="/park-souls/"><span class="parksouls-logo parksouls-logo--compact"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls"></span></a><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="fd-quest.html">FD Quest</a></div>
   <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/ghostchase/privacy.html"><span class="tr" lang="ko">Ghost Chase 개인정보처리방침</span><span class="tr" lang="en">Ghost Chase Privacy Policy</span><span class="tr" lang="ja">Ghost Chase プライバシーポリシー</span><span class="tr" lang="zh">Ghost Chase 隐私政策</span><span class="tr" lang="zh-Hant">Ghost Chase 隱私政策</span></a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span><span class="tr" lang="zh-Hant">PuzzleShooter 隱私政策</span></a><a href="/arrowpuzzle/privacy.html"><span class="tr" lang="ko">Arrow Puzzle 개인정보처리방침</span><span class="tr" lang="en">Arrow Puzzle Privacy Policy</span><span class="tr" lang="ja">Arrow Puzzle プライバシーポリシー</span><span class="tr" lang="zh">Arrow Puzzle 隐私政策</span><span class="tr" lang="zh-Hant">Arrow Puzzle 隱私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
