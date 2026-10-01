@@ -11,8 +11,13 @@
 .parksouls-hero-grid { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center;gap:clamp(32px,4.7vw,76px); }
 .parksouls-detail .hero-copy,.parksouls-detail .hero-image { min-width:0; }
 .parksouls-detail .eyebrow { color:var(--dog);font-family:var(--mono);font-size:11px;letter-spacing:.15em;line-height:1.6; }
-.parksouls-detail .parksouls-hero .gc-title { margin:18px 0 22px;font-size:clamp(68px,8.1vw,118px);line-height:.9;letter-spacing:-.055em;background:linear-gradient(165deg,#fff5df 15%,#ffc061);background-clip:text;-webkit-background-clip:text;color:transparent; }
-.parksouls-detail .title-period { color:var(--dog); }
+/* Reuse the actual in-game title artwork, not a browser-rendered imitation. */
+.parksouls-detail .parksouls-title { margin:24px 0 30px;line-height:1;max-width:600px; }
+.parksouls-detail .parksouls-logo { position:relative;display:block;width:100%;aspect-ratio:1152 / 152;overflow:hidden;mix-blend-mode:screen; }
+.parksouls-detail span.parksouls-logo img { position:absolute;display:block;width:145.138889%;max-width:none;height:auto;left:-24.479167%;top:-117.105263%;filter:url(#parksouls-ink);aspect-ratio:auto;border-radius:0; }
+.parksouls-detail .parksouls-logo--compact { width:114px; }
+.parksouls-detail .caption-brand { display:inline-flex;gap:8px;align-items:center; }
+.parksouls-detail .caption-brand .parksouls-logo--compact { width:78px; }
 .parksouls-detail .subtitle { font-size:clamp(20px,2.1vw,28px);line-height:1.35;letter-spacing:-.015em;margin-bottom:20px;color:var(--ink); }
 .parksouls-detail .intro { color:var(--ink-2);font-size:16px;line-height:1.85;max-width:46ch; }
 .parksouls-detail .platform-note { display:grid;gap:5px;margin:24px 0;color:var(--ink-2);font-size:12px;line-height:1.6; }
@@ -80,7 +85,7 @@
 @media(max-width:800px) {
   .parksouls-detail .parksouls-hero { padding:130px 0 58px; }
   .parksouls-hero-grid { grid-template-columns:1fr;gap:48px; }
-  .parksouls-detail .parksouls-hero .gc-title { font-size:clamp(66px,13vw,100px); }
+  .parksouls-detail .parksouls-title { max-width:600px; }
   .parksouls-detail .hero-actions .btn { flex:0 1 auto; }
   .parksouls-detail .intro { max-width:56ch; }
   .parksouls-detail .hero-image { max-width:640px; }
