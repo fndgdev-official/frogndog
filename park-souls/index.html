@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-grain="on">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Park Souls — Download &amp; Launch | FNDG</title>
   <meta name="description" content="A very large SUV. A very small margin for error. Download Park Souls for Windows, set up once, then launch from FNDG. Keyboard and mouse required. No login.">
-  <meta name="theme-color" content="#111710">
+  <meta name="theme-color" content="#050510">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Park Souls — an FNDG game">
   <meta property="og:description" content="Four floors down. $10,000 to survive. Download the Windows preview and launch from FNDG.">
@@ -15,53 +15,101 @@
   <link rel="canonical" href="https://frogndog.com/park-souls/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/favicon.svg">
-  <link rel="stylesheet" href="page.css">
-  <script defer src="launch-config.js"></script>
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="page.css?v=20261001-starfield">
+  <script defer src="launch-config.js?v=20261001-preview1"></script>
   <script defer src="launch.js"></script>
 </head>
-<body>
-<main>
-  <nav aria-label="Main navigation"><a class="brand" href="/">FNDG <span>/ INTERACTIVE WORK</span></a><a class="back" href="/#games">← ALL GAMES</a></nav>
-  <header class="masthead">
-    <p class="eyebrow">AN FNDG GAME · DEVELOPMENT PREVIEW</p>
-    <h1>PARK SOULS</h1>
-    <p class="tagline">A very large SUV. A very small margin for error.</p>
-    <div class="spec-strip"><span>WINDOWS 10 / 11 · 64-BIT</span><span>KEYBOARD + MOUSE</span><span>DOWNLOAD ONCE</span><span>NO LOGIN</span></div>
-  </header>
-  <div class="notice"><strong>Windows PC + keyboard + mouse required.</strong><span lang="ko">Windows PC 키보드·마우스 전용 · 모바일·태블릿 미지원</span></div>
-  <section id="unsupported-note" class="unsupported hidden" role="status"><h2>Bring a Windows PC.</h2><p>The game runs on your Windows computer. Phones, tablets and touch-only play are not supported. You can still explore the game and setup instructions below.</p></section>
-  <section class="hero" aria-labelledby="hero-title">
-    <img src="../park-souls-preview.png" width="1600" height="900" alt="Actual Park Souls gameplay: the driver's view of an oversized SUV navigating a tight underground garage">
-    <span class="capture-label">ACTUAL GAMEPLAY</span>
-    <div class="shade"></div>
-    <div class="hero-copy"><p class="eyebrow">B1 → B4</p><h2 id="hero-title">Four floors down.<br>$10,000 to survive.</h2><p>Concrete pillars. Badly parked cars. Corners that ask too much of an oversized SUV. Reach B4 and park before the repair bills empty your wallet.</p></div>
-  </section>
-  <section class="launch-panel" id="play" aria-labelledby="play-title">
-    <div class="launch-heading"><span class="section-number">01 / PLAY</span><h2 id="play-title">Your next expensive mistake.</h2><p>The game runs on your PC. This page opens your installed copy.</p></div>
-    <div class="launch-actions">
-      <a class="button primary" id="launch-game" role="link" aria-disabled="true" tabindex="-1" aria-describedby="launch-requirement">PLAY INSTALLED GAME <span aria-hidden="true">↗</span></a>
-      <p id="launch-requirement">Already downloaded and set up? Click Play, then allow your browser to open Park Souls.</p>
-      <a class="button secondary" id="download-game" role="link" aria-disabled="true" tabindex="-1" aria-describedby="download-status">DOWNLOAD FOR WINDOWS <span aria-hidden="true">↓</span></a>
-      <p id="download-status" role="status">Download is being prepared. Check back soon.</p>
-      <p class="launch-feedback" id="launch-status" role="status" aria-live="polite"></p>
-      <a class="text-link" href="#setup">First visit? Follow the setup guide ↓</a>
-      <noscript><p class="script-note">Enable JavaScript on a Windows PC to use the download and launch buttons. No game opens automatically.</p></noscript>
+<body class="parksouls-detail">
+<canvas id="warp" aria-hidden="true"></canvas>
+<div class="mesh" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
+<div class="spotlight" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<div class="dust" aria-hidden="true">
+  <i style="left:6%;width:3px;height:3px;animation-duration:17s;animation-delay:-2s;--dx:30px"></i>
+  <i style="left:14%;width:2px;height:2px;animation-duration:22s;animation-delay:-9s;--dx:-20px"></i>
+  <i style="left:22%;width:4px;height:4px;animation-duration:15s;animation-delay:-5s;--dx:18px"></i>
+  <i style="left:31%;width:2px;height:2px;animation-duration:24s;animation-delay:-13s;--dx:40px"></i>
+  <i style="left:39%;width:3px;height:3px;animation-duration:19s;animation-delay:-1s;--dx:-30px"></i>
+  <i style="left:47%;width:2px;height:2px;animation-duration:26s;animation-delay:-16s;--dx:24px"></i>
+  <i style="left:55%;width:4px;height:4px;animation-duration:16s;animation-delay:-7s;--dx:-26px"></i>
+  <i style="left:63%;width:2px;height:2px;animation-duration:21s;animation-delay:-11s;--dx:16px"></i>
+  <i style="left:71%;width:3px;height:3px;animation-duration:18s;animation-delay:-3s;--dx:-18px"></i>
+  <i style="left:79%;width:2px;height:2px;animation-duration:25s;animation-delay:-19s;--dx:34px"></i>
+  <i style="left:86%;width:4px;height:4px;animation-duration:14s;animation-delay:-6s;--dx:-22px"></i>
+  <i style="left:93%;width:2px;height:2px;animation-duration:23s;animation-delay:-14s;--dx:20px"></i>
+</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav parksouls-nav">
+  <a class="brand" href="/" aria-label="FNDG home"><span class="mark" aria-hidden="true"><span class="orb frog-o"></span><span class="orb dog-o"></span></span><span class="name">FNDG<small>FROG · DOG</small></span></a>
+  <nav class="nav-right" aria-label="Main navigation"><a class="nav-back" href="/#games">← All games</a><a class="nav-back" href="#setup">Setup guide</a><a class="nav-back nav-play" href="#play">Play ↗</a></nav>
+</header>
+<main id="main">
+  <section class="detail-hero parksouls-hero" id="play" aria-labelledby="game-title">
+    <div class="godrays" aria-hidden="true"></div><div class="godrays g2" aria-hidden="true"></div>
+    <div class="wrap parksouls-hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AN FNDG GAME · DEVELOPMENT PREVIEW</p>
+        <h1 class="gc-title" id="game-title">PARK<br>SOULS<span class="title-period">.</span></h1>
+        <p class="subtitle">A very large SUV.<br>A very small margin for error.</p>
+        <p class="intro">Tight ramps. Badly parked cars. Repair bills that keep climbing. Take an oversized SUV down to B4 and claim the last parking space.</p>
+        <div class="platform-note"><strong>Windows 10 / 11 · 64-bit · Keyboard + mouse</strong><span lang="ko">Windows PC 키보드·마우스 전용 · 모바일·태블릿 미지원</span></div>
+        <div id="unsupported-note" class="unsupported hidden" role="status"><strong>Bring a Windows PC.</strong><p>Phones, tablets, macOS, Linux and touch-only play are not supported. You can still explore the game and setup guide below.</p></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="launch-game" role="link" aria-disabled="true" tabindex="-1" aria-describedby="launch-requirement">Play installed game <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" id="download-game" role="link" aria-disabled="true" tabindex="-1" aria-describedby="download-status">Download for Windows <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="status" id="launch-requirement">Download and set up once, then launch from here. Already set up? Click Play and allow your browser to open Park Souls.</p>
+        <p class="status download-status" id="download-status" role="status">Download is being prepared. Check back soon.</p>
+        <p class="launch-feedback" id="launch-status" role="status" aria-live="polite"></p>
+        <a class="text-link" href="#setup">First visit? Follow the setup guide ↓</a>
+        <noscript><p class="script-note">Enable JavaScript on a Windows PC to use the download and launch buttons. No game opens automatically.</p></noscript>
+      </div>
+      <figure class="hero-image">
+        <div class="image-frame"><img src="../park-souls-preview.png" width="1600" height="900" fetchpriority="high" alt="Actual Park Souls gameplay: the driver's view of an oversized SUV navigating between minibuses in a tight underground garage"><span class="image-label">ACTUAL GAMEPLAY</span></div>
+        <figcaption><span>B2 / NO ROOM FOR COMFORT</span><span>PARK SOULS · FNDG</span></figcaption>
+        <div class="hero-caption"><span class="caption-rule"></span><p>Four floors down.<br><strong>$10,000 to survive.</strong></p></div>
+      </figure>
     </div>
   </section>
-  <section class="setup" id="setup" aria-labelledby="setup-title">
-    <div class="section-heading"><span class="section-number">02 / FIRST VISIT</span><h2 id="setup-title">Set up once. Return here to play.</h2></div>
-    <ol class="steps">
+  <div class="wrap">
+    <ul class="facts" aria-label="Game features"><li><strong>B1 → B4</strong><span>Every floor has its own terrible idea</span></li><li><strong>$10,000</strong><span>One budget. Every scrape counts.</span></li><li><strong>Windows PC</strong><span>The game runs on your computer</span></li><li><strong>No login</strong><span>Set up once, then launch here</span></li></ul>
+  </div>
+  <section class="wrap parksouls-section" aria-labelledby="gameplay-title">
+    <div class="section-heading"><p class="eyebrow">BEHIND THE WHEEL</p><h2 id="gameplay-title">Small movements.<br>Expensive mistakes.</h2><p class="section-intro">Brake, reverse, fold your mirrors and find another angle. The parking space is there. Getting to it is your problem.</p></div>
+    <div class="feature-row">
+      <article class="feature"><span class="feature-number">01 / FIND A WAY</span><h3>Too much car.<br>Not enough garage.</h3><p>Thread a full-size SUV through concrete pillars, tight ramps and badly parked cars. Every corner asks for another adjustment.</p></article>
+      <article class="feature"><span class="feature-number">02 / WATCH THE BILL</span><h3>That sounded<br>expensive.</h3><p>Start with $10,000. Every collision eats into your budget. Reach zero and your parking attempt ends with YOU BANKRUPTED.</p></article>
+      <article class="feature"><span class="feature-number">03 / MAKE IT COUNT</span><h3>Four floors.<br>One final space.</h3><p>Descend to B4 and park in the last available spot. Take your time, check your surroundings and try a different angle.</p></article>
+    </div>
+    <div class="controls" aria-label="Keyboard and mouse controls"><span><kbd>W</kbd><kbd>S</kbd> Drive / brake / reverse</span><span><kbd>A</kbd><kbd>D</kbd> Steer</span><span><kbd>Mouse</kbd> Look around</span><span><kbd>Tab</kbd> Fold mirrors</span></div>
+  </section>
+  <section class="wrap parksouls-section setup-section" id="setup" aria-labelledby="setup-title">
+    <div class="section-heading"><p class="eyebrow">FIRST VISIT</p><h2 id="setup-title">Set up once.<br>Return here to play.</h2><p class="section-intro">The website opens your installed Windows game. No account is needed. Keep the extracted game folder after setup.</p></div>
+    <ol class="setup-steps">
       <li><span class="step-number">01</span><h3>Download the game.</h3><p>Use <strong>Download for Windows</strong> above. The ZIP contains the game and its small launcher.</p></li>
       <li><span class="step-number">02</span><h3>Extract everything.</h3><p>Right-click the ZIP and choose <strong>Extract All</strong>. Keep all extracted files together in a folder you plan to keep.</p></li>
       <li><span class="step-number">03</span><h3>Run ParkSouls.exe.</h3><p>Open <strong>ParkSouls.exe</strong> from that folder and choose <strong>Set up &amp; open website</strong>. It registers the launch link in Windows and brings you back here.</p></li>
       <li><span class="step-number">04</span><h3>Click Play here.</h3><p>Choose <strong>Play Installed Game</strong>, then confirm your browser's request to open Park Souls. On future visits, start here.</p></li>
     </ol>
   </section>
-  <div class="details">
-    <section aria-labelledby="controls-title"><span class="section-number">03 / BEHIND THE WHEEL</span><h2 id="controls-title">Small movements.<br>Expensive mistakes.</h2><p>Brake, reverse, fold your mirrors and find another angle. Every floor has its own terrible idea.</p><div class="keys"><span><kbd>W</kbd> <kbd>S</kbd> Drive / brake / reverse</span><span><kbd>A</kbd> <kbd>D</kbd> Steer</span><span><kbd>Mouse</kbd> Look around</span><span><kbd>Tab</kbd> Fold mirrors</span></div></section>
-    <section aria-labelledby="help-title"><span class="section-number">04 / PIT STOP</span><h2 id="help-title">Need a hand?</h2><details><summary>Play didn't open the game.</summary><p>This page cannot reliably check whether the game is installed. Make sure you extracted the ZIP and ran ParkSouls.exe once, then click Play again. Accept your browser's external-app prompt if it appears.</p></details><details><summary>I moved the game folder.</summary><p>Run ParkSouls.exe from its new location to update the launch link, then return to this page and click Play.</p></details><details><summary>Can I play on a phone, Mac or tablet?</summary><p>This preview is for Windows PCs with a keyboard and mouse. Mobile, tablet, macOS and Linux versions are not included.</p></details><details><summary>The game reports missing prerequisites.</summary><p>Run <strong>Support/UEPrereqSetup_x64.exe</strong> from the extracted game folder, complete the Unreal Engine prerequisites setup, then return here and try Play again.</p></details><details><summary>Does this run inside my browser?</summary><p>The browser opens the Windows game installed on your computer. Download and setup are required the first time; you do not need an FNDG account.</p></details></section>
-  </div>
-  <footer><span>Park Souls · Created by FNDG · Development portfolio</span><a href="/">Frog and Dog Games ↗</a></footer>
+  <section class="wrap parksouls-section help-section" aria-labelledby="help-title">
+    <div class="section-heading"><p class="eyebrow">PIT STOP</p><h2 id="help-title">Need a hand?</h2><p class="section-intro">A little help before you run out of room.</p></div>
+    <div class="faq">
+      <details><summary>Play didn't open the game.</summary><p>This page cannot reliably check whether the game is installed. Make sure you extracted the ZIP and ran ParkSouls.exe once, then click Play again. Accept your browser's external-app prompt if it appears.</p></details>
+      <details><summary>I moved the game folder.</summary><p>Run ParkSouls.exe from its new location to update the launch link, then return to this page and click Play.</p></details>
+      <details><summary>Can I play on a phone, Mac or tablet?</summary><p>This preview is for Windows PCs with a keyboard and mouse. Mobile, tablet, macOS and Linux versions are not included.</p></details>
+      <details><summary>The game reports missing prerequisites.</summary><p>Run <strong>Support/UEPrereqSetup_x64.exe</strong> from the extracted game folder, complete the Unreal Engine prerequisites setup, then return here and try Play again.</p></details>
+      <details><summary>Does this run inside my browser?</summary><p>The browser opens the Windows game installed on your computer. Download and setup are required the first time; you do not need an FNDG account.</p></details>
+    </div>
+  </section>
+  <section class="wrap end-cta" aria-labelledby="end-title"><p class="eyebrow">THE LAST SPACE IS WAITING</p><h2 id="end-title">How hard could<br>parking be?</h2><a class="btn btn-primary" href="#play">Download &amp; play <span class="arrow" aria-hidden="true">↗</span></a><p class="status">Windows PC · Keyboard + mouse · Development preview</p></section>
 </main>
+<footer class="footer">
+  <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><a href="/#games">← Back to all games</a></div>
+  <div class="col"><span class="h">Park Souls</span><a href="#play">Download &amp; launch</a><a href="#setup">Setup guide</a><span>Created by FNDG · Development portfolio</span></div>
+  <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a></div>
+  <div class="col"><span class="h">Business</span><span class="legal">FNDG<br>Business registration: 601-16-52660<br>Online business registration: 2026-Gyeonggi Hanam-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
+</footer>
+<script src="/warp.js"></script><script src="/site.js"></script>
 </body>
 </html>
