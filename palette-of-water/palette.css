@@ -29,6 +29,7 @@ h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(62px,7.4vw,105
 .status-pill { display:inline-flex; gap:9px; align-items:center; border:1px solid #bdcbb7; padding:6px 13px; border-radius:20px; font-size:12px; line-height:1.4; margin-bottom:24px; }
 .status-dot { width:6px; height:6px; flex:none; border-radius:50%; background:#728966; }
 .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:22px; }
+.demo-summary { margin:20px 0; padding:14px 18px; border:1px solid var(--line); border-radius:13px; background:#e7eadf; color:var(--ink); font-size:13px; line-height:1.7; }
 .button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:16px; border:1px solid var(--ink); border-radius:28px; padding:12px 22px; font-size:13px; line-height:1.5; text-align:center; }
 .button-primary { background:var(--ink); color:var(--paper); }
 .button:hover { background:#466357; }.text-link { display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:13px; border:0; background:none; text-decoration:underline; text-underline-offset:5px; }
