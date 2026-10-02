@@ -10,57 +10,62 @@
   const copy = {
     ko: {
       play: '설치한 게임 실행',
-      download: 'Windows 다운로드',
+      download: 'Windows 설치 파일 받기',
       unsupportedPlay: 'Windows PC · 키보드 · 마우스 필요',
       unsupportedDownload: 'Windows PC에서 다운로드',
       unsupportedStatus: '키보드와 마우스가 연결된 Windows PC에서 이 페이지를 열어 주세요.',
       unavailable: '다운로드를 준비 중입니다. 잠시 후 다시 확인해 주세요.',
-      archive: 'Windows ZIP',
-      extract: '설치 전 모든 파일의 압축을 풀어 주세요.',
+      installer: '소형 Windows 설치 프로그램',
+      resources: '게임 다운로드',
+      setup: '실행하면 진행률을 보며 게임을 다운로드·설치합니다. 중단해도 이어받을 수 있습니다.',
       launchAttempt: '브라우저에서 Park Souls를 열지 물으면 열기를 선택해 주세요. 아무 반응이 없으면 아래 설치 안내를 확인해 주세요. 이 페이지에서는 게임 설치 여부를 확인할 수 없습니다.'
     },
     en: {
       play: 'Play Installed Game',
-      download: 'Download for Windows',
+      download: 'Get Windows Installer',
       unsupportedPlay: 'Windows PC + keyboard + mouse required',
       unsupportedDownload: 'Download on a Windows PC',
       unsupportedStatus: 'Open this page on a Windows PC with a keyboard and mouse.',
       unavailable: 'Download is being prepared. Check back soon.',
-      archive: 'Windows ZIP',
-      extract: 'Extract all files before setup.',
+      installer: 'Small Windows installer',
+      resources: 'Game download',
+      setup: 'Run it to download and install the game with a progress bar. Interrupted downloads can resume.',
       launchAttempt: 'Your browser may ask to open Park Souls. Choose Open to continue. If nothing happens, follow the setup guide below; this page cannot check whether the game is installed.'
     },
     ja: {
       play: 'インストール済みのゲームを起動',
-      download: 'Windows版をダウンロード',
+      download: 'Windowsインストーラーを入手',
       unsupportedPlay: 'Windows PC・キーボード・マウスが必要',
       unsupportedDownload: 'Windows PCでダウンロード',
       unsupportedStatus: 'キーボードとマウスを接続したWindows PCで、このページを開いてください。',
       unavailable: 'ダウンロードを準備中です。しばらくしてからご確認ください。',
-      archive: 'Windows版ZIP',
-      extract: 'セットアップ前にすべてのファイルを展開してください。',
+      installer: '小容量のWindowsインストーラー',
+      resources: 'ゲームのダウンロード',
+      setup: '実行すると進行状況を確認しながらゲームをダウンロード・インストールできます。中断後も再開できます。',
       launchAttempt: 'ブラウザーにPark Soulsを開くか確認されたら、「開く」を選んでください。何も起きない場合は、下のセットアップ手順をご確認ください。このページではゲームがインストールされているかどうかを確認できません。'
     },
     zh: {
       play: '启动已安装的游戏',
-      download: '下载Windows版',
+      download: '获取Windows安装程序',
       unsupportedPlay: '需要Windows电脑、键盘和鼠标',
       unsupportedDownload: '请在Windows电脑上下载',
       unsupportedStatus: '请使用连接了键盘和鼠标的Windows电脑打开此页面。',
       unavailable: '下载正在准备中，请稍后再来查看。',
-      archive: 'Windows版ZIP',
-      extract: '设置前请解压全部文件。',
+      installer: '小型Windows安装程序',
+      resources: '游戏下载',
+      setup: '运行后即可通过进度条查看游戏下载和安装进度。下载中断后可以继续。',
       launchAttempt: '如果浏览器询问是否打开Park Souls，请选择“打开”。如果没有反应，请查看下方的设置指南。本页面无法检测游戏是否已安装。'
     },
     'zh-Hant': {
       play: '啟動已安裝的遊戲',
-      download: '下載Windows版',
+      download: '取得Windows安裝程式',
       unsupportedPlay: '需要Windows電腦、鍵盤和滑鼠',
       unsupportedDownload: '請在Windows電腦下載',
       unsupportedStatus: '請使用已連接鍵盤與滑鼠的Windows電腦開啟此頁面。',
       unavailable: '下載正在準備中，請稍後再來查看。',
-      archive: 'Windows版ZIP',
-      extract: '設定前請解壓縮全部檔案。',
+      installer: '小型Windows安裝程式',
+      resources: '遊戲下載',
+      setup: '執行後即可透過進度條查看遊戲下載及安裝進度。下載中斷後可以繼續。',
       launchAttempt: '如果瀏覽器詢問是否開啟Park Souls，請選擇「開啟」。如果沒有反應，請查看下方的設定指南。本頁面無法偵測遊戲是否已安裝。'
     }
   };
@@ -110,8 +115,9 @@
     setText(launch, supported ? text.play : text.unsupportedPlay);
     setText(download, supported ? text.download : text.unsupportedDownload);
     setText(downloadStatus, !supported ? text.unsupportedStatus : !downloadUrl ? text.unavailable :
-      text.archive + (typeof release.sizeLabel === 'string' && release.sizeLabel ? ' · ' + release.sizeLabel : '') +
-      ' · ' + text.extract);
+      text.installer + (typeof release.installerSizeLabel === 'string' && release.installerSizeLabel ? ' · ' + release.installerSizeLabel : '') +
+      (typeof release.gameSizeLabel === 'string' && release.gameSizeLabel ? ' · ' + text.resources + ': ' + release.gameSizeLabel : '') +
+      ' · ' + text.setup);
     setText(launchStatus, launchAttempted ? text.launchAttempt : '');
   }
 
