@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ko" data-locale="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#faf7f0">
+<meta name="description" content="한 칸씩 쌓고, 돌려 보며 배우는 쌓기나무 놀이터. 휴대폰과 컴퓨터에서 바로 즐겨 보세요.">
+<title>쌓기나무 놀이터 — FNDG</title>
+<link rel="canonical" href="https://frogndog.com/stacking-blocks.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>
+(function(){var V=['ko','en','ja','zh','zh-Hant'],l='';try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('fndg-locale')||'';}catch(e){}if(V.indexOf(l)<0){var n=(navigator.language||'').toLowerCase();l=n.indexOf('ko')===0?'ko':n.indexOf('ja')===0?'ja':(/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':(n.indexOf('zh')===0?'zh':'en'));}document.documentElement.lang=l;document.documentElement.dataset.locale=l;})();
+</script>
+<style>
+:root{color-scheme:light;--ink:#303d3a;--muted:#68786f;--paper:#faf7f0;--panel:#fffefb;--line:#e1e4d8;--green:#326e62;--wood:#bd813c;font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink)}button,select{font:inherit}button,select{cursor:pointer;-webkit-tap-highlight-color:transparent}button:disabled{cursor:default}button:focus-visible,select:focus-visible,canvas:focus-visible,a:focus-visible{outline:3px solid #458c78;outline-offset:3px}h1,h2,p{margin:0}a{color:var(--green);text-decoration:none}.app{max-width:1500px;margin:auto;padding:20px 28px 16px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}.back-link{display:flex;align-items:center;gap:10px;font-size:13px;min-height:44px}.back-link strong{font-size:17px;letter-spacing:.07em}.locale-control{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}select{border:1px solid #d4ddce;background:var(--panel);color:var(--ink);border-radius:9px;min-height:44px;padding:0 10px}#language{min-width:110px;font-size:13px}.app-header{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.brand-icon{width:40px;height:44px;flex-shrink:0}h1{font-size:clamp(23px,2.4vw,30px);line-height:1.25;letter-spacing:-.6px}.summary{display:flex;align-items:center;gap:20px;font-size:12px;color:var(--muted)}.summary>span{display:flex;align-items:baseline;gap:7px}.summary strong{font-size:25px;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}.unit{font-size:11px}.workspace{display:grid;grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);gap:18px;height:clamp(620px,calc(100dvh - 265px),800px)}.left-column{display:grid;grid-template-rows:minmax(340px,1.2fr) minmax(245px,.9fr);gap:18px;min-width:0;min-height:0}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;min-width:0;min-height:0;overflow:hidden}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 20px 0}h2{font-size:16px;line-height:1.4;font-weight:700;letter-spacing:-.25px}.badge{background:#f1ede2;color:#816b4d;border-radius:7px;padding:5px 8px;white-space:nowrap;font-size:11px}.plan-panel{display:flex;flex-direction:column}.edit-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:12px 20px 0}.mode-switch{display:flex;border:1px solid #d1ddca;border-radius:10px;padding:3px;gap:3px;background:#f4f6ed}.mode-switch button{border:0;color:var(--muted);background:transparent;border-radius:7px;min-height:38px;padding:0 12px;font-size:12px;font-weight:650}.mode-switch button[aria-pressed="true"]{background:var(--green);color:white}.mode-switch button span[aria-hidden]{font-size:16px;vertical-align:-1px;margin-right:4px}.edit-help{font-size:11px;line-height:1.5;color:var(--muted);text-align:right;max-width:140px}.plan-area{flex:1;min-height:0;display:flex;justify-content:center;align-items:center;padding:20px 38px 22px}.grid-scroll{max-width:100%;max-height:100%;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b5c9b4 #f1f4e9;border-radius:7px;padding:2px;touch-action:pan-x pan-y;position:relative}.plan-board{position:relative;flex-shrink:0;width:clamp(205px,20vw,285px);aspect-ratio:1}.plan-board.dense-board{width:calc(var(--size) * 40px + 4px);max-width:none}.grid{height:100%;display:grid;grid-template-columns:repeat(var(--size,4),1fr);grid-template-rows:repeat(var(--size,4),1fr);gap:1px;padding:1px;background:#d3d8cc;border:2px solid #a9b5a4;border-radius:5px}.cell{border:0;background:#fcfcf7;color:#8d9989;min-width:0;min-height:0;font-size:clamp(16px,1.6vw,23px);font-weight:500;font-variant-numeric:tabular-nums;padding:0;touch-action:manipulation;transition:background .12s,color .12s}.cell.filled{color:#795224;background:#f3dfb9;font-weight:750}.cell:hover{background:#f6eddc}.cell.filled:hover{background:#ecd2a0}.cell:focus-visible{outline-offset:-4px;z-index:1}.grid.dense .cell{font-size:15px}.grid.very-dense .cell{font-size:13px}.directions{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 20px 13px;font-size:10px;color:var(--muted)}.directions>span:nth-child(2){color:var(--green);font-weight:650}.scroll-hint{font-size:10px;color:var(--muted);text-align:center;padding:0 15px 10px}.scroll-hint[hidden]{display:none}.fixed-panel,.orbit-panel{display:flex;flex-direction:column}.canvas-wrap{position:relative;min-height:0;isolation:isolate;background:radial-gradient(ellipse at 50% 45%,#fffefb 0,#f0f3e8 100%)}.canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.fixed-wrap{flex:1;margin-top:10px}.orbit-wrap{flex:1;margin:12px 14px 0;border-radius:13px}#orbit-canvas{touch-action:none;cursor:grab}.empty-hint{position:absolute;bottom:18px;left:12px;right:12px;text-align:center;color:#6c7d6d;font-size:12px;pointer-events:none;line-height:1.5}.empty-hint[hidden]{display:none}.view-tag{position:absolute;left:14px;top:14px;font-size:11px;pointer-events:none;color:#7b8977}.orbit-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:14px 20px 18px;color:var(--muted);font-size:11px}.distance{display:flex;align-items:center;gap:6px}.status-dot{width:6px;height:6px;border-radius:50%;background:#62a28b}.view-tabs{display:none}.toolbar{display:flex;align-items:center;gap:15px;background:#eeefe1;border:1px solid #dfe5d4;border-radius:15px;padding:13px 16px;margin-top:18px;z-index:3}.size-control{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;white-space:nowrap}#board-size{min-width:100px;font-weight:500}.size-note{font-size:11px;color:var(--muted);line-height:1.4;max-width:330px}.toolbar-actions{display:flex;align-items:center;gap:8px;margin-left:auto}.button{display:inline-flex;justify-content:center;align-items:center;gap:6px;border:1px solid #d4ddcc;background:var(--panel);color:#536d5d;min-height:44px;border-radius:9px;padding:0 14px;font-size:13px;white-space:nowrap}.button:hover{background:#f1f5e9}.button:disabled{opacity:.4}.button-reset{background:var(--green);color:white;border-color:var(--green)}.button-reset:hover{background:#285e51}.button-subtle{min-height:36px;padding:0 9px;font-size:11px;color:var(--muted);border-color:#e3e6da;background:transparent}.cell.pop{animation:pop .18s ease-out}@keyframes pop{50%{box-shadow:inset 0 0 0 3px #d59e51;color:#b16b15}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.noscript{padding:24px;border:1px solid #c9ab70;background:#fff4de}.no-script-tr{display:none}html[data-locale="ko"] .no-script-tr[lang="ko"],html[data-locale="en"] .no-script-tr[lang="en"],html[data-locale="ja"] .no-script-tr[lang="ja"],html[data-locale="zh"] .no-script-tr[lang="zh"],html[data-locale="zh-Hant"] .no-script-tr[lang="zh-Hant"]{display:block}.graphics-error{padding:30px;line-height:1.6;color:#925a31}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media(min-width:1001px){.workspace:has(.grid.dense){height:830px}.workspace:has(.grid.dense) .left-column{grid-template-rows:minmax(500px,1.5fr) minmax(275px,.9fr)}.plan-panel:has(.grid.dense) .plan-area{padding-left:16px;padding-right:16px}.plan-panel:has(.grid.dense) .grid-scroll{height:100%;max-height:405px}.plan-panel:has(.grid.dense) .scroll-hint{display:block}}
+@media(max-width:1000px){.app{padding:10px max(12px,env(safe-area-inset-right)) 12px max(12px,env(safe-area-inset-left))}.topbar{margin-bottom:10px;gap:8px}.back-link{font-size:11px;gap:7px;min-height:40px}.back-link strong{font-size:15px}#language{font-size:12px;min-width:104px;min-height:40px}.locale-control>label{display:none}.app-header{align-items:flex-start;gap:10px;margin-bottom:12px;flex-wrap:wrap}.brand{gap:9px}.brand-icon{width:29px;height:33px}h1{font-size:22px;letter-spacing:-.5px;line-height:1.4}.summary{width:100%;justify-content:flex-start;gap:24px;margin-left:38px;font-size:11px}.summary strong{font-size:21px}.summary>span{gap:6px}.workspace{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(225px,31dvh);height:auto;gap:10px}.left-column{display:contents}.plan-panel{grid-row:1;min-height:290px}.panel{border-radius:14px}.panel-heading{padding:12px 14px 0}h2{font-size:14px}.badge{font-size:10px;padding:4px 7px}.edit-tools{margin:8px 14px 0;gap:8px}.mode-switch button{min-height:40px;padding:0 13px}.edit-help{font-size:10px;max-width:132px}.plan-area{flex:initial;height:216px;padding:9px 12px 7px;min-width:0}.plan-board{width:204px;height:204px}.grid-scroll{height:208px;width:auto;max-width:100%;max-height:none}.plan-board.dense-board{height:calc(var(--size) * 40px + 4px)}.plan-panel:has(.grid.dense) .grid-scroll{width:100%}.cell{font-size:20px}.directions{padding:0 14px 9px;font-size:10px}.scroll-hint{padding:0 14px 8px;font-size:10px}.view-tabs{display:flex;grid-row:2;gap:4px;background:#e8eddf;border:1px solid #dae2cf;border-radius:11px;padding:4px;min-width:0}.view-tabs button{flex:1;min-width:0;border:0;border-radius:8px;min-height:42px;background:transparent;color:var(--muted);font-size:13px;font-weight:650}.view-tabs button[aria-selected="true"]{background:var(--panel);color:var(--green);box-shadow:0 1px 4px #2f4e3510}.fixed-panel,.orbit-panel{grid-row:3;grid-column:1;display:none}.fixed-panel.view-selected,.orbit-panel.view-selected{display:flex}.fixed-panel .panel-heading,.orbit-panel h2{display:none}.orbit-panel .panel-heading{padding:8px 10px 0;justify-content:flex-end}.orbit-panel .button-subtle{min-height:36px}.fixed-wrap{margin-top:0}.orbit-wrap{margin:2px 8px 0}.orbit-footer{padding:9px 12px 10px;font-size:10px;gap:4px}.orbit-footer .keyboard-hint{display:none}.view-tag{left:10px;top:10px;font-size:10px}.empty-hint{font-size:11px;bottom:12px}.toolbar{position:sticky;bottom:0;border-radius:13px 13px 0 0;margin:12px -1px -12px;padding:10px 10px max(10px,env(safe-area-inset-bottom));gap:8px;flex-wrap:wrap;box-shadow:0 -4px 14px #4d674412}.size-control{gap:6px;font-size:11px}.size-control label{max-width:75px;white-space:normal;line-height:1.2}#board-size{min-width:76px;width:76px;padding:0 6px;font-size:13px}.toolbar-actions{gap:6px}.button{font-size:12px;padding:0 10px;min-height:44px}.size-note{order:3;width:100%;max-width:none;font-size:10px;line-height:1.35;margin:0;text-align:center}.toolbar-actions .button>span[aria-hidden]{font-size:17px}.workspace:has(.grid.dense){grid-template-rows:auto auto minmax(225px,31dvh)}}
+@media(max-width:360px){.app{padding-left:9px;padding-right:9px}.back-link span{font-size:10px}.app-header{margin-bottom:9px}h1{font-size:20px}.summary{gap:16px}.summary strong{font-size:20px}.toolbar{gap:5px;padding-left:7px;padding-right:7px}.button{padding-left:7px;padding-right:7px;font-size:11px}.size-control label{max-width:58px}.edit-help{max-width:115px}.mode-switch button{padding-left:10px;padding-right:10px}}
+/* Phones follow the learning flow: turn the blocks, tap the plan, then clear. */
+@media(max-width:1000px){
+  .workspace,.workspace:has(.grid.dense){grid-template-columns:minmax(0,1fr);grid-template-rows:clamp(220px,28dvh,250px) auto;gap:10px}
+  .plan-panel{grid-row:2;grid-column:1;min-height:0}
+  .orbit-panel .panel-heading{display:none}
+  .orbit-panel,.orbit-panel.view-selected{grid-row:1;grid-column:1;display:flex}
+  .fixed-panel,.fixed-panel.view-selected,.view-tabs{display:none}
+  .plan-area{height:188px;padding:7px 12px 5px}
+  .plan-board{width:176px;height:176px}
+  .grid-scroll{height:180px;max-height:180px}
+  .plan-board.dense-board{width:calc(var(--size) * 40px + 4px);height:calc(var(--size) * 40px + 4px)}
+  .plan-panel:has(.dense-board) .grid-scroll{width:100%}
+  .app-header{margin-bottom:10px}
+  .toolbar{margin-top:10px}
+}
+@media(max-width:360px){#undo{min-width:44px;padding-left:10px;padding-right:10px}#undo>span:not([aria-hidden]){display:none}}
+/* Small desktop boards fit their complete footprint; only large boards scroll. */
+@media(min-width:1001px){
+  .plan-panel:not(:has(.dense-board)) .plan-area{container-type:size}
+  .plan-panel:not(:has(.dense-board)) .plan-board{width:min(285px,calc(100cqh - 4px),calc(100cqw - 4px));height:auto;aspect-ratio:1}
+  .plan-panel:not(:has(.dense-board)) .grid-scroll{height:auto;padding:2px;overflow:visible}
+}
+@media(max-width:1000px){.plan-area{height:194px}}
+</style>
+</head>
+<body>
+<main class="app">
+  <nav class="topbar" aria-label="FNDG" data-i18n-aria="navigation">
+    <a id="home-link" class="back-link" href="index.html#games"><strong>FNDG</strong><span data-i18n="allGames">← 모든 게임</span></a>
+    <div class="locale-control"><label for="language" data-i18n="language">언어</label><select id="language" aria-label="언어" data-i18n-aria="language"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="zh-Hant">繁體中文</option></select></div>
+  </nav>
+  <header class="app-header">
+    <div class="brand"><svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 44 14.5 24 26 4 14.5Z" fill="#f4b85c"/><path d="m4 14.5 20 11.5v22L4 36.5Z" fill="#d98e39"/><path d="m44 14.5-20 11.5v22l20-11.5Z" fill="#b56e2b"/><path d="M24 3 44 14.5v22L24 48 4 36.5v-22ZM4 14.5 24 26l20-11.5M24 26v22" fill="none" stroke="#965c27" stroke-width="1.5" stroke-linejoin="round"/></svg><h1 data-i18n="title">쌓기나무 놀이터</h1></div>
+    <div class="summary" aria-label="쌓은 블록 요약" data-i18n-aria="summary"><span><span data-i18n="totalLabel">쌓은 블록</span><strong id="total-count">0</strong></span><span><span data-i18n="heightLabel">최고 높이</span><strong id="max-height">0</strong><span class="unit" data-i18n="heightUnit">층</span></span></div>
+  </header>
+  <div class="workspace">
+    <div class="left-column">
+      <section class="panel plan-panel" aria-labelledby="plan-title">
+        <div class="panel-heading"><h2 id="plan-title" data-i18n="planTitle">위에서 보고 쌓아요</h2><span id="size-badge" class="badge">4 × 4</span></div>
+        <div class="edit-tools"><div class="mode-switch" role="group" aria-label="블록 놓기 또는 빼기" data-i18n-aria="editMode"><button id="add-mode" type="button" aria-pressed="true"><span aria-hidden="true">＋</span><span data-i18n="add">쌓기</span></button><button id="remove-mode" type="button" aria-pressed="false"><span aria-hidden="true">−</span><span data-i18n="remove">빼기</span></button></div><p id="edit-help" class="edit-help">한 칸을 누를 때마다 하나씩 쌓여요.</p></div>
+        <div class="plan-area"><div id="grid-scroll" class="grid-scroll"><div id="plan-board" class="plan-board"><div id="grid" class="grid" role="group" aria-label="쌓기나무 높이 격자"></div></div></div></div>
+        <div class="directions"><span data-i18n="backTop">위쪽 = 뒤</span><span data-i18n="frontBottom">아래쪽 = 앞</span><span data-i18n="leftRight">왼쪽 ↔ 오른쪽</span></div>
+        <p id="scroll-hint" class="scroll-hint" hidden data-i18n="scrollHint">격자 안을 밀어 숨은 칸을 볼 수 있어요.</p>
+      </section>
+      <section id="fixed-panel" class="panel fixed-panel" aria-labelledby="fixed-title">
+        <div class="panel-heading"><h2 id="fixed-title" data-i18n="fixedTitle">45°로 바라봐요</h2><span class="badge" data-i18n="fixedBadge">고정 쿼터뷰</span></div>
+        <div class="canvas-wrap fixed-wrap"><canvas id="fixed-canvas" role="img" aria-label="45도에서 본 쌓기나무"></canvas><p id="fixed-empty" class="empty-hint" data-i18n="emptyFixed">칸을 눌러 블록을 쌓아 보세요.</p></div>
+      </section>
+    </div>
+    <section id="orbit-panel" class="panel orbit-panel view-selected" aria-labelledby="orbit-title">
+      <div class="panel-heading"><h2 id="orbit-title" data-i18n="orbitTitle">이리저리 돌려 봐요</h2><button id="reset-view" class="button button-subtle" type="button"><span aria-hidden="true">↺</span><span data-i18n="resetView">처음 방향</span></button></div>
+      <div class="canvas-wrap orbit-wrap"><canvas id="orbit-canvas" tabindex="0" role="img" aria-describedby="rotation-help" aria-label="드래그 또는 방향키로 회전하는 쌓기나무"></canvas><p id="orbit-empty" class="empty-hint" data-i18n="emptyOrbit">블록을 쌓으면 여기에서도 볼 수 있어요.</p><span class="view-tag" data-i18n="viewTag">자유롭게 회전</span></div>
+      <div class="orbit-footer"><span id="rotation-help"><span data-i18n="dragHelp">손가락이나 마우스로 드래그해요.</span><span class="keyboard-hint" data-i18n="keyboardHelp"> 방향키로도 회전할 수 있어요.</span></span><span class="distance"><span class="status-dot" aria-hidden="true"></span><span data-i18n="distance">거리 유지</span></span></div>
+    </section>
+  </div>
+  <footer class="toolbar" aria-label="놀이터 도구" data-i18n-aria="toolbar">
+    <div class="size-control"><label for="board-size" data-i18n="boardSize">바닥 크기</label><select id="board-size" aria-describedby="size-note"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option><option value="7">7 × 7</option><option value="8">8 × 8</option><option value="9">9 × 9</option><option value="10">10 × 10</option></select></div>
+    <p id="size-note" class="size-note" data-i18n="sizeNote">크기를 줄이면 바깥 칸의 블록은 사라져요. 되돌릴 수 있어요.</p>
+    <div class="toolbar-actions"><button id="undo" class="button" type="button" disabled><span aria-hidden="true">↶</span><span data-i18n="undo">되돌리기</span></button><button id="reset" class="button button-reset" type="button"><span aria-hidden="true">↺</span><span data-i18n="reset">초기화</span></button></div>
+  </footer>
+  <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+  <noscript><div class="noscript"><p class="no-script-tr" lang="ko">이 놀이터를 사용하려면 브라우저의 자바스크립트를 켜 주세요.</p><p class="no-script-tr" lang="en">Enable JavaScript in your browser to use this playground.</p><p class="no-script-tr" lang="ja">この遊び場を使うには、ブラウザーのJavaScriptを有効にしてください。</p><p class="no-script-tr" lang="zh">请启用浏览器的 JavaScript 来使用这个积木乐园。</p><p class="no-script-tr" lang="zh-Hant">請啟用瀏覽器的 JavaScript 來使用這個積木樂園。</p></div></noscript>
+</main>
+<script>/* Offline orthographic voxel renderer. Rows run from back to front. */
+(function () {
+  'use strict';
+
+  const TAU = Math.PI * 2;
+  const DEFAULT_YAW = Math.PI / 4;
+  const DEFAULT_PITCH = Math.atan(1 / Math.sqrt(2));
+  const MIN_PITCH = Math.PI / 12;
+  const MAX_PITCH = Math.PI * 4 / 9;
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+  function create(canvas, options = {}) {
+    if (!canvas || typeof canvas.getContext !== 'function') {
+      throw new TypeError('StackRenderer.create needs a canvas.');
+    }
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) throw new Error('Canvas2D unavailable');
+    const interactive = Boolean(options.interactive);
+    let frontLabel = options.frontLabel || 'Front';
+    let grid = Array.from({ length: 4 }, () => Array(4).fill(0));
+    let size = 4;
+    let maxHeight = 0;
+    let yaw = DEFAULT_YAW;
+    let pitch = DEFAULT_PITCH;
+    let width = 1;
+    let height = 1;
+    let pixelRatio = 1;
+    let scale = 1;
+    let originX = 0.5;
+    let originY = 0.5;
+    let fitRadius = 1;
+    let centerY = -0.09;
+    let frame = 0;
+    let disposed = false;
+    let drag = null;
+    let cornerCache = new Map();
+
+    function fit() {
+      // Every corner of every possible rotated view lies within this sphere.
+      // Scale depends on the scene and viewport, never on yaw or pitch.
+      centerY = (maxHeight - 0.18) / 2;
+      fitRadius = Math.hypot(size / 2 + 0.36, size / 2 + 0.76,
+        (maxHeight + 0.18) / 2) + 0.05;
+      scale = Math.max(1, Math.min(width - 32, height - 36)) / (fitRadius * 2);
+      originX = width / 2;
+      originY = height / 2;
+      if (!interactive) {
+        // The fixed view has one known angle, so its actual projected bounds
+        // can fill the shorter preview without reserving unused rotations.
+        const sinYaw = Math.sin(DEFAULT_YAW), cosYaw = Math.cos(DEFAULT_YAW);
+        const sinPitch = Math.sin(DEFAULT_PITCH), cosPitch = Math.cos(DEFAULT_PITCH);
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        function include(x, y, z) {
+          const px = x * cosYaw - z * sinYaw;
+          const py = (y - centerY) * cosPitch - (x * sinYaw + z * cosYaw) * sinPitch;
+          minX = Math.min(minX, px); maxX = Math.max(maxX, px);
+          minY = Math.min(minY, py); maxY = Math.max(maxY, py);
+        }
+        const board = size / 2 + 0.12;
+        for (const x of [-board, board]) for (const z of [-board, board]) {
+          include(x, -0.18, z); include(x, 0, z);
+        }
+        include(-0.16, 0, size / 2 + 0.76);
+        include(0.16, 0, size / 2 + 0.76);
+        for (let row = 0; row < size; row++) for (let col = 0; col < size; col++) {
+          if (!grid[row][col]) continue;
+          for (const x of [col - size / 2, col - size / 2 + 1]) {
+            for (const z of [row - size / 2, row - size / 2 + 1]) {
+              include(x, 0, z); include(x, grid[row][col], z);
+            }
+          }
+        }
+        scale = Math.max(0.001, Math.min(Math.max(1, width - 32) / (maxX - minX),
+          Math.max(1, height - 36) / (maxY - minY)));
+        originX -= (minX + maxX) * scale / 2;
+        originY += (minY + maxY) * scale / 2;
+      }
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      const nextWidth = Math.max(1, rect.width);
+      const nextHeight = Math.max(1, rect.height);
+      const nextRatio = Math.min(2, window.devicePixelRatio || 1);
+      if (nextWidth === width && nextHeight === height && nextRatio === pixelRatio) return;
+      width = nextWidth;
+      height = nextHeight;
+      pixelRatio = nextRatio;
+      canvas.width = Math.max(1, Math.round(width * pixelRatio));
+      canvas.height = Math.max(1, Math.round(height * pixelRatio));
+      fit();
+    }
+
+    function schedule() {
+      if (!disposed && !frame) frame = requestAnimationFrame(draw);
+    }
+
+    function heightAt(row, col) {
+      return row < 0 || col < 0 || row >= size || col >= size ? 0 : grid[row][col];
+    }
+
+    function cubesFor(xSign, zSign) {
+      const key = `${xSign},${zSign}`;
+      if (cornerCache.has(key)) return cornerCache.get(key);
+      const cubes = [];
+      for (let row = 0; row < size; row++) {
+        for (let col = 0; col < size; col++) {
+          const count = grid[row][col];
+          if (!count) continue;
+          const neighborX = heightAt(row, col + xSign);
+          const neighborZ = heightAt(row + zSign, col);
+          // Buried cubes have no visible face and do not need drawing.
+          const firstExposed = Math.min(count - 1, neighborX, neighborZ);
+          for (let level = firstExposed; level < count; level++) {
+            cubes.push({ row, col, level, xFace: level >= neighborX,
+              zFace: level >= neighborZ, topFace: level === count - 1 });
+          }
+        }
+      }
+      cornerCache.set(key, cubes);
+      return cubes;
+    }
+
+    function draw() {
+      frame = 0;
+      if (disposed) return;
+      resize();
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      if (width < 8 || height < 8) return;
+
+      const sinYaw = Math.sin(yaw);
+      const cosYaw = Math.cos(yaw);
+      const sinPitch = Math.sin(pitch);
+      const cosPitch = Math.cos(pitch);
+      const xSign = sinYaw >= 0 ? 1 : -1;
+      const zSign = cosYaw >= 0 ? 1 : -1;
+      const cameraX = sinYaw * cosPitch;
+      const cameraY = sinPitch;
+      const cameraZ = cosYaw * cosPitch;
+      const half = size / 2;
+
+      function project(x, y, z) {
+        return [originX + (x * cosYaw - z * sinYaw) * scale,
+          originY - ((y - centerY) * cosPitch -
+            (x * sinYaw + z * cosYaw) * sinPitch) * scale];
+      }
+
+      function polygon(vertices, fill, stroke = '#8c572c', lineWidth = 1) {
+        ctx.beginPath();
+        vertices.forEach((vertex, index) => {
+          const point = project(...vertex);
+          if (index === 0) ctx.moveTo(point[0], point[1]);
+          else ctx.lineTo(point[0], point[1]);
+        });
+        ctx.closePath();
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke) {
+          ctx.strokeStyle = stroke;
+          ctx.lineWidth = lineWidth;
+          ctx.lineJoin = 'round';
+          ctx.stroke();
+        }
+      }
+
+      function line(start, end, stroke, lineWidth = 1) {
+        const a = project(...start);
+        const b = project(...end);
+        ctx.beginPath();
+        ctx.moveTo(a[0], a[1]);
+        ctx.lineTo(b[0], b[1]);
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+      }
+
+      // A board is always behind the cubes because the camera stays above it.
+      const board = half + 0.12;
+      polygon([[-board, -0.18, -board], [board, -0.18, -board],
+        [board, -0.18, board], [-board, -0.18, board]], '#d9c1a1', '#baa07d', 1);
+      if (xSign > 0) {
+        polygon([[board, 0, -board], [board, 0, board],
+          [board, -0.18, board], [board, -0.18, -board]], '#c3a27c', '#ad8964', 1);
+      } else {
+        polygon([[-board, 0, board], [-board, 0, -board],
+          [-board, -0.18, -board], [-board, -0.18, board]], '#c3a27c', '#ad8964', 1);
+      }
+      if (zSign > 0) {
+        polygon([[-board, 0, board], [board, 0, board],
+          [board, -0.18, board], [-board, -0.18, board]], '#b68e62', '#a57d56', 1);
+      } else {
+        polygon([[board, 0, -board], [-board, 0, -board],
+          [-board, -0.18, -board], [board, -0.18, -board]], '#b68e62', '#a57d56', 1);
+      }
+      polygon([[-board, 0, -board], [board, 0, -board],
+        [board, 0, board], [-board, 0, board]], '#f5ebdc', '#b89d77', 1.2);
+      for (let index = 0; index <= size; index++) {
+        const position = index - half;
+        line([position, 0.001, -half], [position, 0.001, half], '#d4c1a6', 1);
+        line([-half, 0.001, position], [half, 0.001, position], '#d4c1a6', 1);
+      }
+
+      // Draw the orientation marker on the floor before voxels: rear-facing
+      // views correctly let the structure hide it instead of showing through.
+      const front = half + 0.43;
+      polygon([[-0.11, 0.006, front - 0.13], [0.11, 0.006, front - 0.13],
+        [0, 0.006, front + 0.035]], '#537a73', null);
+      const marker = project(0, 0.008, half + 0.66);
+      ctx.fillStyle = '#44675f';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = `600 ${clamp(scale * 0.31, 9, 14)}px system-ui, sans-serif`;
+      ctx.fillText(frontLabel, marker[0], marker[1]);
+
+      const cubes = cubesFor(xSign, zSign);
+      for (const cube of cubes) {
+        cube.depth = (cube.col - half + 0.5) * cameraX +
+          (cube.level + 0.5) * cameraY + (cube.row - half + 0.5) * cameraZ;
+      }
+      // Sort whole unit cubes, not face centers. Any two overlapping voxel
+      // silhouettes are coordinatewise ordered along this camera orthant.
+      // Their center depths therefore give a consistent far-to-near order.
+      cubes.sort((a, b) => a.depth - b.depth || a.row - b.row ||
+        a.col - b.col || a.level - b.level);
+      const edgeWidth = clamp(scale * 0.018, 0.65, 1.3);
+      for (const cube of cubes) {
+        const x = cube.col - half;
+        const z = cube.row - half;
+        const y = cube.level;
+        const variation = ((cube.row * 7 + cube.col * 11 + cube.level * 3) % 5) - 2;
+        const topColor = `hsl(35 71% ${73 + variation}%)`;
+        const xColor = `hsl(31 63% ${61 + variation}%)`;
+        const zColor = `hsl(28 58% ${51 + variation}%)`;
+        if (cube.xFace && Math.abs(sinYaw) > 0.00001) {
+          const side = x + (xSign > 0 ? 1 : 0);
+          polygon([[side, y, z], [side, y, z + 1],
+            [side, y + 1, z + 1], [side, y + 1, z]], xColor, '#925d32', edgeWidth);
+          if (scale > 18) {
+            line([side, y + 0.24, z + 0.16], [side, y + 0.24, z + 0.76],
+              'rgba(130,78,33,.12)', edgeWidth * 0.7);
+          }
+        }
+        if (cube.zFace && Math.abs(cosYaw) > 0.00001) {
+          const side = z + (zSign > 0 ? 1 : 0);
+          polygon([[x, y, side], [x + 1, y, side],
+            [x + 1, y + 1, side], [x, y + 1, side]], zColor, '#925d32', edgeWidth);
+          if (scale > 18) {
+            line([x + 0.16, y + 0.7, side], [x + 0.73, y + 0.7, side],
+              'rgba(108,60,24,.14)', edgeWidth * 0.7);
+          }
+        }
+        if (cube.topFace) {
+          polygon([[x, y + 1, z], [x + 1, y + 1, z],
+            [x + 1, y + 1, z + 1], [x, y + 1, z + 1]], topColor, '#925d32', edgeWidth);
+        }
+      }
+    }
+
+    function setScene(nextGrid) {
+      if (!Array.isArray(nextGrid) || !nextGrid.length ||
+          nextGrid.some(row => !Array.isArray(row) || row.length !== nextGrid.length)) {
+        throw new TypeError('setScene needs a square grid[row][col].');
+      }
+      size = nextGrid.length;
+      grid = nextGrid.map(row => row.map(value => {
+        const number = Number(value);
+        return Number.isFinite(number) ? Math.max(0, Math.floor(number)) : 0;
+      }));
+      maxHeight = grid.reduce((maximum, row) => Math.max(maximum, ...row), 0);
+      cornerCache = new Map();
+      fit();
+      schedule();
+    }
+
+    function resetView() {
+      yaw = DEFAULT_YAW;
+      pitch = DEFAULT_PITCH;
+      schedule();
+    }
+
+    function pointerDown(event) {
+      if (drag || (event.pointerType === 'mouse' && event.button !== 0)) return;
+      drag = { id: event.pointerId, x: event.clientX, y: event.clientY };
+      canvas.setPointerCapture(event.pointerId);
+      canvas.style.cursor = 'grabbing';
+      canvas.focus({ preventScroll: true });
+      event.preventDefault();
+    }
+
+    function pointerMove(event) {
+      if (!drag || event.pointerId !== drag.id) return;
+      const deltaX = event.clientX - drag.x;
+      const deltaY = event.clientY - drag.y;
+      drag.x = event.clientX;
+      drag.y = event.clientY;
+      yaw = ((yaw - deltaX * 0.009) % TAU + TAU) % TAU;
+      pitch = clamp(pitch + deltaY * 0.006, MIN_PITCH, MAX_PITCH);
+      schedule();
+      event.preventDefault();
+    }
+
+    function pointerEnd(event) {
+      if (!drag || event.pointerId !== drag.id) return;
+      if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+      drag = null;
+      canvas.style.cursor = 'grab';
+    }
+
+    function keyDown(event) {
+      const step = Math.PI / 36;
+      switch (event.key) {
+        case 'ArrowLeft': yaw += step; break;
+        case 'ArrowRight': yaw -= step; break;
+        case 'ArrowUp': pitch = clamp(pitch + step, MIN_PITCH, MAX_PITCH); break;
+        case 'ArrowDown': pitch = clamp(pitch - step, MIN_PITCH, MAX_PITCH); break;
+        case 'Home': resetView(); break;
+        default: return;
+      }
+      yaw = ((yaw % TAU) + TAU) % TAU;
+      event.preventDefault();
+      schedule();
+    }
+
+    if (interactive) {
+      canvas.style.touchAction = 'none';
+      canvas.style.cursor = 'grab';
+      if (!canvas.hasAttribute('tabindex')) canvas.tabIndex = 0;
+      canvas.addEventListener('pointerdown', pointerDown);
+      canvas.addEventListener('pointermove', pointerMove);
+      canvas.addEventListener('pointerup', pointerEnd);
+      canvas.addEventListener('pointercancel', pointerEnd);
+      canvas.addEventListener('lostpointercapture', pointerEnd);
+      canvas.addEventListener('keydown', keyDown);
+    }
+    const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(schedule) : null;
+    if (observer) observer.observe(canvas);
+    window.addEventListener('resize', schedule);
+    fit();
+    schedule();
+
+    return {
+      setScene,
+      setFrontLabel(label) { frontLabel = String(label); schedule(); },
+      resetView,
+      render: schedule,
+      getViewState() {
+        return { yaw, pitch, scale, fitRadius, projection: 'orthographic',
+          originX, originY, size, maxHeight, width, height, dragging: Boolean(drag) };
+      },
+      dispose() {
+        if (disposed) return;
+        disposed = true;
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        if (observer) observer.disconnect();
+        window.removeEventListener('resize', schedule);
+        if (interactive) {
+          canvas.removeEventListener('pointerdown', pointerDown);
+          canvas.removeEventListener('pointermove', pointerMove);
+          canvas.removeEventListener('pointerup', pointerEnd);
+          canvas.removeEventListener('pointercancel', pointerEnd);
+          canvas.removeEventListener('lostpointercapture', pointerEnd);
+          canvas.removeEventListener('keydown', keyDown);
+        }
+      }
+    };
+  }
+
+  window.StackRenderer = Object.freeze({ create });
+})();
+
+  </script><script>
+(() => {
+  'use strict';
+  const LOCALES = ['ko', 'en', 'ja', 'zh', 'zh-Hant'];
+  const NUMBER_LOCALES = { ko: 'ko-KR', en: 'en-US', ja: 'ja-JP', zh: 'zh-CN', 'zh-Hant': 'zh-TW' };
+  const WORDS = {
+    ko: {
+      title: '쌓기나무 놀이터', description: '한 칸씩 쌓고, 돌려 보며 배우는 쌓기나무 놀이터. 휴대폰과 컴퓨터에서 바로 즐겨 보세요.',
+      navigation: 'FNDG 홈페이지', allGames: '← 모든 게임', language: '언어', summary: '쌓은 블록 요약', totalLabel: '쌓은 블록', heightLabel: '최고 높이', heightUnit: '층',
+      planTitle: '위에서 보고 쌓아요', editMode: '블록 놓기 또는 빼기', add: '쌓기', remove: '빼기', addHelp: '한 칸을 누를 때마다 하나씩 쌓여요.', removeHelp: '한 칸을 누를 때마다 하나씩 빠져요.',
+      backTop: '위쪽 = 뒤', frontBottom: '아래쪽 = 앞', leftRight: '왼쪽 ↔ 오른쪽', front: '앞', scrollHint: '격자 안을 밀어 숨은 칸을 볼 수 있어요.',
+      fixedTitle: '45°로 바라봐요', fixedBadge: '고정 쿼터뷰', emptyFixed: '칸을 눌러 블록을 쌓아 보세요.', viewChoice: '쌓기나무 보기 선택', orbitTab: '돌려 보기', fixedTab: '45° 보기',
+      orbitTitle: '이리저리 돌려 봐요', resetView: '처음 방향', resetViewHelp: '처음 보던 방향으로 돌아가기', emptyOrbit: '블록을 쌓으면 여기에서도 볼 수 있어요.', viewTag: '자유롭게 회전',
+      dragHelp: '손가락이나 마우스로 드래그해요.', keyboardHelp: ' 방향키로도 회전할 수 있어요.', distance: '거리 유지', toolbar: '놀이터 도구', boardSize: '바닥 크기',
+      sizeNote: '크기를 줄이면 바깥 칸의 블록은 사라져요. 되돌릴 수 있어요.', undo: '되돌리기', reset: '초기화', undoHelp: '바로 전 상태로 되돌리기', resetHelp: '쌓은 블록을 전부 지우고 처음 방향으로 돌아가기',
+      gridLabel: '{size} 곱하기 {size} 쌓기나무 높이 격자. 위쪽은 뒤, 아래쪽은 앞입니다.', cellLabel: '{row}행 {col}열: {height}개. {action}', addAction: '누르면 하나 추가', removeAction: '누르면 하나 빼기',
+      fixedLabel: '45도 방향에서 본 {size} 곱하기 {size} 쌓기나무. 총 {total}개, 최고 {height}층.', orbitLabel: '드래그 또는 방향키로 회전할 수 있는 쌓기나무 3D 보기. 총 {total}개, 최고 {height}층.',
+      changedCell: '{row}행 {col}열, 블록 {height}개.', heightLimit: '한 칸에는 최대 {limit}개까지 쌓을 수 있어요.', changedSize: '바닥을 {size} 곱하기 {size}로 바꿨어요.', alreadyEmpty: '모든 칸은 0이에요. 처음 보던 방향으로 돌아왔어요.', cleared: '모든 블록을 지웠어요. 처음 보던 방향으로 돌아왔어요.', undone: '바로 전 상태로 되돌렸어요.', viewReset: '처음 보던 방향으로 돌아왔어요.', modeAdd: '쌓기 모드. 칸을 누르면 하나씩 추가해요.', modeRemove: '빼기 모드. 칸을 누르면 하나씩 빼요.', selectedOrbit: '돌려 보는 화면을 선택했어요.', selectedFixed: '고정된 45도 화면을 선택했어요.', graphicsError: '이 브라우저에서 3D 그림을 표시할 수 없어요. 최신 브라우저에서 다시 열어 주세요.'
+    },
+    en: {
+      title: 'Cube Stacking Playground', description: 'Build with blocks and explore your creation from every angle. A hands-on learning playground for phones and computers.',
+      navigation: 'FNDG home', allGames: '← All games', language: 'Language', summary: 'Block summary', totalLabel: 'Blocks', heightLabel: 'Max height', heightUnit: 'levels',
+      planTitle: 'Build from above', editMode: 'Add or remove blocks', add: 'Add', remove: 'Remove', addHelp: 'Tap a cell to add one block.', removeHelp: 'Tap a cell to remove one block.',
+      backTop: 'Top = back', frontBottom: 'Bottom = front', leftRight: 'Left ↔ right', front: 'Front', scrollHint: 'Swipe inside the grid to reach more cells.',
+      fixedTitle: 'Look from 45°', fixedBadge: 'Fixed quarter view', emptyFixed: 'Tap a cell to start building.', viewChoice: 'Choose a block view', orbitTab: 'Rotate', fixedTab: '45° view',
+      orbitTitle: 'Turn it around', resetView: 'Start view', resetViewHelp: 'Restore the starting camera direction', emptyOrbit: 'Your blocks will appear here too.', viewTag: 'Free rotation',
+      dragHelp: 'Drag with a finger or mouse.', keyboardHelp: ' Arrow keys also rotate.', distance: 'Fixed distance', toolbar: 'Playground tools', boardSize: 'Board',
+      sizeNote: 'A smaller board removes outer cells. You can undo this.', undo: 'Undo', reset: 'Reset', undoHelp: 'Undo the last change', resetHelp: 'Clear every block and restore the starting view',
+      gridLabel: '{size} by {size} block-height grid. The top is the back; the bottom is the front.', cellLabel: 'Row {row}, column {col}: height {height}. {action}', addAction: 'Press to add one block', removeAction: 'Press to remove one block',
+      fixedLabel: 'A {size} by {size} block board viewed from 45 degrees. Total blocks: {total}. Maximum height: {height}.', orbitLabel: '3D block view. Rotate by dragging or with arrow keys. Total blocks: {total}. Maximum height: {height}.',
+      changedCell: 'Row {row}, column {col}: height {height}.', heightLimit: 'Each cell can hold up to {limit} blocks.', changedSize: 'Board changed to {size} by {size}.', alreadyEmpty: 'Every cell is zero. The starting view is restored.', cleared: 'All blocks cleared. The starting view is restored.', undone: 'The last change was undone.', viewReset: 'The starting view is restored.', modeAdd: 'Add mode. Tap a cell to add one block.', modeRemove: 'Remove mode. Tap a cell to remove one block.', selectedOrbit: 'Rotating view selected.', selectedFixed: 'Fixed 45-degree view selected.', graphicsError: 'This browser cannot display the 3D drawing. Please open this page in a current browser.'
+    },
+    ja: {
+      title: '積み木の広場', description: 'マスに積み木を置いて、いろいろな角度から見て学ぼう。スマートフォンでもパソコンでも遊べます。',
+      navigation: 'FNDGホーム', allGames: '← すべてのゲーム', language: '言語', summary: '積み木のまとめ', totalLabel: '積み木の数', heightLabel: '一番高い所', heightUnit: '段',
+      planTitle: '上から見て積もう', editMode: '積み木を置く・取る', add: '置く', remove: '取る', addHelp: 'マスを押すたびに1個置きます。', removeHelp: 'マスを押すたびに1個取ります。',
+      backTop: '上 = 奥', frontBottom: '下 = 手前', leftRight: '左 ↔ 右', front: '手前', scrollHint: 'マスの中をスワイプすると、隠れたマスが見えます。',
+      fixedTitle: '45°から見よう', fixedBadge: '固定の斜めビュー', emptyFixed: 'マスを押して積み木を置いてみよう。', viewChoice: '積み木の見方を選択', orbitTab: '回して見る', fixedTab: '45°ビュー',
+      orbitTitle: 'くるくる回そう', resetView: '最初の向き', resetViewHelp: '最初のカメラの向きに戻す', emptyOrbit: '置いた積み木がここにも見えます。', viewTag: '自由に回転',
+      dragHelp: '指やマウスでドラッグします。', keyboardHelp: ' 矢印キーでも回転できます。', distance: '距離をキープ', toolbar: '遊び場の道具', boardSize: '床の大きさ',
+      sizeNote: '小さくすると外側の積み木が消えます。元に戻せます。', undo: '元に戻す', reset: 'リセット', undoHelp: '直前の状態に戻す', resetHelp: 'すべての積み木を消して最初の向きに戻す',
+      gridLabel: '{size}掛ける{size}の積み木の高さを示すマス。上が奥、下が手前です。', cellLabel: '{row}行{col}列：{height}個。{action}', addAction: '押すと1個置きます', removeAction: '押すと1個取ります',
+      fixedLabel: '45度から見た{size}掛ける{size}の積み木。合計{total}個、一番高い所は{height}段。', orbitLabel: 'ドラッグや矢印キーで回転できる積み木の3Dビュー。合計{total}個、一番高い所は{height}段。',
+      changedCell: '{row}行{col}列、積み木{height}個。', heightLimit: '1マスには{limit}個まで置けます。', changedSize: '床を{size}掛ける{size}に変えました。', alreadyEmpty: 'すべてのマスは0です。最初の向きに戻しました。', cleared: 'すべての積み木を消して最初の向きに戻しました。', undone: '直前の状態に戻しました。', viewReset: '最初の向きに戻しました。', modeAdd: '置くモード。マスを押すと1個置きます。', modeRemove: '取るモード。マスを押すと1個取ります。', selectedOrbit: '回して見る画面を選びました。', selectedFixed: '固定の45度ビューを選びました。', graphicsError: 'このブラウザーでは3Dの図を表示できません。最新のブラウザーで開いてください。'
+    },
+    zh: {
+      title: '积木乐园', description: '点击格子堆积木，再从各个角度观察和学习。在手机和电脑上都能直接玩。',
+      navigation: 'FNDG 首页', allGames: '← 所有游戏', language: '语言', summary: '积木统计', totalLabel: '积木总数', heightLabel: '最高高度', heightUnit: '层',
+      planTitle: '从上方看，动手堆', editMode: '添加或移除积木', add: '添加', remove: '移除', addHelp: '每点一次格子，就添加一块积木。', removeHelp: '每点一次格子，就移除一块积木。',
+      backTop: '上方 = 后面', frontBottom: '下方 = 前面', leftRight: '左 ↔ 右', front: '前', scrollHint: '在格子内滑动，就能看到其他格子。',
+      fixedTitle: '从45°角观察', fixedBadge: '固定斜视图', emptyFixed: '点一个格子，开始堆积木吧。', viewChoice: '选择积木视图', orbitTab: '旋转观察', fixedTab: '45°视图',
+      orbitTitle: '转一转，仔细看', resetView: '初始方向', resetViewHelp: '恢复最初的观察方向', emptyOrbit: '堆好的积木也会出现在这里。', viewTag: '自由旋转',
+      dragHelp: '用手指或鼠标拖动来旋转。', keyboardHelp: ' 也可以用方向键旋转。', distance: '保持距离', toolbar: '乐园工具', boardSize: '底板大小',
+      sizeNote: '缩小底板会移除外围格子的积木。可以撤销。', undo: '撤销', reset: '重置', undoHelp: '撤销上一次操作', resetHelp: '清空所有积木并恢复初始方向',
+      gridLabel: '{size}乘{size}的积木高度格子。上方是后面，下方是前面。', cellLabel: '第{row}行第{col}列：{height}块。{action}', addAction: '点击添加一块', removeAction: '点击移除一块',
+      fixedLabel: '从45度观察的{size}乘{size}积木底板。共{total}块，最高{height}层。', orbitLabel: '可以拖动或使用方向键旋转的积木3D视图。共{total}块，最高{height}层。',
+      changedCell: '第{row}行第{col}列，积木{height}块。', heightLimit: '每个格子最多可以堆{limit}块积木。', changedSize: '底板已改为{size}乘{size}。', alreadyEmpty: '所有格子都是0，已恢复初始方向。', cleared: '所有积木已清空，并已恢复初始方向。', undone: '已撤销上一次操作。', viewReset: '已恢复初始方向。', modeAdd: '添加模式。点击格子添加一块积木。', modeRemove: '移除模式。点击格子移除一块积木。', selectedOrbit: '已选择旋转视图。', selectedFixed: '已选择固定的45度视图。', graphicsError: '此浏览器无法显示3D图形。请用最新版浏览器打开。'
+    },
+    'zh-Hant': {
+      title: '積木樂園', description: '點選格子堆積木，再從各個角度觀察和學習。在手機和電腦上都能直接玩。',
+      navigation: 'FNDG 首頁', allGames: '← 所有遊戲', language: '語言', summary: '積木統計', totalLabel: '積木總數', heightLabel: '最高高度', heightUnit: '層',
+      planTitle: '從上方看，動手堆', editMode: '新增或移除積木', add: '新增', remove: '移除', addHelp: '每點一次格子，就新增一塊積木。', removeHelp: '每點一次格子，就移除一塊積木。',
+      backTop: '上方 = 後面', frontBottom: '下方 = 前面', leftRight: '左 ↔ 右', front: '前', scrollHint: '在格子內滑動，就能看到其他格子。',
+      fixedTitle: '從45°角觀察', fixedBadge: '固定斜視圖', emptyFixed: '點一個格子，開始堆積木吧。', viewChoice: '選擇積木視圖', orbitTab: '旋轉觀察', fixedTab: '45°視圖',
+      orbitTitle: '轉一轉，仔細看', resetView: '初始方向', resetViewHelp: '恢復最初的觀察方向', emptyOrbit: '堆好的積木也會出現在這裡。', viewTag: '自由旋轉',
+      dragHelp: '用手指或滑鼠拖曳來旋轉。', keyboardHelp: ' 也可以用方向鍵旋轉。', distance: '保持距離', toolbar: '樂園工具', boardSize: '底板大小',
+      sizeNote: '縮小底板會移除外圍格子的積木。可以復原。', undo: '復原', reset: '重置', undoHelp: '復原上一次操作', resetHelp: '清空所有積木並恢復初始方向',
+      gridLabel: '{size}乘{size}的積木高度格子。上方是後面，下方是前面。', cellLabel: '第{row}列第{col}欄：{height}塊。{action}', addAction: '點選新增一塊', removeAction: '點選移除一塊',
+      fixedLabel: '從45度觀察的{size}乘{size}積木底板。共{total}塊，最高{height}層。', orbitLabel: '可以拖曳或使用方向鍵旋轉的積木3D視圖。共{total}塊，最高{height}層。',
+      changedCell: '第{row}列第{col}欄，積木{height}塊。', heightLimit: '每個格子最多可以堆{limit}塊積木。', changedSize: '底板已改為{size}乘{size}。', alreadyEmpty: '所有格子都是0，已恢復初始方向。', cleared: '所有積木已清空，並已恢復初始方向。', undone: '已復原上一次操作。', viewReset: '已恢復初始方向。', modeAdd: '新增模式。點選格子新增一塊積木。', modeRemove: '移除模式。點選格子移除一塊積木。', selectedOrbit: '已選擇旋轉視圖。', selectedFixed: '已選擇固定的45度視圖。', graphicsError: '此瀏覽器無法顯示3D圖形。請用最新版瀏覽器開啟。'
+    }
+  };
+  const $ = id => document.getElementById(id);
+  const gridElement = $('grid');
+  const fixedCanvas = $('fixed-canvas');
+  const orbitCanvas = $('orbit-canvas');
+  const sizeSelect = $('board-size');
+  const undoButton = $('undo');
+  const STORAGE_KEY = 'fndg-stacking-blocks-v1';
+  const MAX_COLUMN_HEIGHT = 100;
+  let locale = LOCALES.includes(document.documentElement.dataset.locale) ? document.documentElement.dataset.locale : 'ko';
+  let numberFormat = new Intl.NumberFormat(NUMBER_LOCALES[locale]);
+  let size = 4;
+  let grid = emptyGrid(size);
+  let mode = 1;
+  const history = [];
+  let cellButtons = [];
+  let fixedView = null;
+  let orbitView = null;
+
+  function emptyGrid(n) { return Array.from({ length: n }, () => Array(n).fill(0)); }
+  function t(key, values = {}) { return WORDS[locale][key].replace(/\{(\w+)\}/g, (_, name) => String(values[name] ?? '')); }
+  function n(value) { return numberFormat.format(value); }
+  function snapshot() { return { size, grid: grid.map(row => row.slice()) }; }
+  function remember() { history.push(snapshot()); if (history.length > 100) history.shift(); }
+  function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch (_) { /* The board also works without storage. */ } }
+  function restore() {
+    try {
+      const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (!data || !Number.isInteger(data.size) || data.size < 2 || data.size > 10 || !Array.isArray(data.grid) || data.grid.length !== data.size) return;
+      if (!data.grid.every(row => Array.isArray(row) && row.length === data.size && row.every(height => Number.isSafeInteger(height) && height >= 0 && height <= MAX_COLUMN_HEIGHT))) return;
+      size = data.size;
+      grid = data.grid;
+    } catch (_) { /* Invalid or unavailable saved data starts an empty board. */ }
+  }
+  function announce(message) { $('announcement').textContent = message; }
+  function makeGrid() {
+    gridElement.replaceChildren();
+    gridElement.style.setProperty('--size', size);
+    $('plan-board').style.setProperty('--size', size);
+    gridElement.classList.toggle('dense', size >= 6);
+    gridElement.classList.toggle('very-dense', size >= 9);
+    $('plan-board').classList.toggle('dense-board', size >= 5);
+    $('scroll-hint').hidden = size < 5;
+    $('grid-scroll').scrollLeft = 0;
+    $('grid-scroll').scrollTop = 0;
+    cellButtons = [];
+    const fragment = document.createDocumentFragment();
+    for (let row = 0; row < size; row++) {
+      cellButtons[row] = [];
+      for (let col = 0; col < size; col++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'cell';
+        button.dataset.row = row;
+        button.dataset.col = col;
+        button.addEventListener('click', event => changeHeight(row, col, event.shiftKey ? -1 : mode, button));
+        button.addEventListener('contextmenu', event => { event.preventDefault(); changeHeight(row, col, -1, button); });
+        button.addEventListener('keydown', event => {
+          const moves = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] };
+          if (moves[event.key]) {
+            event.preventDefault();
+            const [dr, dc] = moves[event.key];
+            cellButtons[Math.max(0, Math.min(size - 1, row + dr))][Math.max(0, Math.min(size - 1, col + dc))].focus();
+          } else if (event.key === 'Delete' || event.key === 'Backspace' || event.key === '-') {
+            event.preventDefault();
+            changeHeight(row, col, -1, button);
+          }
+        });
+        cellButtons[row][col] = button;
+        fragment.append(button);
+      }
+    }
+    gridElement.append(fragment);
+    // Changing size must return the viewport to the back-left of the board.
+    $('grid-scroll').scrollLeft = 0;
+    $('grid-scroll').scrollTop = 0;
+  }
+  function changeHeight(row, col, delta, button) {
+    if (delta < 0 && grid[row][col] === 0) return;
+    if (delta > 0 && grid[row][col] >= MAX_COLUMN_HEIGHT) { announce(t('heightLimit', { limit: n(MAX_COLUMN_HEIGHT) })); return; }
+    remember();
+    grid[row][col] += delta;
+    refresh();
+    if (button) {
+      button.classList.remove('pop');
+      void button.offsetWidth;
+      button.classList.add('pop');
+    }
+    announce(t('changedCell', { row: n(row + 1), col: n(col + 1), height: n(grid[row][col]) }));
+  }
+  function refresh(render = true) {
+    let total = 0;
+    let highest = 0;
+    for (let row = 0; row < size; row++) for (let col = 0; col < size; col++) {
+      const height = grid[row][col];
+      const button = cellButtons[row][col];
+      button.textContent = n(height);
+      button.classList.toggle('filled', height > 0);
+      button.setAttribute('aria-label', t('cellLabel', { row: n(row + 1), col: n(col + 1), height: n(height), action: t(mode > 0 ? 'addAction' : 'removeAction') }));
+      total += height;
+      highest = Math.max(highest, height);
+    }
+    gridElement.setAttribute('aria-label', t('gridLabel', { size: n(size) }));
+    $('total-count').textContent = n(total);
+    $('max-height').textContent = n(highest);
+    $('size-badge').textContent = `${n(size)} × ${n(size)}`;
+    sizeSelect.value = String(size);
+    undoButton.disabled = history.length === 0;
+    $('fixed-empty').hidden = total > 0;
+    $('orbit-empty').hidden = total > 0;
+    $('add-mode').setAttribute('aria-pressed', String(mode > 0));
+    $('remove-mode').setAttribute('aria-pressed', String(mode < 0));
+    $('edit-help').textContent = t(mode > 0 ? 'addHelp' : 'removeHelp');
+    fixedCanvas.setAttribute('aria-label', t('fixedLabel', { size: n(size), total: n(total), height: n(highest) }));
+    orbitCanvas.setAttribute('aria-label', t('orbitLabel', { total: n(total), height: n(highest) }));
+    if (render && fixedView && orbitView) {
+      fixedView.setScene(grid);
+      orbitView.setScene(grid);
+      save();
+    }
+  }
+  function applyLocale(nextLocale, persist = true) {
+    if (!LOCALES.includes(nextLocale)) return;
+    locale = nextLocale;
+    numberFormat = new Intl.NumberFormat(NUMBER_LOCALES[locale]);
+    document.documentElement.lang = locale;
+    document.documentElement.dataset.locale = locale;
+    document.title = `${t('title')} — FNDG`;
+    document.querySelector('meta[name="description"]').content = t('description');
+    document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = t(element.dataset.i18n); });
+    document.querySelectorAll('[data-i18n-aria]').forEach(element => { element.setAttribute('aria-label', t(element.dataset.i18nAria)); });
+    $('language').value = locale;
+    sizeSelect.querySelectorAll('option').forEach(option => { const value = Number(option.value); option.textContent = `${n(value)} × ${n(value)}`; });
+    $('reset-view').title = t('resetViewHelp');
+    $('undo').title = t('undoHelp');
+    $('undo').setAttribute('aria-label', t('undoHelp'));
+    $('reset').title = t('resetHelp');
+    $('announcement').textContent = '';
+    if (fixedView) fixedView.setFrontLabel(t('front'));
+    if (orbitView) orbitView.setFrontLabel(t('front'));
+    refresh(false);
+    if (persist) { try { localStorage.setItem('fndg-locale', locale); } catch (_) { /* Language switching also works without storage. */ } }
+  }
+  restore();
+  makeGrid();
+  applyLocale(locale);
+  try {
+    fixedView = window.StackRenderer.create(fixedCanvas, { interactive: false, frontLabel: t('front') });
+    orbitView = window.StackRenderer.create(orbitCanvas, { interactive: true, frontLabel: t('front') });
+  } catch (_) {
+    for (const canvas of [fixedCanvas, orbitCanvas]) {
+      const error = document.createElement('p');
+      error.className = 'graphics-error';
+      error.dataset.i18n = 'graphicsError';
+      error.textContent = t('graphicsError');
+      canvas.replaceWith(error);
+    }
+  }
+  refresh();
+  $('language').addEventListener('change', event => applyLocale(event.target.value));
+  window.addEventListener('storage', event => { if (event.key === 'fndg-locale' && LOCALES.includes(event.newValue)) applyLocale(event.newValue, false); });
+  $('add-mode').addEventListener('click', () => { mode = 1; refresh(false); announce(t('modeAdd')); });
+  $('remove-mode').addEventListener('click', () => { mode = -1; refresh(false); announce(t('modeRemove')); });
+  sizeSelect.addEventListener('change', () => {
+    const nextSize = Number(sizeSelect.value);
+    if (!Number.isInteger(nextSize) || nextSize < 2 || nextSize > 10 || nextSize === size) { sizeSelect.value = String(size); return; }
+    remember();
+    const nextGrid = emptyGrid(nextSize);
+    for (let row = 0; row < Math.min(size, nextSize); row++) for (let col = 0; col < Math.min(size, nextSize); col++) nextGrid[row][col] = grid[row][col];
+    size = nextSize;
+    grid = nextGrid;
+    makeGrid();
+    refresh();
+    announce(t('changedSize', { size: n(size) }));
+  });
+  $('reset').addEventListener('click', () => {
+    const hadBlocks = grid.some(row => row.some(height => height > 0));
+    if (hadBlocks) {
+      remember();
+      grid = emptyGrid(size);
+    }
+    mode = 1;
+    refresh();
+    if (orbitView) orbitView.resetView();
+    announce(t(hadBlocks ? 'cleared' : 'alreadyEmpty'));
+  });
+  undoButton.addEventListener('click', () => {
+    if (!history.length) return;
+    const previous = history.pop();
+    const changedSize = size !== previous.size;
+    size = previous.size;
+    grid = previous.grid;
+    if (changedSize) makeGrid();
+    refresh();
+    announce(t('undone'));
+  });
+  $('reset-view').addEventListener('click', () => { if (orbitView) orbitView.resetView(); announce(t('viewReset')); });
+})();
+</script>
+</body>
+</html>

@@ -85,6 +85,12 @@
   .arrowpuzzle-panel .gp-availability { margin-top: 16px; color: var(--ink-2); font-size: 13px; line-height: 1.6; }
   @media (max-width: 880px) { .arrowpuzzle-panel .gp-media { min-height: 0; padding: 28px 20px; gap: 14px; } .arrowpuzzle-panel .gp-media img { max-height: 430px; } }
   @media (max-width: 880px) { .puzzleshooter-panel .gp-media { min-height: 0; aspect-ratio: 1024 / 500; } }
+  .stacking-blocks-panel { --c: #e3ad57; }
+  .stacking-blocks-panel .gp-media { background: #f5f2e9; min-height: 360px; }
+  .stacking-blocks-panel .gp-media img { position: static; width: 100%; height: auto; max-height: 680px; object-fit: contain; padding: 24px; }
+  .stacking-blocks-panel .gp-title { font-size: clamp(32px, 4vw, 62px); line-height: 1.12; }
+  .stacking-blocks-panel .gp-tag { flex-wrap: wrap; letter-spacing: .07em; }
+  @media (max-width: 880px) { .stacking-blocks-panel .gp-media { min-height: 0; } .stacking-blocks-panel .gp-media img { max-height: 460px; padding: 12px; } }
 </style>
 <noscript><style>#intro{display:none!important}.parksouls-panel.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
@@ -105,7 +111,8 @@
     { "@type": "VideoGame", "name": "Arrow Puzzle: Calm Escape", "gamePlatform": ["Web", "Android"], "url": "https://frogndog.com/arrowpuzzle.html", "inLanguage": "en" },
     { "@type": "VideoGame", "name": "GardenPuzzle", "gamePlatform": "Web", "url": "https://frogndog.com/gardenpuzzle.html" },
     { "@type": "VideoGame", "name": "Palette of Water", "gamePlatform": ["Web browser", "Android"], "url": "https://frogndog.com/palette-of-water.html", "description": "A watercolor color-mixing puzzle. Free browser demo: stages 1–30. Full Android game: 999 stages, currently under Google Play review." },
-    { "@type": "VideoGame", "name": "FD Quest", "gamePlatform": ["PC", "Console"] }
+    { "@type": "VideoGame", "name": "FD Quest", "gamePlatform": ["PC", "Console"] },
+    { "@type": "WebApplication", "name": "Cube Stacking Playground", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "url": "https://frogndog.com/stacking-blocks.html", "description": "Stack wooden cubes on a 2 by 2 to 10 by 10 grid and explore the structure in rotatable 3D views. Supports touch and five languages." }
   ]
 }
 </script>
@@ -290,7 +297,7 @@
       <div class="sec-head">
         <span class="kicker reveal"><span class="dot"></span>// 002 — OUR GAMES</span>
         <h2 class="reveal d1"><span class="tr" lang="ko">우리가 만든 우주들.</span><span class="tr" lang="en">The worlds we've built.</span><span class="tr" lang="ja">私たちが作った宇宙たち。</span><span class="tr" lang="zh">我们打造的宇宙。</span><span class="tr" lang="zh-Hant">我們打造的宇宙。</span></h2>
-        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 일곱 개의 우주.</span><span class="tr" lang="en">Seven universes, made by two.</span><span class="tr" lang="ja">2人で作った7つの宇宙。</span><span class="tr" lang="zh">两人打造的七个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的七個宇宙。</span></div>
+        <div class="kr-title reveal d2"><span class="tr" lang="ko">두 사람이 만든 여덟 개의 우주.</span><span class="tr" lang="en">Eight universes, made by two.</span><span class="tr" lang="ja">2人で作った8つの宇宙。</span><span class="tr" lang="zh">两人打造的八个宇宙。</span><span class="tr" lang="zh-Hant">兩人打造的八個宇宙。</span></div>
       </div>
 
       <article class="game-panel parksouls-panel reveal" aria-labelledby="parksouls-card-title">
@@ -407,6 +414,17 @@
           <span class="gp-link"><span class="tr" lang="ko">자세히 보기</span><span class="tr" lang="en">Explore</span><span class="tr" lang="ja">くわしく見る</span><span class="tr" lang="zh">查看详情</span><span class="tr" lang="zh-Hant">查看詳情</span> <span class="arrow">→</span></span>
         </div>
       </a>
+      <a class="game-panel stacking-blocks-panel reveal" href="stacking-blocks.html" id="stacking-blocks">
+        <div class="gp-media"><img src="stacking-blocks-preview.png" alt="" width="720" height="560" loading="lazy"></div>
+        <div class="gp-body">
+          <div class="gp-tag"><span class="pill"><span class="tr" lang="ko">무료 웹</span><span class="tr" lang="en">Free on web</span><span class="tr" lang="ja">無料Web</span><span class="tr" lang="zh">免费网页</span><span class="tr" lang="zh-Hant">免費網頁</span></span><span><span class="tr" lang="ko">입체도형 · 학습 놀이</span><span class="tr" lang="en">3D shapes · Learning through play</span><span class="tr" lang="ja">立体図形・学習あそび</span><span class="tr" lang="zh">立体图形 · 趣味学习</span><span class="tr" lang="zh-Hant">立體圖形 · 趣味學習</span></span></div>
+          <div class="gp-title"><span class="tr" lang="ko">쌓기나무 놀이터</span><span class="tr" lang="en">Cube Stacking Playground</span><span class="tr" lang="ja">積み木の広場</span><span class="tr" lang="zh">积木乐园</span><span class="tr" lang="zh-Hant">積木樂園</span></div>
+          <div class="gp-kr"><span class="tr" lang="ko">쌓아 보고, 돌려 보고, 공간을 알아가요</span><span class="tr" lang="en">Build, turn, and discover shapes in space</span><span class="tr" lang="ja">積んで、回して、立体を学ぼう</span><span class="tr" lang="zh">堆一堆，转一转，认识立体空间</span><span class="tr" lang="zh-Hant">堆一堆，轉一轉，認識立體空間</span></div>
+          <p class="gp-desc"><span class="tr" lang="ko">칸을 누를 때마다 나무 블록이 하나씩 쌓여요. 위에서 본 높이와 45도 보기를 비교하고, 손가락이나 마우스로 돌려 보세요. 설치 없이 휴대폰과 PC에서 바로 사용할 수 있어요.</span><span class="tr" lang="en">Tap a cell to add one wooden cube. Compare its height with a fixed 45° view, then drag with your finger or mouse to explore every side. Play on your phone or computer without installing anything.</span><span class="tr" lang="ja">マスを押すたびに木のブロックが一つ積み上がります。上から見た高さと45度の眺めを比べ、指やマウスで回してみましょう。インストールせずにスマートフォンやPCで遊べます。</span><span class="tr" lang="zh">每点一次方格，就叠上一块木方块。对照俯视高度和45度视图，再用手指或鼠标拖动，观察不同角度。无需安装，手机和电脑都能直接使用。</span><span class="tr" lang="zh-Hant">每點一次方格，就疊上一塊木方塊。對照俯視高度和45度視圖，再用手指或滑鼠拖動，觀察不同角度。無需安裝，手機和電腦都能直接使用。</span></p>
+          <div class="gp-meta"><span><b>2 × 2 – 10 × 10</b></span><span><span class="tr" lang="ko"><b>PC · 모바일</b></span><span class="tr" lang="en"><b>Desktop · Mobile</b></span><span class="tr" lang="ja"><b>PC・スマートフォン</b></span><span class="tr" lang="zh"><b>电脑 · 手机</b></span><span class="tr" lang="zh-Hant"><b>電腦 · 手機</b></span></span></div>
+          <span class="gp-link"><span class="tr" lang="ko">바로 쌓아 보기</span><span class="tr" lang="en">Start stacking</span><span class="tr" lang="ja">積んでみよう</span><span class="tr" lang="zh">开始堆积木</span><span class="tr" lang="zh-Hant">開始堆積木</span> <span class="arrow">→</span></span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -423,7 +441,7 @@
 
 <footer class="footer">
   <div class="col"><span class="h">Studio</span><span>FNDG — Frog and Dog Games</span><span><span class="tr" lang="ko">대한민국</span><span class="tr" lang="en">Republic of Korea</span><span class="tr" lang="ja">大韓民国</span><span class="tr" lang="zh">大韩民国</span><span class="tr" lang="zh-Hant">大韓民國</span></span></div>
-  <div class="col"><span class="h">Games</span><a href="/park-souls/"><span class="parksouls-logo parksouls-logo--compact"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls"></span></a><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="palette-of-water.html">Palette of Water</a><a href="fd-quest.html">FD Quest</a></div>
+  <div class="col"><span class="h">Games</span><a href="/park-souls/"><span class="parksouls-logo parksouls-logo--compact"><img src="/park-souls/title-art.png" width="1672" height="941" alt="Park Souls"></span></a><a href="puzzleshooter.html">PuzzleShooter</a><a href="ghostchase.html">Ghost Chase</a><a href="arrowpuzzle.html">Arrow Puzzle: Calm Escape</a><a href="gardenpuzzle.html">GardenPuzzle</a><a href="palette-of-water.html">Palette of Water</a><a href="fd-quest.html">FD Quest</a><a href="stacking-blocks.html"><span class="tr" lang="ko">쌓기나무 놀이터</span><span class="tr" lang="en">Cube Stacking Playground</span><span class="tr" lang="ja">積み木の広場</span><span class="tr" lang="zh">积木乐园</span><span class="tr" lang="zh-Hant">積木樂園</span></a></div>
   <div class="col"><span class="h">Connect</span><a href="mailto:fndgdev@gmail.com">fndgdev@gmail.com</a><a href="https://frogndog.com/" target="_blank" rel="noopener">frogndog.com ↗</a><a href="/ghostchase/privacy.html"><span class="tr" lang="ko">Ghost Chase 개인정보처리방침</span><span class="tr" lang="en">Ghost Chase Privacy Policy</span><span class="tr" lang="ja">Ghost Chase プライバシーポリシー</span><span class="tr" lang="zh">Ghost Chase 隐私政策</span><span class="tr" lang="zh-Hant">Ghost Chase 隱私政策</span></a><a href="/puzzleshooter/privacy.html"><span class="tr" lang="ko">PuzzleShooter 개인정보처리방침</span><span class="tr" lang="en">PuzzleShooter Privacy Policy</span><span class="tr" lang="ja">PuzzleShooter プライバシーポリシー</span><span class="tr" lang="zh">PuzzleShooter 隐私政策</span><span class="tr" lang="zh-Hant">PuzzleShooter 隱私政策</span></a><a href="/arrowpuzzle/privacy.html"><span class="tr" lang="ko">Arrow Puzzle 개인정보처리방침</span><span class="tr" lang="en">Arrow Puzzle Privacy Policy</span><span class="tr" lang="ja">Arrow Puzzle プライバシーポリシー</span><span class="tr" lang="zh">Arrow Puzzle 隐私政策</span><span class="tr" lang="zh-Hant">Arrow Puzzle 隱私政策</span></a></div>
   <div class="col"><span class="h">Business</span><span class="legal">FNDG (에프엔디지)<br>사업자등록번호 601-16-52660<br>통신판매업신고 2026-경기하남-0930<br>© 2026 FNDG · Made by 🐸 + 🐶</span></div>
 </footer>
