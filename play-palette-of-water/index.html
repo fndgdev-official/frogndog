@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7f3e9">
-  <title>Palette of Water · 1–30 stages browser demo — FNDG</title>
-  <meta name="description" content="Play stages 1–30 of Palette of Water free in your browser. A colour-mixing tutorial demo. The full Android game has 999 stages and is under Google Play review.">
+  <title>Palette of Water · All 999 stages free — FNDG</title>
+  <meta name="description" content="Play all 999 stages of Palette of Water free in your browser. Clear each stage to open the next. Progress is saved in this browser, separately from Android.">
   <link rel="canonical" href="https://frogndog.com/play-palette-of-water/">
   <link rel="icon" href="../palette-of-water/media/icon.png" type="image/png">
   <link rel="stylesheet" href="./play.css">
-  <script src="./play.js" defer></script>
+  <script src="./play.js?v=full999-20261008" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main" data-copy="skip">Skip to the demo</a>
+  <a class="skip-link" href="#main" data-copy="skip">Skip to the game</a>
   <header class="play-header">
     <a class="brand" href="../index.html#games" aria-label="FNDG"><span class="brand-paints" aria-hidden="true"><i></i><i></i></span>FNDG</a>
     <a class="back-link" href="../palette-of-water.html" data-copy="back">← Game details</a>
@@ -28,29 +28,29 @@
     <section class="introduction" aria-labelledby="title">
       <p class="eyebrow" data-copy="eyebrow">A LITTLE COLOUR, A LITTLE TIME</p>
       <h1 id="title">Palette <i>of</i> Water</h1>
-      <p class="demo-badge" data-copy="badge">1–30 stages / free browser demo</p>
+      <p class="demo-badge" data-copy="badge">All 999 stages / free browser game</p>
       <p class="intro-copy" data-copy="intro">A first brushstroke. Mix red, yellow and blue, and learn to bring the board together in one colour.</p>
     </section>
-    <section id="player" class="player" aria-label="Palette of Water browser demo" data-label="player" aria-busy="false">
+    <section id="player" class="player" aria-label="Palette of Water browser game" data-label="player" aria-busy="false">
       <canvas id="unity-canvas" width="540" height="960" tabindex="-1" aria-hidden="true" aria-label="Palette of Water game" data-label="canvas"></canvas>
       <div class="player-cover" id="cover">
         <img class="game-icon" src="../palette-of-water/media/icon.png" width="80" height="80" alt="">
         <span class="pigments" aria-hidden="true"><i></i><i></i><i></i></span>
-        <h2 data-copy="coverTitle">Your first 30 stages</h2>
-        <p id="status" role="status" aria-live="polite" data-copy="idle">Ready for a little colour? Choose Start to load the demo.</p>
+        <h2 data-copy="coverTitle">All 999 stages, one brushstroke at a time</h2>
+        <p id="status" role="status" aria-live="polite" data-copy="idle">Ready for a little colour? Choose Start to load the game.</p>
         <progress id="progress" max="1" value="0" aria-label="Game loading" data-label="progress" hidden></progress>
-        <button id="start" class="button" type="button" aria-describedby="gesture-note" disabled data-copy="start">Start demo</button>
+        <button id="start" class="button" type="button" aria-describedby="gesture-note" disabled data-copy="start">Start game</button>
         <button id="enter" class="button" type="button" hidden data-copy="enter">Play with sound</button>
         <button id="retry" class="button" type="button" hidden data-copy="retry">Reload and try again</button>
         <p id="gesture-note" class="small-note" data-copy="gesture">You choose when to start. After loading, tap Play with sound to enable game audio.</p>
       </div>
     </section>
     <p id="notice" class="notice" role="status" hidden></p>
-    <noscript><p class="notice">JavaScript is required to load this demo. <a href="../palette-of-water.html">Read about Palette of Water</a>.</p></noscript>
+    <noscript><p class="notice">JavaScript is required to load this game. <a href="../palette-of-water.html">Read about Palette of Water</a>.</p></noscript>
     <section class="demo-notes" aria-labelledby="notes-title">
-      <h2 id="notes-title" data-copy="notesTitle">A small start, saved here</h2>
+      <h2 id="notes-title" data-copy="notesTitle">999 stages, saved here</h2>
       <p data-copy="save">Progress is saved in this browser only, separately from Android. Clearing site data or using private browsing can remove your save.</p>
-      <p data-copy="scope">This free tutorial demo includes stages 1–30. The full Android game has 999 stages and is currently under Google Play review.</p>
+      <p data-copy="scope">All 999 stages are free. Clear a stage to open the next; replay cleared stages from the in-game menu. The free Android game is under Google Play review.</p>
       <p class="small-note" data-copy="controls">Tap or click to mix and paint. A portrait layout works best; you can keep playing without entering fullscreen.</p>
     </section>
   </main>
