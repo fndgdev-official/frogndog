@@ -1,0 +1,25 @@
+{
+    "schema": 1,
+    "virtualFile": "Player.data.unityweb",
+    "originalSha256": "33BBB01B354D601EDC41DD41087A27335CA220610C3C10C8D3CB5B1A6539756D",
+    "createdUtc": "2026-10-10T10:02:01.5979442Z",
+    "totalBytes": 182011660,
+    "chunkMaxBytes": 83886080,
+    "chunks": [
+        {
+            "file": "Player.data.unityweb.part01",
+            "sha256": "63BC10941344E15BE5B73F81A8697DC5910B4042A470910AC9396DF85DDDE26C",
+            "bytes": 83886080
+        },
+        {
+            "file": "Player.data.unityweb.part02",
+            "sha256": "90596A8F6910AF2BE9E40EFD6D27B51FB43689BFBF68A0A3153193B96924BE10",
+            "bytes": 83886080
+        },
+        {
+            "file": "Player.data.unityweb.part03",
+            "sha256": "E01F8DB4812C4902023859265D0CE62F23B37388F7D0A5549C21F141EB644B5C",
+            "bytes": 14239500
+        }
+    ]
+}

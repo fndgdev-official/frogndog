@@ -7,7 +7,7 @@
   //   { language: 'en', youtubeId: '<verified 11-character ID>',
   //     orientation: 'portrait', durationSeconds: 36 }
   // ] }
-  // Add only verified public/unlisted GardenPuzzle videos. Empty means no section.
+  // Add only verified public/unlisted BloomGlee videos. Empty means no section.
   var languages = [
     ['en', 'English'], ['ko', '한국어'], ['ja', '日本語'],
     ['zh-Hans', '简体中文'], ['zh-Hant', '繁體中文'], ['es', 'Español'],
@@ -27,7 +27,7 @@
       privacy: '재생을 누르면 YouTube에 연결됩니다. 다른 언어를 고르면 재생이 멈춥니다.',
       ready: '선택한 영상: {language}', playing: 'YouTube 플레이어: {language}',
       fallback: '현재 웹 언어의 영상이 없어 {language} 영상을 보여드립니다.',
-      frame: 'GardenPuzzle 실제 플레이 — {language}'
+      frame: 'BloomGlee 실제 플레이 — {language}'
     },
     en: {
       title: 'Watch your little garden bloom',
@@ -38,7 +38,7 @@
       privacy: 'Playing connects to YouTube. Choosing another language stops playback.',
       ready: 'Selected video: {language}', playing: 'YouTube player: {language}',
       fallback: 'A video in this website language is not available yet. Showing {language}.',
-      frame: 'GardenPuzzle real gameplay — {language}'
+      frame: 'BloomGlee real gameplay — {language}'
     },
     ja: {
       title: '小さな庭が花開く瞬間を',
@@ -49,7 +49,7 @@
       privacy: '再生するとYouTubeに接続します。別の言語を選ぶと再生が止まります。',
       ready: '選択中の動画：{language}', playing: 'YouTubeプレーヤー：{language}',
       fallback: 'このサイトの言語の動画は準備中です。{language}の動画を表示します。',
-      frame: 'GardenPuzzleの実際のプレイ — {language}'
+      frame: 'BloomGleeの実際のプレイ — {language}'
     },
     zh: {
       title: '看小小的花园绽放',
@@ -60,7 +60,7 @@
       privacy: '点击播放后将连接YouTube。选择其他语言会停止播放。',
       ready: '已选视频：{language}', playing: 'YouTube播放器：{language}',
       fallback: '当前网站语言的视频尚未提供，现显示{language}视频。',
-      frame: 'GardenPuzzle实际游戏过程 — {language}'
+      frame: 'BloomGlee实际游戏过程 — {language}'
     },
     'zh-Hant': {
       title: '看小小的花園綻放',
@@ -71,7 +71,7 @@
       privacy: '點擊播放後將連線至YouTube。選擇其他語言會停止播放。',
       ready: '已選影片：{language}', playing: 'YouTube播放器：{language}',
       fallback: '目前網站語言的影片尚未提供，現顯示{language}影片。',
-      frame: 'GardenPuzzle實際遊戲過程 — {language}'
+      frame: 'BloomGlee實際遊戲過程 — {language}'
     }
   };
   var section = document.getElementById('garden-videos');

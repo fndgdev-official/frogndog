@@ -1,0 +1,19 @@
+BloomGlee music credits
+
+Lakeside meadow: Forget Me Not (looped) by Kistol.
+License: CC0 1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://opengameart.org/content/forget-me-not
+The original loop is unchanged.
+
+Cat garden, dog garden, mountains, field, river and snowfield:
+New original scores and edited sampled-piano performances for BloomGlee (2026).
+Piano sample recordings: Salamander Grand Piano V3 by Alexander Holm.
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0).
+https://creativecommons.org/licenses/by/3.0/
+Source: https://archive.org/details/SalamanderGrandPianoV3
+Sample repository: https://github.com/sfzinstruments/SalamanderGrandPiano
+Modifications: notes arranged into new scores, close-note tuning, note envelopes,
+gentle equalization, stereo-width and gain adjustments.
+The sample author does not sponsor or endorse BloomGlee.
+
+The sample license is included as SalamanderGrandPiano-CC-BY-3.0.txt.
